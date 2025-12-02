@@ -1,9 +1,11 @@
 import { type FC, type ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Button, Logo } from 'shared/ui';
+import { Logo } from 'shared/ui';
 
 import styles from './Header.module.scss';
+
+import { ThemeSwitcher } from 'assets/icons';
 
 export const Header: FC = (): ReactElement => {
   return (
@@ -12,7 +14,13 @@ export const Header: FC = (): ReactElement => {
         <Logo />
       </Link>
 
-      <Button title='SWITCH' />
+      <div className={styles.controls}>
+        <button className={styles.button}></button>
+        <button className={styles.button}></button>
+        <div className={styles.switcher}>
+          <ThemeSwitcher />
+        </div>
+      </div>
     </div>
   );
 };
