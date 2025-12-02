@@ -2,7 +2,7 @@ import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
 const getBase = (): string => {
-  if (process.env.NODE_ENV === 'production') return '/forno';
+  if (process.env.NODE_ENV === 'production') return '/gargantua';
   return '/';
 };
 
