@@ -5,8 +5,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: ghostwhite;
+  background: var(--color-border);
   border-radius: 4px;
+
+  &:hover {
+    background: var(--color-border-hover);
+  }
 }
 
 button,
@@ -57,7 +61,7 @@ summary {
   list-style: none;
 
   &::selection {
-    background-color: var(--color-background);
+    background-color: var(--color-error);
   }
 }
 

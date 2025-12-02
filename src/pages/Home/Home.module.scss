@@ -4,4 +4,14 @@
   padding: 24px;
 
   background-color: white;
+
+  .row {
+    display: flex;
+
+    align-items: center;
+
+    gap: 24px;
+
+    margin-bottom: 16px;
+  }
 }
