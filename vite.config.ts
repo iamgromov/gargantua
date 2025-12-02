@@ -14,4 +14,14 @@ export default defineConfig({
     open: true,
   },
   plugins: [react()],
+  resolve: {
+    alias: {
+      app: '/src/app',
+      assets: '/src/assets',
+      components: '/src/components',
+      pages: '/src/pages',
+      scss: '/src/scss',
+      shared: '/src/shared',
+    },
+  },
 });
