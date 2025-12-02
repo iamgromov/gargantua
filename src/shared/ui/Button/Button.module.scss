@@ -1,0 +1,96 @@
+.button {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 8px 16px;
+
+  border: 1px solid gray;
+
+  border-radius: 32px;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  .leftIcon,
+  .rightIcon {
+    margin-top: 2px;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+// .primary,
+// .secondary {
+//   svg {
+//     path {
+//       stroke: vars.$light;
+//       stroke-width: 2;
+//     }
+//   }
+
+//   span {
+//     color: vars.$light;
+//   }
+// }
+
+// .primary {
+//   background-color: vars.$primary;
+
+//   &:hover {
+//     background-color: color.adjust(vars.$primary, $lightness: 10%);
+//   }
+
+//   &:active {
+//     background-color: color.adjust(vars.$primary, $lightness: 15%);
+//   }
+// }
+
+// .secondary {
+//   background-color: vars.$secondary;
+
+//   &:hover {
+//     background-color: color.adjust(vars.$secondary, $lightness: 10%);
+//   }
+
+//   &:active {
+//     background-color: color.adjust(vars.$secondary, $lightness: 15%);
+//   }
+// }
+
+// .outline {
+//   background-color: vars.$background;
+//   border: 1px solid vars.$primary;
+
+//   svg {
+//     path {
+//       stroke: vars.$primary;
+//       stroke-width: 2;
+//     }
+//   }
+
+//   span {
+//     color: vars.$primary;
+//   }
+
+//   &:hover,
+//   &:active {
+//     background-color: vars.$primary;
+
+//     svg {
+//       path {
+//         stroke: vars.$light;
+//       }
+//     }
+
+//     span {
+//       color: vars.$light;
+//     }
+//   }
+// }
