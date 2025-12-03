@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 
 import type { IconProps } from 'shared/types';
+import { scrollToTop } from 'shared/utils';
 
 import styles from './Logo.module.scss';
 
@@ -11,6 +12,7 @@ export const Logo: FC<IconProps> = ({ ...props }) => {
   return (
     <svg
       className={styles.icon}
+      onClick={scrollToTop}
       viewBox='0 16 383.3999938964844 37.5'
       data-asc='1.07'
       width='383.3999938964844'

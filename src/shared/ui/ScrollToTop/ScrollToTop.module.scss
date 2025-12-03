@@ -1,0 +1,58 @@
+@use '../../../scss/variables' as *;
+
+.scroll {
+  position: fixed;
+  right: 50%;
+  bottom: $spacing-xl;
+  z-index: $z-index-fixed;
+
+  opacity: 0;
+
+  transform: translateY(20px);
+
+  &.visible {
+    animation: fade $transition-slow forwards;
+  }
+}
+
+.button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+
+  background: var(--color-background);
+
+  border: $border-width-1 solid var(--color-border);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+
+  svg {
+    path {
+      fill: var(--color-text-primary);
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 6px 20px rgb(0 0 0 / 20%);
+
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.icon {
+  display: block;
+
+  margin: 0 auto;
+}
+
+@keyframes fade {
+  to {
+    opacity: 1;
+
+    transform: translateY(10px);
+  }
+}
