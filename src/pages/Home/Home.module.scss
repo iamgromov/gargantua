@@ -1,17 +1,19 @@
+@use '../../scss/variables' as *;
+
 .main {
   min-height: calc(100vh - 80px);
 
-  padding: 24px;
+  padding: $spacing-xl;
 
-  background-color: white;
+  background-color: var(--color-background);
 
   .row {
     display: flex;
 
     align-items: center;
 
-    gap: 24px;
+    gap: $spacing-xl;
 
-    margin-bottom: 16px;
+    margin-bottom: $spacing-base;
   }
 }

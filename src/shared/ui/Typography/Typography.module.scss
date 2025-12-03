@@ -1,44 +1,46 @@
+@use '../../../scss/variables' as *;
+
 .root {
   display: flex;
 
   flex-wrap: wrap;
 
-  margin-bottom: 8px;
+  margin-bottom: $spacing-xs;
 }
 
 .t10 {
   font-size: 10px;
-  font-weight: 400;
+  font-weight: $font-weight-normal;
 }
 
 .t14 {
   font-size: 14px;
-  font-weight: 400;
+  font-weight: $font-weight-normal;
 }
 
 .t14_130 {
   font-size: 14px;
-  font-weight: 400;
+  font-weight: $font-weight-normal;
   line-height: 130%;
   letter-spacing: 0.01em;
 }
 
 .t18 {
   font-size: 18px;
-  font-weight: 400;
+  font-weight: $font-weight-normal;
 }
 
 .t18b {
   font-size: 18px;
-  font-weight: 900;
+  font-weight: $font-weight-extrabold;
 }
 
 .t24b {
   font-size: 24px;
-  font-weight: 900;
+  font-weight: $font-weight-extrabold;
 }
 
 .t30b {
   font-size: 30px;
-  font-weight: 900;
+  font-weight: $font-weight-extrabold;
 }

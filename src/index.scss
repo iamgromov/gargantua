@@ -1,8 +1,6 @@
 @use './scss/libs/normalize';
-@use './scss/fonts';
-@use './scss/mixins' as *;
 @use './scss/variables' as *;
 
 body {
-  font-family: 'Proxima Nova', Roboto, system-ui, Tahoma, sans-serif;
+  font-family: $font-family-sans;
 }

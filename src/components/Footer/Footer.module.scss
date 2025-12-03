@@ -1,12 +1,14 @@
+@use '../../scss/variables' as *;
+
 .footer {
   display: flex;
 
   justify-content: space-between;
 
   height: 180px;
-  padding: 24px;
+  padding: $spacing-xl;
 
-  border-top: 1px solid ghostwhite;
+  border-top: $border-width-1 solid var(--color-border);
 
   .column {
     display: flex;
@@ -15,7 +17,7 @@
     align-items: end;
 
     a {
-      margin-bottom: 4px;
+      margin-bottom: $spacing-xxs;
     }
 
     .logo {

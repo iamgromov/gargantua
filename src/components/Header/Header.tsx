@@ -1,7 +1,7 @@
 import { type FC, type ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Logo } from 'shared/ui';
+import { Button, Logo } from 'shared/ui';
 
 import styles from './Header.module.scss';
 
@@ -15,11 +15,15 @@ export const Header: FC = (): ReactElement => {
       </Link>
 
       <div className={styles.controls}>
-        <button className={styles.button}></button>
-        <button className={styles.button}></button>
-        <div className={styles.switcher}>
+        <Button to='/about' variant='ghost' size='small'>
+          About
+        </Button>
+        <Button to='/notfound' variant='ghost' size='small'>
+          Auth
+        </Button>
+        <Button variant='link' size='small'>
           <ThemeSwitcher />
-        </div>
+        </Button>
       </div>
     </div>
   );

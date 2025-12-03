@@ -19,9 +19,19 @@ export const Home: FC = () => {
 
       <Typography variant='t30b'>Button</Typography>
       <div className={styles.row}>
-        <Button title='Купить' />
-        <Button title='Купить' />
-        <Button title='Купить' />
+        <Button variant='primary'>Primary</Button>
+        <Button variant='secondary'>Secondary</Button>
+        <Button variant='outline'>Outline</Button>
+        <Button variant='danger'>Danger</Button>
+        <Button variant='success'>Success</Button>
+        <Button variant='ghost'>Ghost</Button>
+        <Button variant='link'>Link</Button>
+        <Button variant='success' loading={true}>
+          Success
+        </Button>
+        <Button variant='success' disabled={true}>
+          Success
+        </Button>
       </div>
     </div>
   );

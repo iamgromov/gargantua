@@ -1,5 +1,7 @@
-.layout {
-  padding: 0 24px;
+@use '../../../scss/variables' as *;
 
-  background-color: #fff;
+.layout {
+  padding: 0 $spacing-xl;
+
+  background-color: var(--color-white);
 }
