@@ -5,11 +5,10 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-border);
-  border-radius: 4px;
+  background: var(--color-surface);
 
   &:hover {
-    background: var(--color-border-hover);
+    background: var(--color-border);
   }
 }
 
