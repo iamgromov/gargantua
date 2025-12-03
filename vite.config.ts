@@ -1,5 +1,6 @@
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
+import svgr from 'vite-plugin-svgr';
 
 const getBase = (): string => {
   if (process.env.NODE_ENV === 'production') return '/gargantua';
@@ -13,7 +14,7 @@ export default defineConfig({
     port: 3000,
     open: true,
   },
-  plugins: [react()],
+  plugins: [react(), svgr()],
   resolve: {
     alias: {
       app: '/src/app',

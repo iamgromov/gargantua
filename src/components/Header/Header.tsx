@@ -16,7 +16,7 @@ export const Header: FC = (): ReactElement => {
         <Button to='/about' variant='ghost' size='small'>
           About
         </Button>
-        <Button to='/notfound' variant='ghost' size='small'>
+        <Button to='/auth' variant='ghost' size='small'>
           Auth
         </Button>
         <Button variant='link' size='small'>
