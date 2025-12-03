@@ -2,7 +2,7 @@
   "name": "gargantua",
   "homepage": "https://iamgromov.github.io/gargantua",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -28,9 +28,11 @@
     ]
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.11.0",
     "classnames": "^2.5.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-redux": "^9.2.0",
     "react-router-dom": "^7.9.6",
     "sass": "^1.92.1"
   },

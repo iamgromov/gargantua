@@ -1,2 +1,3 @@
-export * from './icon.interface';
-export * from './links.interface';
+export * from './hooks.interfaces';
+export * from './icon.interfaces';
+export * from './links.interfaces';

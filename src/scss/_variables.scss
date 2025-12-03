@@ -52,6 +52,9 @@
   --color-border: #e1dfe7;
   --color-border-hover: #adb5bd;
   --color-error: #d32f2f;
+
+  // Switcher rotation
+  --rotation: 1;
 }
 
 // ===== DARK THEME =====
@@ -60,12 +63,15 @@
 
   // Background, text, border
   --color-background: #1b1b23;
-  --color-surface: #f8f9fa;
+  --color-surface: #2d2d35;
   --color-text-primary: #fff;
-  --color-text-secondary: #52515b;
-  --color-border: #1b1b23;
-  --color-border-hover: #1b1b23;
-  --color-error: #d32f2f;
+  --color-text-secondary: #b4b4be;
+  --color-border: #3d3d45;
+  --color-border-hover: #5d5d65;
+  --color-error: #ef4444;
+
+  // Switcher rotation
+  --rotation: -1;
 }
 
 // ===== TYPOGRAPHY TOKENS =====

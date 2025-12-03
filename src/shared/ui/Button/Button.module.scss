@@ -200,11 +200,11 @@
   color: var(--color-gray-700);
 
   &:hover:not(.disabled, .loading) {
-    background-color: var(--color-gray-100);
+    background-color: var(--color-surface);
   }
 
   &:active:not(.disabled, .loading) {
-    background-color: var(--color-gray-200);
+    background-color: var(--color-surface);
   }
 }
 

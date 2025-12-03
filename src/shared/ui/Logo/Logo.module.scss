@@ -1,0 +1,7 @@
+@use '../../../scss/variables' as *;
+
+.icon {
+  g {
+    fill: var(--color-text-primary);
+  }
+}

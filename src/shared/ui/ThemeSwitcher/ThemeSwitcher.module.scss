@@ -1,0 +1,15 @@
+@use '../../../scss/variables' as *;
+
+.icon {
+  transform: scaleX(var(--rotation));
+
+  rect {
+    fill: var(--color-text-secondary);
+    stroke: var(--color-border);
+  }
+
+  path {
+    fill: var(--color-background);
+    stroke: var(--color-border);
+  }
+}
