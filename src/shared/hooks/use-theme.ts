@@ -9,7 +9,10 @@ export const useTheme = (): UseThemeReturn => {
   const theme = useSelector((state: RootState) => state.theme);
 
   const toggleTheme = (): void => {
-    dispatch(setTheme(theme === 'light' ? 'dark' : 'light'));
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+
+    dispatch(setTheme(newTheme));
+    localStorage.setItem('theme', newTheme);
   };
 
   useEffect(() => {
