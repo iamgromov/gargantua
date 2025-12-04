@@ -1,4 +1,5 @@
 @use '../../../scss/variables' as *;
+@use '../../../scss/mixins' as *;
 
 .scroll {
   position: fixed;
@@ -8,7 +9,7 @@
 
   opacity: 0;
 
-  transform: translateY(20px);
+  transform: translateX(50%) translateY(20px);
 
   &.visible {
     animation: fade $transition-slow forwards;
@@ -26,11 +27,8 @@
   border-radius: 50%;
   box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
 
-  svg {
-    path {
-      fill: var(--color-text-primary);
-    }
-  }
+  @include theme-transition(all);
+  @include svg-fill;
 
   &:hover {
     box-shadow: 0 6px 20px rgb(0 0 0 / 20%);
@@ -43,16 +41,10 @@
   }
 }
 
-.icon {
-  display: block;
-
-  margin: 0 auto;
-}
-
 @keyframes fade {
   to {
     opacity: 1;
 
-    transform: translateY(10px);
+    transform: translateX(50%) translateY(10px);
   }
 }

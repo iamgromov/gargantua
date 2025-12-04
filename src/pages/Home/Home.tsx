@@ -1,10 +1,32 @@
-import type { FC } from 'react';
+import { useMemo, type FC } from 'react';
 
+import type { ButtonSize, ButtonVariant } from 'shared/types';
 import { Button, Typography } from 'shared/ui';
 
 import styles from './Home.module.scss';
 
+const SIZES: ButtonSize[] = ['extra-large', 'large', 'medium', 'small'];
+const VARIANTS: ButtonVariant[] = ['primary', 'outline', 'danger', 'success', 'ghost', 'link'];
+
+const getVariantTitle = (variant: string): string => {
+  return variant.charAt(0).toUpperCase() + variant.slice(1);
+};
+
 export const Home: FC = () => {
+  const buttonsGrid = useMemo(
+    () =>
+      SIZES.map((size) => (
+        <div key={size} className={styles.row}>
+          {VARIANTS.map((variant) => (
+            <Button key={`${size}-${variant}`} variant={variant} size={size}>
+              {getVariantTitle(variant)}
+            </Button>
+          ))}
+        </div>
+      )),
+    []
+  );
+
   return (
     <div className={styles.main}>
       <Typography variant='t30b'>Typography</Typography>
@@ -17,22 +39,17 @@ export const Home: FC = () => {
         <Typography variant='t10'>Some text</Typography>
       </div>
 
-      <Typography variant='t30b'>Button</Typography>
+      <Typography variant='t30b'>Buttons</Typography>
       <div className={styles.row}>
-        <Button variant='primary'>Primary</Button>
-        <Button variant='secondary'>Secondary</Button>
-        <Button variant='outline'>Outline</Button>
-        <Button variant='danger'>Danger</Button>
-        <Button variant='success'>Success</Button>
-        <Button variant='ghost'>Ghost</Button>
-        <Button variant='link'>Link</Button>
-        <Button variant='success' loading={true}>
+        <Button variant='success' size='large' loading={true}>
           Success
         </Button>
-        <Button variant='success' disabled={true}>
+        <Button variant='success' size='large' disabled={true}>
           Success
         </Button>
       </div>
+
+      {buttonsGrid}
     </div>
   );
 };

@@ -1,1 +1,5 @@
-export type Links = 'REPO' | 'STUB' | 'TELEGRAM';
+export interface Links {
+  REPO: string;
+  STUB: string;
+  TELEGRAM: string;
+}

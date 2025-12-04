@@ -1,15 +1,16 @@
 @use '../../../scss/variables' as *;
+@use '../../../scss/mixins' as *;
 
-.icon {
+.switcher {
   transform: scaleX(var(--rotation));
 
   rect {
     fill: var(--color-text-secondary);
-    stroke: var(--color-border);
+    stroke: var(--color-switcher-border);
   }
 
   path {
-    fill: var(--color-background);
-    stroke: var(--color-border);
+    fill: var(--color-surface);
+    stroke: var(--color-switcher-border);
   }
 }

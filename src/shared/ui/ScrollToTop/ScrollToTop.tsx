@@ -6,14 +6,14 @@ import { scrollToTop } from 'shared/utils';
 
 import styles from './ScrollToTop.module.scss';
 
-import ArrowIcon from 'assets/icons/arrow-up.svg?react';
+import { ArrowUp } from 'assets/icons';
 
 export const ScrollToTop: FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.pageYOffset > 200) {
+      if (window.pageYOffset > 70) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -34,7 +34,7 @@ export const ScrollToTop: FC = () => {
   return (
     <div className={cn(styles.scroll, styles.visible)}>
       <Button variant='ghost' onClick={scrollToTop} className={styles.button}>
-        <ArrowIcon className={styles.icon} />
+        <ArrowUp className={styles.icon} />
       </Button>
     </div>
   );

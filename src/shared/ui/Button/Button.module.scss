@@ -1,4 +1,5 @@
 @use '../../../scss/variables' as *;
+@use '../../../scss/mixins' as *;
 
 // Base button styles
 .button {
@@ -13,7 +14,6 @@
   overflow: hidden;
 
   border: $border-width-1 solid transparent;
-  border-radius: $border-radius-base;
   outline: none;
 
   text-align: center;
@@ -76,12 +76,16 @@
   min-height: 32px;
   padding: $spacing-xs $spacing-sm;
 
+  border-radius: $border-radius-md;
+
   font-size: $font-size-sm;
 }
 
 .medium {
   min-height: 40px;
   padding: $spacing-xs $spacing-base;
+
+  border-radius: $border-radius-lg;
 
   font-size: $font-size-sm;
 }
@@ -90,12 +94,16 @@
   min-height: 48px;
   padding: $spacing-sm $spacing-xl;
 
+  border-radius: $border-radius-xl;
+
   font-size: $font-size-base;
 }
 
 .extra-large {
   min-height: 56px;
   padding: $spacing-base $spacing-3xl;
+
+  border-radius: $border-radius-full;
 
   font-size: $font-size-lg;
 }
@@ -115,13 +123,13 @@
   border-color: var(--color-primary);
 
   &:hover:not(.disabled, .loading) {
-    background-color: var(--color-primary-dark);
-    border-color: var(--color-primary-dark);
+    background-color: color-mix(in srgb, var(--color-primary) 90%, white);
+    border-color: color-mix(in srgb, var(--color-primary) 90%, white);
   }
 
   &:active:not(.disabled, .loading) {
-    background-color: var(--color-primary-active);
-    border-color: var(--color-primary-active);
+    background-color: color-mix(in srgb, var(--color-primary) 80%, white);
+    border-color: color-mix(in srgb, var(--color-primary) 80%, white);
   }
 }
 
@@ -134,13 +142,13 @@
   }
 
   &:hover:not(.disabled, .loading) {
-    background-color: var(--color-secondary-dark);
-    border-color: var(--color-secondary-dark);
+    background-color: color-mix(in srgb, var(--color-secondary) 90%, white);
+    border-color: color-mix(in srgb, var(--color-secondary) 90%, white);
   }
 
   &:active:not(.disabled, .loading) {
-    background-color: var(--color-gray-700);
-    border-color: var(--color-gray-700);
+    background-color: color-mix(in srgb, var(--color-secondary) 80%, white);
+    border-color: color-mix(in srgb, var(--color-secondary) 80%, white);
   }
 }
 
@@ -149,17 +157,25 @@
   border-color: var(--color-gray-300);
 
   .title {
-    color: var(--color-gray-700);
+    color: var(--color-text-primary);
   }
 
   &:hover:not(.disabled, .loading) {
     background-color: var(--color-gray-50);
     border-color: var(--color-gray-400);
+
+    .title {
+      color: var(--color-secondary);
+    }
   }
 
   &:active:not(.disabled, .loading) {
     background-color: var(--color-gray-100);
     border-color: var(--color-secondary);
+
+    .title {
+      color: var(--color-secondary);
+    }
   }
 }
 
@@ -168,13 +184,13 @@
   border-color: var(--color-danger);
 
   &:hover:not(.disabled, .loading) {
-    background-color: var(--color-danger-dark);
-    border-color: var(--color-danger-dark);
+    background-color: color-mix(in srgb, var(--color-danger) 90%, white);
+    border-color: color-mix(in srgb, var(--color-danger) 90%, white);
   }
 
   &:active:not(.disabled, .loading) {
-    background-color: var(--color-danger-active);
-    border-color: var(--color-danger-active);
+    background-color: color-mix(in srgb, var(--color-danger) 80%, white);
+    border-color: color-mix(in srgb, var(--color-danger) 80%, white);
   }
 }
 
@@ -183,13 +199,13 @@
   border-color: var(--color-success);
 
   &:hover:not(.disabled, .loading) {
-    background-color: var(--color-success-dark);
-    border-color: var(--color-success-dark);
+    background-color: color-mix(in srgb, var(--color-success) 90%, white);
+    border-color: color-mix(in srgb, var(--color-success) 90%, white);
   }
 
   &:active:not(.disabled, .loading) {
-    background-color: var(--color-success-active);
-    border-color: var(--color-success-active);
+    background-color: color-mix(in srgb, var(--color-success) 80%, white);
+    border-color: color-mix(in srgb, var(--color-success) 80%, white);
   }
 }
 
@@ -214,16 +230,17 @@
 
   background-color: transparent;
   border-color: transparent;
+  border-radius: 0;
 
   text-decoration: underline;
   color: var(--color-primary);
 
   &:hover:not(.disabled, .loading) {
-    color: var(--color-primary-dark);
+    color: color-mix(in srgb, var(--color-primary) 90%, white);
   }
 
   &:active:not(.disabled, .loading) {
-    color: var(--color-primary-active);
+    color: color-mix(in srgb, var(--color-primary) 80%, white);
   }
 }
 

@@ -1,4 +1,5 @@
 @use '../../scss/variables' as *;
+@use '../../scss/mixins' as *;
 
 .footer {
   display: flex;
@@ -14,10 +15,25 @@
     display: flex;
 
     flex-direction: column;
-    align-items: end;
 
-    a {
-      margin-bottom: $spacing-xs;
+    gap: $spacing-sm;
+
+    .row {
+      gap: $spacing-xs;
+
+      @include flex-children(row, start, center);
+
+      svg:hover {
+        cursor: pointer;
+
+        transform: translateY(-2px);
+
+        @include smooth-transition;
+      }
+    }
+
+    &:not(:first-child) {
+      align-items: end;
     }
 
     .logo {

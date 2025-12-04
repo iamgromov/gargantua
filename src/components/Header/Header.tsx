@@ -5,6 +5,8 @@ import { Button, Logo, ThemeSwitcher } from 'shared/ui';
 
 import styles from './Header.module.scss';
 
+import { Profile } from 'assets/icons';
+
 export const Header: FC = (): ReactElement => {
   return (
     <div className={styles.header}>
@@ -16,9 +18,13 @@ export const Header: FC = (): ReactElement => {
         <Button to='/about' variant='ghost' size='small'>
           About
         </Button>
-        <Button to='/auth' variant='ghost' size='small'>
-          Auth
+        <Button to='/contacts' variant='ghost' size='small'>
+          Contacts
         </Button>
+        <Button to='/auth' variant='link' size='small'>
+          <Profile />
+        </Button>
+
         <Button variant='link' size='small'>
           <ThemeSwitcher />
         </Button>

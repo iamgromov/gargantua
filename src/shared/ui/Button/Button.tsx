@@ -2,9 +2,9 @@ import { type Ref, forwardRef } from 'react';
 import { Link } from 'react-router-dom';
 import cn from 'classnames';
 
-import styles from './Button.module.scss';
+import type { ButtonProps } from 'shared/types';
 
-import type { ButtonProps } from './types';
+import styles from './Button.module.scss';
 
 /** Button component
  * @param variant - button variant

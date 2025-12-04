@@ -1,7 +1,19 @@
 @use './variables' as *;
 
 @mixin mobile {
-  @media (width <= 767px) {
+  @media (width < $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (width >= $breakpoint-md) and (width < $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (width >= $breakpoint-lg) {
     @content;
   }
 }
@@ -18,33 +30,48 @@
   }
 }
 
-@mixin flex-center {
+// Aligns blocks to the center
+@mixin flex-children($flex-direction: row, $justify-content: center, $align-items: center) {
   display: flex;
 
-  justify-content: center;
-  align-items: center;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
 }
 
-@mixin flex-between {
-  display: flex;
-
-  justify-content: space-between;
-  align-items: center;
+// Prevents the user from selecting elements
+@mixin noselect {
+  -webkit-touch-callout: none;
+  user-select: none;
 }
 
-@mixin flex-start {
-  display: flex;
+// Limits text to a number of lines
+@mixin line-clamp($lines) {
+  display: block;
 
-  justify-content: flex-start;
-  align-items: center;
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-line-clamp: $lines;
+
+  line-clamp: $lines;
 }
 
-@mixin flex-column {
-  display: flex;
+// Hide scrollbar
+@mixin hide-scrollbar {
+  -ms-overflow-style: none;
 
-  flex-direction: column;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
+// Transitions
 @mixin smooth-transition($properties: all) {
   transition: $properties var(--transition-duration) var(--transition-timing);
 }
@@ -53,47 +80,14 @@
   transition: $properties var(--transition-theme) var(--transition-timing);
 }
 
-@mixin focus-visible {
-  &:focus-visible {
-    outline: 2px solid var(--color-variation-a);
+@mixin svg-fill() {
+  svg {
+    display: block;
 
-    outline-offset: 2px;
-  }
-}
+    margin: 0 auto;
 
-@mixin button-reset {
-  margin: 0;
-  padding: 0;
-
-  background: none;
-  border: none;
-
-  font: inherit;
-  color: inherit;
-
-  cursor: pointer;
-
-  &:focus {
-    outline: none;
-  }
-}
-
-@mixin custom-scrollbar {
-  &::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: var(--color-surface);
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: var(--color-border);
-    border-radius: 4px;
-
-    &:hover {
-      background: var(--color-border-hover);
+    path {
+      fill: var(--color-text-primary);
     }
   }
 }
