@@ -1,5 +1,5 @@
 [![Pages Deploy](https://github.com/iamgromov/gargantua/actions/workflows/deploy.yml/badge.svg)](https://github.com/iamgromov/gargantua/actions/workflows/deploy.yml)
-[![Workflow Status](https://img.shields.io/github/actions/workflow-status/iamgromov/gargantua/deploy.yml?branch=main&logo=githubactions)](https://github.com/iamgromov/gargantua/actions/workflows/deploy.yml)
+[![Workflow Status](https://img.shields.io/github/actions/workflow/status/iamgromov/gargantua/deploy.yml?branch=main&logo=githubactions)](https://github.com/iamgromov/gargantua/actions/workflows/deploy.yml)
 [![Last Commit](https://img.shields.io/github/last-commit/iamgromov/gargantua?logo=git)](https://github.com/iamgromov/gargantua/commits/main/)
 
 # <img src="public/favicon.png" width="24" alt="favicon"> Gargantua
