@@ -1,73 +1,78 @@
-# React + TypeScript + Vite
+[![GitHub Pages](https://img.shields.io/github/actions/deployment/gargantua/gh-pages?logo=githubactions&logoColor=white)](https://github.com/gargantua/actions)
+[![Workflow Status](https://img.shields.io/github/actions/workflow-status/gargantua/deploy.yml?logo=githubactions)](https://github.com/gargantua/actions/workflows/deploy.yml)
+[![Last Commit](https://img.shields.io/github/last-commit/gargantua/main?logo=git)](https://github.com/gargantua/commits/main/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# <img src="public/favicon.png" width="24" alt="favicon"> Gargantua
 
-Currently, two official plugins are available:
+**Gargantua** is a React project template that lets you quickly start a new project without additional setup. It features a basic project structure, configured linters, automatic linting and formatting on commit, and deployment to GitHub Pages via GitHub Actions
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## <img src="public/television.png" width="16" alt="television"> Demo
 
-## React Compiler
+View the demo here: [iamgromov.github.io/gargantua](https://iamgromov.github.io/gargantua)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## <img src="public/joystick.png" width="16" alt="joystick"> Features
 
-## Expanding the ESLint configuration
+- **Modular architecture** - components organized by separation of concerns
+- **Theme support** - switching between light and dark themes
+- **Responsive design** - components adapt to various screen sizes
+- **TypeScript** - full typing for better DX
+- **Reusable components** - set of ready-to-use UI elements
+- **Modern stack** - React 19, Vite, Redux Toolkit, SCSS
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## <img src="public/tools.png" width="16" alt="tools"> Technologies
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **React** - library for building user interfaces
+- **TypeScript** - typed JavaScript
+- **Vite** - fast build tool
+- **Redux Toolkit** - application state management
+- **React Router DOM** - routing
+- **SCSS** - CSS preprocessor
+- **ESLint + Stylelint** - code and styles linting
+- **Prettier** - code formatting
+- **Husky** - Git hooks
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## <img src="public/package.png" width="16" alt="package"> Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# Clone the repository
+git clone https://github.com/iamgromov/gargantua.git
+
+# Navigate to project directory
+cd gargantua
+
+# Install dependencies
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## <img src="public/rocket.png" width="16" alt="rocket"> Running
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+# Development mode
+npm run dev
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Production build
+npm run build
+
+# Preview build
+npm run preview
+
+# Lint code
+npm run lint
+
+# Lint styles
+npm run stylelint
 ```
+
+## <img src="public/handshake.png" width="16" alt="handshake"> Contributing
+
+The project is in active development. To contribute:
+
+1. Create a feature branch
+2. Make the necessary changes
+3. Ensure all linting checks pass
+4. Create a Pull Request
+
+---
+
+**Author**: [iamgromov](https://github.com/iamgromov)
+**Demo**: [https://iamgromov.github.io/gargantua](https://iamgromov.github.io/gargantua)
