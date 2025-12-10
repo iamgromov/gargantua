@@ -1,0 +1,12 @@
+@use '../../../scss/variables' as *;
+
+.link {
+  text-decoration: none;
+  color: var(--color-text-primary);
+
+  &:hover {
+    text-decoration: underline;
+
+    text-decoration-color: var(--color-primary);
+  }
+}
