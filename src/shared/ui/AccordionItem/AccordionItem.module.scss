@@ -1,0 +1,179 @@
+@use '../../../scss/variables' as *;
+@use '../../../scss/mixins' as *;
+
+.accordionItem {
+  width: 100%;
+
+  background-color: var(--color-background);
+  border: $border-width-1 solid var(--color-border);
+
+  @include smooth-transition(all);
+
+  &:not(:last-child) {
+    margin-bottom: $spacing-xs;
+  }
+
+  &:hover:not(.disabled) {
+    border-color: var(--color-border-hover);
+    box-shadow: $shadow-sm;
+  }
+
+  // Size variants
+  &.small {
+    border-radius: $border-radius-sm;
+
+    .button {
+      min-height: 36px;
+      padding: $spacing-sm;
+
+      font-size: $font-size-sm;
+    }
+
+    .contentInner {
+      padding: $spacing-sm;
+    }
+  }
+
+  &.medium {
+    border-radius: $border-radius-md;
+
+    .button {
+      min-height: 44px;
+      padding: $spacing-base;
+
+      font-size: $font-size-base;
+    }
+
+    .contentInner {
+      padding: $spacing-base;
+    }
+  }
+
+  &.large {
+    border-radius: $border-radius-lg;
+
+    .button {
+      min-height: 52px;
+      padding: $spacing-lg;
+
+      font-size: $font-size-lg;
+    }
+
+    .contentInner {
+      padding: $spacing-lg;
+    }
+  }
+
+  // Border radius variants
+  &.none {
+    border-radius: 0;
+  }
+
+  &.full {
+    border-radius: $border-radius-full;
+  }
+}
+
+.header {
+  width: 100%;
+}
+
+.button {
+  width: 100%;
+
+  background: none;
+
+  border: none;
+  outline: none;
+
+  text-align: left;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  &:focus-visible {
+    box-shadow: 0 0 0 2px rgb(var(--color-primary) / 50%);
+  }
+
+  &:active:not(.disabled) {
+    transform: translateY(1px);
+  }
+
+  &.disabled {
+    opacity: $opacity-disabled;
+
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &.expanded {
+    .headerContent {
+      color: var(--color-primary);
+    }
+  }
+
+  &:not(.disabled):hover {
+    .headerContent {
+      color: var(--color-primary);
+    }
+  }
+
+  @include flex-children(row, space-between, center);
+  @include smooth-transition(all);
+}
+
+.headerContent {
+  flex: 1;
+
+  font-weight: $font-weight-medium;
+  color: var(--color-text-primary);
+
+  @include smooth-transition(color);
+}
+
+.iconWrapper {
+  flex-shrink: 0;
+
+  margin-left: $spacing-sm;
+
+  color: var(--color-text-secondary);
+
+  @include smooth-transition(all);
+
+  .button.expanded & {
+    color: var(--color-primary);
+  }
+
+  .button:not(.disabled):hover & {
+    color: var(--color-primary);
+  }
+}
+
+.chevron {
+  @include smooth-transition(transform);
+}
+
+.content {
+  overflow: hidden;
+
+  @include smooth-transition(all);
+
+  &.collapsed {
+    max-height: 0;
+
+    opacity: 0;
+  }
+
+  &.expanded {
+    max-height: 1000px;
+
+    opacity: 1;
+  }
+}
+
+.contentInner {
+  border-top: $border-width-1 solid var(--color-border);
+
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}

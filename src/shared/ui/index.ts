@@ -1,3 +1,4 @@
+export * from './AccordionItem/AccordionItem';
 export * from './Button/Button';
 export * from './CustomLink/CustomLink';
 export * from './Logo/Logo';

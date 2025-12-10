@@ -1,0 +1,18 @@
+@use '../../scss/variables' as *;
+@use '../../scss/mixins' as *;
+
+.accordion {
+  width: 100%;
+
+  @include flex-children(column, flex-start, stretch);
+
+  // Remove margin from first item
+  & > *:first-child {
+    margin-top: 0;
+  }
+
+  // Remove margin from last item
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+}

@@ -1,21 +1,9 @@
-import type { DetailedHTMLProps, FC, ReactNode, HTMLAttributes } from 'react';
+import type { FC } from 'react';
 import cn from 'classnames';
 
-import styles from './Typography.module.scss';
+import type { TypographyProps } from 'shared/types';
 
-interface TypographyProps extends DetailedHTMLProps<
-  HTMLAttributes<HTMLSpanElement>,
-  HTMLSpanElement
-> {
-  variant: 't10' | 't14' | 't14_130' | 't18b' | 't24b' | 't30b';
-  children: ReactNode;
-  isUppercase?: boolean;
-  isCapitalize?: boolean;
-  isCenter?: boolean;
-  isRight?: boolean;
-  isJustify?: boolean;
-  isBold?: boolean;
-}
+import styles from './Typography.module.scss';
 
 export const Typography: FC<TypographyProps> = ({
   variant,

@@ -76,7 +76,7 @@
   min-height: 32px;
   padding: $spacing-xs $spacing-sm;
 
-  border-radius: $border-radius-md;
+  border-radius: $border-radius-lg;
 
   font-size: $font-size-sm;
 }
@@ -103,7 +103,7 @@
   min-height: 56px;
   padding: $spacing-base $spacing-3xl;
 
-  border-radius: $border-radius-full;
+  border-radius: $border-radius-xl;
 
   font-size: $font-size-lg;
 }
@@ -121,6 +121,10 @@
 .primary {
   background-color: var(--color-primary);
   border-color: var(--color-primary);
+
+  .title {
+    color: var(--color-white);
+  }
 
   &:hover:not(.disabled, .loading) {
     background-color: color-mix(in srgb, var(--color-primary) 90%, white);
@@ -183,6 +187,10 @@
   background-color: var(--color-danger);
   border-color: var(--color-danger);
 
+  .title {
+    color: var(--color-white);
+  }
+
   &:hover:not(.disabled, .loading) {
     background-color: color-mix(in srgb, var(--color-danger) 90%, white);
     border-color: color-mix(in srgb, var(--color-danger) 90%, white);
@@ -197,6 +205,10 @@
 .success {
   background-color: var(--color-success);
   border-color: var(--color-success);
+
+  .title {
+    color: var(--color-white);
+  }
 
   &:hover:not(.disabled, .loading) {
     background-color: color-mix(in srgb, var(--color-success) 90%, white);
