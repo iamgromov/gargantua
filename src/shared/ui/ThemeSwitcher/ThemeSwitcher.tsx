@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
-import { useTheme } from 'shared/hooks';
-import type { IconProps } from 'shared/types';
+import { useTheme } from '@/shared/hooks';
+import type { IconProps } from '@/shared/types';
 
 import styles from './ThemeSwitcher.module.scss';
 

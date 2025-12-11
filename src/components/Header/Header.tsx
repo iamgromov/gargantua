@@ -1,11 +1,10 @@
 import { type FC, type ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Button, Logo, ThemeSwitcher } from 'shared/ui';
+import { Button, Logo, ThemeSwitcher } from '@/shared/ui';
 
+import { Profile } from '@/assets/icons';
 import styles from './Header.module.scss';
-
-import { Profile } from 'assets/icons';
 
 export const Header: FC = (): ReactElement => {
   return (

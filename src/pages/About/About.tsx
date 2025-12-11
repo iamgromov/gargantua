@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 
-import { useDocumentTitle } from 'shared/hooks';
-import { Typography } from 'shared/ui';
+import { useDocumentTitle } from '@/shared/hooks';
+import { Typography } from '@/shared/ui';
 
 import styles from './About.module.scss';
 

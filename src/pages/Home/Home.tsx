@@ -1,9 +1,8 @@
 import { useMemo, type FC } from 'react';
 
-import { Accordion } from 'components/index';
-import type { AccordionItem, ButtonSize, ButtonVariant } from 'shared/types';
-import type { TypographyVariant } from 'shared/types/typography.interfaces';
-import { Button, Typography } from 'shared/ui';
+import { Accordion } from '@/components/';
+import type { AccordionItem, ButtonSize, ButtonVariant, TypographyVariant } from '@/shared/types';
+import { Button, Typography } from '@/shared/ui';
 
 import styles from './Home.module.scss';
 

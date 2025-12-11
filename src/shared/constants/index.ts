@@ -1,4 +1,4 @@
-import type { Links } from 'shared/types';
+import type { Links } from '@/shared/types';
 
 export const LINKS: Links = {
   REPO: 'https://github.com/iamgromov/gargantua',

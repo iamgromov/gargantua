@@ -1,11 +1,10 @@
 import { type FC } from 'react';
 import cn from 'classnames';
 
-import type { AccordionItemProps } from 'shared/types';
+import type { AccordionItemProps } from '@/shared/types';
 
+import ChevronDown from '@/assets/icons/chevron-down.svg?react';
 import styles from './AccordionItem.module.scss';
-
-import ChevronDown from 'assets/icons/chevron-down.svg?react';
 
 /** Chevron icon component */
 const ChevronIcon: FC<{ isExpanded: boolean }> = ({ isExpanded }) => (

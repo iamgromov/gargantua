@@ -17,12 +17,7 @@ export default defineConfig({
   plugins: [react(), svgr()],
   resolve: {
     alias: {
-      app: '/src/app',
-      assets: '/src/assets',
-      components: '/src/components',
-      pages: '/src/pages',
-      scss: '/src/scss',
-      shared: '/src/shared',
+      '@': '/src',
     },
   },
 });

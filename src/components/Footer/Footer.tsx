@@ -1,13 +1,12 @@
 import { type FC, type ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 
-import { LINKS } from 'shared/constants';
-import type { FooterLink } from 'shared/types';
-import { Button, CustomLink, Logo, ThemeSwitcher } from 'shared/ui';
+import { LINKS } from '@/shared/constants';
+import type { FooterLink } from '@/shared/types';
+import { Button, CustomLink, Logo, ThemeSwitcher } from '@/shared/ui';
 
+import { ReactLogo, ReduxLogo, JSLogo, CSSLogo, HTMLLogo } from '@/assets/icons';
 import styles from './Footer.module.scss';
-
-import { ReactLogo, ReduxLogo, JSLogo, CSSLogo, HTMLLogo } from 'assets/icons';
 
 const currentYear = new Date().getFullYear();
 

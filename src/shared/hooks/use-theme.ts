@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setTheme, type AppDispatch, type RootState } from 'shared/store';
-import type { UseThemeReturn } from 'shared/types';
+import { setTheme, type AppDispatch, type RootState } from '@/shared/store';
+import type { UseThemeReturn } from '@/shared/types';
 
 export const useTheme = (): UseThemeReturn => {
   const dispatch = useDispatch<AppDispatch>();

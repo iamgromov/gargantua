@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import type { CustomLinkProps } from 'shared/types';
+import type { CustomLinkProps } from '@/shared/types';
 
 import styles from './CustomLink.module.scss';
 

@@ -33,16 +33,7 @@ export default [
       'import/order': [
         'error',
         {
-          groups: [
-            'builtin',
-            'external',
-            'internal',
-            'parent',
-            'sibling',
-            'index',
-            'object',
-            'type',
-          ],
+          groups: ['builtin', 'external', 'internal', 'index', 'object', 'type'],
           'newlines-between': 'always',
           alphabetize: {
             order: 'asc',
@@ -55,27 +46,38 @@ export default [
               position: 'before',
             },
             {
-              pattern: 'app/**',
+              pattern: '@/app/**',
               group: 'internal',
-              position: 'before',
+              position: 'after',
+            },
+
+            {
+              pattern: '@/components/**',
+              group: 'internal',
+              position: 'after',
             },
             {
-              pattern: 'components/**',
+              pattern: '@/pages/**',
               group: 'internal',
-              position: 'before',
+              position: 'after',
             },
             {
-              pattern: 'pages/**',
+              pattern: '@/shared/**',
               group: 'internal',
-              position: 'before',
+              position: 'after',
             },
             {
-              pattern: 'shared/**',
-              group: 'internal',
-              position: 'before',
+              pattern: '@/assets/**',
+              group: 'index',
+              position: 'after',
             },
             {
-              pattern: 'assets/**',
+              pattern: './**/*.scss',
+              group: 'index',
+              position: 'after',
+            },
+            {
+              pattern: '../**/*.scss',
               group: 'index',
               position: 'after',
             },

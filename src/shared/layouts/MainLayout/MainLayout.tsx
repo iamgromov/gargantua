@@ -1,8 +1,8 @@
 import { type FC, type ReactElement } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import { Footer, Header } from 'components/index';
-import { ScrollToTop } from 'shared/ui';
+import { Footer, Header } from '@/components/';
+import { ScrollToTop } from '@/shared/ui';
 
 import styles from './MainLayout.module.scss';
 

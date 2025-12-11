@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import cn from 'classnames';
 
-import type { TypographyProps } from 'shared/types';
+import type { TypographyProps } from '@/shared/types';
 
 import styles from './Typography.module.scss';
 

@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
-import type { IconProps } from 'shared/types';
-import { scrollToTop } from 'shared/utils';
+import type { IconProps } from '@/shared/types';
+import { scrollToTop } from '@/shared/utils';
 
 import styles from './Logo.module.scss';
 
