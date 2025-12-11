@@ -139,6 +139,7 @@
   color: var(--color-text-secondary);
 
   @include smooth-transition(all);
+  @include svg-fill;
 
   .button.expanded & {
     color: var(--color-primary);
