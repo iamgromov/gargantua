@@ -2,7 +2,9 @@
 @use '../../../scss/mixins' as *;
 
 .icon {
-  g {
-    fill: var(--color-text-primary);
+  svg {
+    g {
+      fill: var(--color-text-primary);
+    }
   }
 }

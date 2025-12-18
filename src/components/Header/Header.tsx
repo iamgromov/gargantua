@@ -1,17 +1,14 @@
-import { type FC, type ReactElement } from 'react';
-import { Link } from 'react-router-dom';
+import { memo, type FC, type ReactElement } from 'react';
 
 import { Button, Logo, ThemeSwitcher } from '@/shared/ui';
 
 import { Profile } from '@/assets/icons';
 import styles from './Header.module.scss';
 
-export const Header: FC = (): ReactElement => {
+export const Header: FC = memo((): ReactElement => {
   return (
     <div className={styles.header}>
-      <Link to='/' className={styles.logo}>
-        <Logo />
-      </Link>
+      <Logo className={styles.logo} />
 
       <div className={styles.controls}>
         <Button to='/about' variant='ghost' size='small'>
@@ -24,10 +21,8 @@ export const Header: FC = (): ReactElement => {
           <Profile />
         </Button>
 
-        <Button variant='link' size='small'>
-          <ThemeSwitcher />
-        </Button>
+        <ThemeSwitcher />
       </div>
     </div>
   );
-};
+});

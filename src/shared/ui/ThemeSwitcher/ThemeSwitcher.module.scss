@@ -1,16 +1,28 @@
 @use '../../../scss/variables' as *;
 @use '../../../scss/mixins' as *;
 
-.switcher {
-  transform: scaleX(var(--rotation));
+.wrapper {
+  transition: all $transition-base;
 
-  rect {
-    fill: var(--color-text-secondary);
-    stroke: var(--color-switcher-border);
+  cursor: pointer;
+
+  @include noselect;
+
+  .switcher {
+    transform: scaleX(var(--rotation));
+
+    rect {
+      fill: var(--color-text-secondary);
+      stroke: var(--color-switcher-border);
+    }
+
+    path {
+      fill: var(--color-surface);
+      stroke: var(--color-switcher-border);
+    }
   }
 
-  path {
-    fill: var(--color-surface);
-    stroke: var(--color-switcher-border);
+  &:active {
+    transform: translateY(1px);
   }
 }

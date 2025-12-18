@@ -12,19 +12,19 @@
   border-bottom: $border-width-1 solid var(--color-border);
 
   a {
-    width: auto;
-    height: 25px;
-  }
+    cursor: pointer;
 
-  .logo {
-    svg {
-      width: 256px;
+    .logo {
+      width: auto;
       height: 25px;
-    }
-  }
 
-  .logo:active {
-    svg {
+      svg {
+        width: 256px;
+        height: 25px;
+      }
+    }
+
+    &:active {
       transform: translateY(1px);
     }
   }

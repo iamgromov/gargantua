@@ -36,15 +36,20 @@
       align-items: end;
     }
 
-    .logo {
-      svg {
-        width: 128px;
-        height: 12.5px;
-      }
-    }
+    a {
+      cursor: pointer;
 
-    .logo:active {
-      svg {
+      .logo {
+        width: auto;
+        height: 12.5px;
+
+        svg {
+          width: 128px;
+          height: 12.5px;
+        }
+      }
+
+      &:active {
         transform: translateY(1px);
       }
     }

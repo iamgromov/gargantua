@@ -1,6 +1,6 @@
 export * from './accordion.interfaces';
 export * from './button.interfaces';
-export * from './custom-link.interfaces';
+export * from './link-button.interfaces';
 export * from './footer.interfaces';
 export * from './hooks.interfaces';
 export * from './icon.interfaces';

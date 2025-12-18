@@ -1,4 +1,16 @@
-import type { ButtonSize, ButtonVariant, Links, TypographyVariant } from '@/shared/types';
+import type { FunctionComponent } from 'react';
+
+import type {
+  ButtonSize,
+  ButtonVariant,
+  FooterLink,
+  Links,
+  TypographyVariant,
+} from '@/shared/types';
+
+import { ReactLogo, ReduxLogo, JSLogo, CSSLogo, HTMLLogo } from '@/assets/icons';
+
+export const CURRENT_YEAR = new Date().getFullYear();
 
 export const BUTTON_SIZES: Array<{ value: ButtonSize; label: string }> = [
   { value: 'extra-large', label: 'Extra large' },
@@ -21,5 +33,32 @@ export const LINKS: Links = {
   STUB: 'https://www.youtube.com/watch?v=K5zP7eQltDE',
   TELEGRAM: 'https://t.me/iamgromov',
 };
+
+export const FOOTER_LINKS: FooterLink[] = [
+  {
+    href: LINKS.REPO,
+    title: 'GitHub Repo',
+  },
+  {
+    href: LINKS.TELEGRAM,
+    title: `@iamgromov / ${CURRENT_YEAR}`,
+  },
+  {
+    href: '',
+    title: '',
+  },
+  {
+    href: LINKS.STUB,
+    title: 'Created with:',
+  },
+];
+
+export const LOGOS: Array<{ id: number; value: FunctionComponent }> = [
+  { id: 1, value: ReactLogo },
+  { id: 2, value: ReduxLogo },
+  { id: 3, value: JSLogo },
+  { id: 4, value: CSSLogo },
+  { id: 5, value: HTMLLogo },
+];
 
 export const TYPOGRAPHY_VARIANTS: TypographyVariant[] = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];

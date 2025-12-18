@@ -1,60 +1,30 @@
-import { type FC, type ReactElement } from 'react';
-import { Link } from 'react-router-dom';
+import { memo, type FC, type ReactElement } from 'react';
 
-import { LINKS } from '@/shared/constants';
-import type { FooterLink } from '@/shared/types';
-import { Button, CustomLink, Logo, ThemeSwitcher } from '@/shared/ui';
+import { FOOTER_LINKS, LOGOS } from '@/shared/constants';
+import { LinkButton, Logo, ThemeSwitcher } from '@/shared/ui';
 
-import { ReactLogo, ReduxLogo, JSLogo, CSSLogo, HTMLLogo } from '@/assets/icons';
 import styles from './Footer.module.scss';
 
-const currentYear = new Date().getFullYear();
-
-const links: FooterLink[] = [
-  {
-    href: LINKS.REPO,
-    title: 'GitHub Repo',
-  },
-  {
-    href: LINKS.TELEGRAM,
-    title: `@iamgromov / ${currentYear}`,
-  },
-  {
-    href: '',
-    title: '',
-  },
-  {
-    href: LINKS.STUB,
-    title: 'Created with:',
-  },
-];
-
-const logos = [ReactLogo, ReduxLogo, JSLogo, CSSLogo, HTMLLogo];
-
-export const Footer: FC = (): ReactElement => {
+export const Footer: FC = memo((): ReactElement => {
   return (
     <footer className={styles.footer}>
       <div className={styles.column}>
-        {links.map((link, index) => (
-          <CustomLink key={index} href={link.href} title={link.title} />
+        {FOOTER_LINKS.map((link) => (
+          <LinkButton key={link.href} href={link.href} title={link.title} />
         ))}
 
         <div className={styles.row}>
-          {logos.map((LogoComponent, index) => (
-            <LogoComponent key={index} />
+          {LOGOS.map((elem) => (
+            <elem.value key={`logo-${elem.id}`} />
           ))}
         </div>
       </div>
 
       <div className={styles.column}>
-        <Link to='/' className={styles.logo}>
-          <Logo />
-        </Link>
+        <Logo className={styles.logo} />
 
-        <Button variant='link' size='small'>
-          <ThemeSwitcher />
-        </Button>
+        <ThemeSwitcher />
       </div>
     </footer>
   );
-};
+});

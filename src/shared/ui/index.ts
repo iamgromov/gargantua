@@ -1,6 +1,6 @@
 export * from './AccordionItem/AccordionItem';
 export * from './Button/Button';
-export * from './CustomLink/CustomLink';
+export * from './LinkButton/LinkButton';
 export * from './Logo/Logo';
 export * from './ScrollToTop/ScrollToTop';
 export * from './Select/Select';

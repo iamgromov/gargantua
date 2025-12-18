@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import { memo, type FC } from 'react';
 
 import { useTheme } from '@/shared/hooks';
 import type { IconProps } from '@/shared/types';
@@ -6,11 +6,11 @@ import type { IconProps } from '@/shared/types';
 import styles from './ThemeSwitcher.module.scss';
 
 /** Switcher for changing themes */
-export const ThemeSwitcher: FC<IconProps> = ({ ...props }) => {
+export const ThemeSwitcher: FC<IconProps> = memo(({ ...props }) => {
   const toggleTheme = useTheme();
 
   return (
-    <>
+    <div className={styles.wrapper}>
       <svg
         className={styles.switcher}
         onClick={toggleTheme}
@@ -38,6 +38,6 @@ export const ThemeSwitcher: FC<IconProps> = ({ ...props }) => {
           strokeWidth='8'
         />
       </svg>
-    </>
+    </div>
   );
-};
+});
