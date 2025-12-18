@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC, useCallback } from 'react';
 import cn from 'classnames';
 
 import type { AccordionItemProps } from '@/shared/types';
@@ -37,11 +37,11 @@ export const AccordionItem: FC<AccordionItemProps> = ({
   size = 'medium',
   borderRadius = 'medium',
 }) => {
-  const handleToggle = () => {
+  const handleToggle = useCallback(() => {
     if (!item.disabled) {
       onToggle();
     }
-  };
+  }, [item.disabled, onToggle]);
 
   const itemClass = styles.accordionItem;
   const headerClass = styles.header;

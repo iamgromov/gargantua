@@ -1,4 +1,4 @@
-import { useMemo, useState, type ChangeEvent, type FC } from 'react';
+import { useMemo, useState, useCallback, type ChangeEvent, type FC } from 'react';
 
 import { Accordion } from '@/components/';
 import { BUTTON_SIZES, BUTTON_VARIANTS, TYPOGRAPHY_VARIANTS } from '@/shared/constants';
@@ -15,14 +15,15 @@ export const Home: FC = () => {
   const [selectedVariant, setSelectedVariant] = useState<ButtonVariant>('primary');
   const [selectedSize, setSelectedSize] = useState<ButtonSize>('large');
 
-  const handleVariantChange = (event: ChangeEvent<HTMLSelectElement>) => {
+  const handleVariantChange = useCallback((event: ChangeEvent<HTMLSelectElement>) => {
     setSelectedVariant(event.target.value as ButtonVariant);
-  };
+  }, []);
 
-  const handleSizeChange = (event: ChangeEvent<HTMLSelectElement>) => {
+  const handleSizeChange = useCallback((event: ChangeEvent<HTMLSelectElement>) => {
     setSelectedSize(event.target.value as ButtonSize);
-  };
+  }, []);
 
+  // Статические JSX элементы для аккордеона
   const typographyGrid = useMemo(
     () => (
       <div className={styles.row}>
@@ -68,11 +69,15 @@ export const Home: FC = () => {
     []
   );
 
-  const ACCORDION_ITEMS: AccordionItem[] = [
-    { header: 'Headers', content: typographyGrid, id: '1' },
-    { header: 'Buttons', content: [disabledGrid, buttonsGrid], id: '2' },
-    { header: 'Disabled', content: '', id: '3', disabled: true },
-  ];
+  // Мемоизированный массив элементов аккордеона
+  const ACCORDION_ITEMS = useMemo<AccordionItem[]>(
+    () => [
+      { header: 'Headers', content: typographyGrid, id: '1' },
+      { header: 'Buttons', content: [disabledGrid, buttonsGrid], id: '2' },
+      { header: 'Disabled', content: '', id: '3', disabled: true },
+    ],
+    [typographyGrid, disabledGrid, buttonsGrid]
+  );
 
   return (
     <div className={styles.main}>
