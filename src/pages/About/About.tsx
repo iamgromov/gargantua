@@ -12,7 +12,7 @@ export const About: FC = () => {
 
   return (
     <div className={styles.main}>
-      <Typography variant='t30b'>About</Typography>
+      <Typography variant='h1'>About</Typography>
     </div>
   );
 };

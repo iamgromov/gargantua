@@ -1,17 +1,13 @@
 import type { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 
-export type TypographyVariant = 't12' | 't14' | 't16' | 't18b' | 't24b' | 't30b';
+export type TypographyVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+export type TypographyWeight = 'regular' | 'medium' | 'bold' | 'black';
 
 export interface TypographyProps extends DetailedHTMLProps<
   HTMLAttributes<HTMLSpanElement>,
   HTMLSpanElement
 > {
   variant: TypographyVariant;
+  weight?: TypographyWeight;
   children: ReactNode;
-  isUppercase?: boolean;
-  isCapitalize?: boolean;
-  isCenter?: boolean;
-  isRight?: boolean;
-  isJustify?: boolean;
-  isBold?: boolean;
 }

@@ -1,34 +1,34 @@
-import { useMemo, type FC } from 'react';
+import { useMemo, useState, type ChangeEvent, type FC } from 'react';
 
 import { Accordion } from '@/components/';
-import type { AccordionItem, ButtonSize, ButtonVariant, TypographyVariant } from '@/shared/types';
-import { Button, Typography } from '@/shared/ui';
+import { BUTTON_SIZES, BUTTON_VARIANTS, TYPOGRAPHY_VARIANTS } from '@/shared/constants';
+import type { AccordionItem, ButtonSize, ButtonVariant } from '@/shared/types';
+import { Button, Select, Typography } from '@/shared/ui';
 
 import styles from './Home.module.scss';
-
-const BUTTON_SIZES: ButtonSize[] = ['extra-large', 'large', 'medium', 'small'];
-const BUTTON_VARIANTS: ButtonVariant[] = [
-  'primary',
-  'secondary',
-  'outline',
-  'danger',
-  'success',
-  'ghost',
-  'link',
-];
-const TYPOGRAPHY_VARIANTS: TypographyVariant[] = ['t30b', 't24b', 't18b', 't16', 't14', 't12'];
 
 const getVariantTitle = (variant: string): string => {
   return variant.charAt(0).toUpperCase() + variant.slice(1);
 };
 
 export const Home: FC = () => {
+  const [selectedVariant, setSelectedVariant] = useState<ButtonVariant>('primary');
+  const [selectedSize, setSelectedSize] = useState<ButtonSize>('large');
+
+  const handleVariantChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    setSelectedVariant(event.target.value as ButtonVariant);
+  };
+
+  const handleSizeChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    setSelectedSize(event.target.value as ButtonSize);
+  };
+
   const typographyGrid = useMemo(
     () => (
       <div className={styles.row}>
         {TYPOGRAPHY_VARIANTS.map((variant) => (
           <Typography variant={variant} key={variant}>
-            Some text
+            Headline
           </Typography>
         ))}
       </div>
@@ -53,10 +53,14 @@ export const Home: FC = () => {
   const buttonsGrid = useMemo(
     () =>
       BUTTON_SIZES.map((size) => (
-        <div key={size} className={styles.row}>
+        <div key={size.value} className={styles.row}>
           {BUTTON_VARIANTS.map((variant) => (
-            <Button key={`${size}-${variant}`} variant={variant} size={size}>
-              {getVariantTitle(variant)}
+            <Button
+              key={`${size.value}-${variant.value}`}
+              variant={variant.value}
+              size={size.value}
+            >
+              {variant.label}
             </Button>
           ))}
         </div>
@@ -72,17 +76,40 @@ export const Home: FC = () => {
 
   return (
     <div className={styles.main}>
-      <Typography variant='t30b'>Accordion</Typography>
+      <Typography variant='h1'>Accordion</Typography>
       <div className={styles.row}>
         <Accordion size='large' items={ACCORDION_ITEMS}></Accordion>
       </div>
 
-      <Typography variant='t30b'>Headers</Typography>
+      <Typography variant='h1'>Select</Typography>
+      <div className={styles.row}>
+        <Select
+          options={BUTTON_VARIANTS}
+          value={selectedVariant}
+          placeholder='Variant'
+          onChange={handleVariantChange}
+        />
+        <Select
+          options={BUTTON_SIZES}
+          value={selectedSize}
+          placeholder='Size'
+          onChange={handleSizeChange}
+        />
+        <Button variant={selectedVariant} size={selectedSize}>
+          {getVariantTitle(selectedVariant)}
+        </Button>
+      </div>
+
+      <Typography variant='h1'>Headers</Typography>
       {typographyGrid}
 
-      <Typography variant='t30b'>Buttons</Typography>
-      {disabledGrid}
-      {buttonsGrid}
+      <Typography variant='h1'>Buttons</Typography>
+      <div className={styles.row}>
+        <div className={styles.column}>
+          {disabledGrid}
+          {buttonsGrid}
+        </div>
+      </div>
     </div>
   );
 };

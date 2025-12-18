@@ -7,7 +7,7 @@ import styles from './NotFound.module.scss';
 export const NotFound: FC = () => {
   return (
     <div className={styles.main}>
-      <Typography variant='t30b'>NotFound</Typography>
+      <Typography variant='h1'>NotFound</Typography>
     </div>
   );
 };

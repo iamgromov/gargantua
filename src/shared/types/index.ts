@@ -5,4 +5,5 @@ export * from './footer.interfaces';
 export * from './hooks.interfaces';
 export * from './icon.interfaces';
 export * from './links.interfaces';
+export * from './select.interfaces';
 export * from './typography.interfaces';

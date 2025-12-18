@@ -1,44 +1,35 @@
 @use '../../../scss/variables' as *;
 
-.root {
+.typography {
   display: flex;
 
   flex-wrap: wrap;
-
-  margin-bottom: $spacing-xs;
 }
 
-.t12 {
-  font-size: 12px;
-  font-weight: $font-weight-normal;
+.h1 {
+  font-size: $font-size-h1;
 }
 
-.t14 {
-  font-size: 14px;
-  font-weight: $font-weight-normal;
+.h2 {
+  font-size: $font-size-h2;
 }
 
-.t16 {
-  font-size: 16px;
-  font-weight: $font-weight-normal;
+.h3 {
+  font-size: $font-size-h3;
 }
 
-.t18 {
-  font-size: 18px;
-  font-weight: $font-weight-normal;
+.h4 {
+  font-size: $font-size-h4;
 }
 
-.t18b {
-  font-size: 18px;
-  font-weight: $font-weight-extrabold;
+.h5 {
+  font-size: $font-size-h5;
 }
 
-.t24b {
-  font-size: 24px;
-  font-weight: $font-weight-extrabold;
+.h6 {
+  font-size: $font-size-h6;
 }
 
-.t30b {
-  font-size: 30px;
-  font-weight: $font-weight-extrabold;
+.black {
+  font-weight: $font-weight-black;
 }
