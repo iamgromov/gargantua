@@ -35,16 +35,5 @@
     align-items: center;
 
     gap: $spacing-base;
-
-    a {
-      span {
-        svg {
-          width: 22px;
-          height: 22px;
-        }
-
-        @include svg-fill;
-      }
-    }
   }
 }

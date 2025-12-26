@@ -1,7 +1,7 @@
 import { useEffect, useState, type FC } from 'react';
 import cn from 'classnames';
 
-import { Button } from '@/shared/ui';
+import { IconButton } from '@/shared/ui';
 import { scrollToTop } from '@/shared/utils';
 
 import { ArrowUp } from '@/assets/icons';
@@ -32,9 +32,13 @@ export const ScrollToTop: FC = () => {
 
   return (
     <div className={cn(styles.scroll, styles.visible)}>
-      <Button variant='ghost' onClick={scrollToTop} className={styles.button}>
-        <ArrowUp className={styles.icon} />
-      </Button>
+      <IconButton
+        icon={<ArrowUp />}
+        onClick={scrollToTop}
+        variant='outline'
+        size='medium'
+        className={styles.button}
+      />
     </div>
   );
 };

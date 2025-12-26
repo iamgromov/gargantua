@@ -13,12 +13,12 @@
 
     rect {
       fill: var(--color-text-secondary);
-      stroke: var(--color-switcher-border);
+      stroke: var(--color-text-primary);
     }
 
     path {
       fill: var(--color-surface);
-      stroke: var(--color-switcher-border);
+      stroke: var(--color-text-primary);
     }
   }
 

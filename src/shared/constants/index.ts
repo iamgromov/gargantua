@@ -5,6 +5,7 @@ import type {
   ButtonVariant,
   FooterLink,
   Links,
+  SpinnerSize,
   TypographyVariant,
 } from '@/shared/types';
 
@@ -59,6 +60,12 @@ export const LOGOS: Array<{ id: number; value: FunctionComponent }> = [
   { id: 3, value: JSLogo },
   { id: 4, value: CSSLogo },
   { id: 5, value: HTMLLogo },
+];
+
+export const SPINNERS_SIZES: Array<{ value: SpinnerSize; label: string }> = [
+  { value: 'large', label: 'Large' },
+  { value: 'medium', label: 'Medium' },
+  { value: 'small', label: 'Small' },
 ];
 
 export const TYPOGRAPHY_VARIANTS: TypographyVariant[] = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];

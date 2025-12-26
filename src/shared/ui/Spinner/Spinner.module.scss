@@ -1,0 +1,77 @@
+@use '../../../scss/variables' as *;
+@use '../../../scss/mixins' as *;
+
+.wrapper {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+}
+
+// Base spinner styles
+.spinner {
+  display: inline-block;
+
+  width: $spacing-base;
+  height: $spacing-base;
+
+  border: 2px solid transparent;
+  border-top: 2px solid currentcolor;
+  border-radius: 50%;
+
+  animation: spin 1s linear infinite;
+}
+
+// Size variants
+.small {
+  width: 16px;
+  height: 16px;
+
+  border-width: 1px;
+
+  border-top-width: 1px;
+}
+
+.medium {
+  width: $spacing-base;
+  height: $spacing-base;
+
+  border-width: 2px;
+
+  border-top-width: 2px;
+}
+
+.large {
+  width: 24px;
+  height: 24px;
+
+  border-width: 3px;
+
+  border-top-width: 3px;
+}
+
+// Color variants
+.primary {
+  color: var(--color-primary);
+}
+
+.secondary {
+  color: var(--color-secondary);
+}
+
+.white {
+  color: var(--color-white);
+}
+
+// Animations
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

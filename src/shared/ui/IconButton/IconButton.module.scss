@@ -1,0 +1,240 @@
+@use '../../../scss/variables' as *;
+@use '../../../scss/mixins' as *;
+
+// Base icon button styles
+.iconButton {
+  position: relative;
+
+  display: inline-flex;
+
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+  border: $border-width-1 solid transparent;
+  border-radius: 50%;
+  outline: none;
+
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition: all $transition-base;
+
+  cursor: pointer;
+
+  user-select: none;
+
+  &:focus-visible {
+    box-shadow: 0 0 0 2px rgb(var(--color-primary), 0.5);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  // Loading state
+  &.loading {
+    opacity: $opacity-loading;
+
+    pointer-events: none;
+
+    .icon {
+      opacity: 0;
+    }
+
+    .spinner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      width: $spacing-sm;
+      height: $spacing-sm;
+
+      border: $border-width-2 solid transparent;
+      border-top: $border-width-2 solid currentcolor;
+      border-radius: 50%;
+
+      animation: spin 1s linear infinite;
+
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  // Disabled state
+  &.disabled {
+    opacity: $opacity-disabled;
+
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+.icon {
+  @include svg-fill;
+}
+
+// Size variants
+.small {
+  width: 32px;
+  height: 32px;
+}
+
+.medium {
+  width: 40px;
+  height: 40px;
+}
+
+.large {
+  width: 48px;
+  height: 48px;
+}
+
+// Color variants
+.primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+
+  .icon {
+    svg {
+      path {
+        fill: var(--color-white);
+      }
+    }
+  }
+
+  &:hover:not(.disabled, .loading) {
+    background-color: color-mix(in srgb, var(--color-primary) 90%, white);
+    border-color: color-mix(in srgb, var(--color-primary) 90%, white);
+  }
+
+  &:active:not(.disabled, .loading) {
+    background-color: color-mix(in srgb, var(--color-primary) 80%, white);
+    border-color: color-mix(in srgb, var(--color-primary) 80%, white);
+  }
+}
+
+.secondary {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+
+  .icon {
+    svg {
+      path {
+        fill: var(--color-white);
+      }
+    }
+  }
+
+  &:hover:not(.disabled, .loading) {
+    background-color: color-mix(in srgb, var(--color-secondary) 90%, white);
+    border-color: color-mix(in srgb, var(--color-secondary) 90%, white);
+  }
+
+  &:active:not(.disabled, .loading) {
+    background-color: color-mix(in srgb, var(--color-secondary) 80%, white);
+    border-color: color-mix(in srgb, var(--color-secondary) 80%, white);
+  }
+}
+
+.outline {
+  background: var(--color-background);
+  border-color: var(--color-gray-300);
+
+  &:hover:not(.disabled, .loading) {
+    background-color: var(--color-gray-50);
+    border-color: var(--color-gray-400);
+
+    .icon {
+      svg {
+        path {
+          fill: var(--color-black);
+        }
+      }
+    }
+  }
+
+  &:active:not(.disabled, .loading) {
+    background-color: var(--color-gray-100);
+    border-color: var(--color-secondary);
+
+    .icon {
+      svg {
+        path {
+          fill: var(--color-black);
+        }
+      }
+    }
+  }
+}
+
+.danger {
+  background-color: var(--color-danger);
+  border-color: var(--color-danger);
+
+  .icon {
+    svg {
+      path {
+        fill: var(--color-white);
+      }
+    }
+  }
+
+  &:hover:not(.disabled, .loading) {
+    background-color: color-mix(in srgb, var(--color-danger) 90%, white);
+    border-color: color-mix(in srgb, var(--color-danger) 90%, white);
+  }
+
+  &:active:not(.disabled, .loading) {
+    background-color: color-mix(in srgb, var(--color-danger) 80%, white);
+    border-color: color-mix(in srgb, var(--color-danger) 80%, white);
+  }
+}
+
+.success {
+  background-color: var(--color-success);
+  border-color: var(--color-success);
+
+  .icon {
+    svg {
+      path {
+        fill: var(--color-white);
+      }
+    }
+  }
+
+  &:hover:not(.disabled, .loading) {
+    background-color: color-mix(in srgb, var(--color-success) 90%, white);
+    border-color: color-mix(in srgb, var(--color-success) 90%, white);
+  }
+
+  &:active:not(.disabled, .loading) {
+    background-color: color-mix(in srgb, var(--color-success) 80%, white);
+    border-color: color-mix(in srgb, var(--color-success) 80%, white);
+  }
+}
+
+.ghost {
+  background-color: transparent;
+  border-color: transparent;
+
+  &:hover:not(.disabled, .loading) {
+    background-color: var(--color-surface);
+  }
+
+  &:active:not(.disabled, .loading) {
+    background-color: var(--color-surface);
+  }
+}
+
+// Animations
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

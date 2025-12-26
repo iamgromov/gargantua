@@ -1,6 +1,7 @@
 import { memo, type FC } from 'react';
 import { Link } from 'react-router-dom';
 
+import { ROUTES } from '@/shared/routes';
 import type { IconProps } from '@/shared/types';
 import { scrollToTop } from '@/shared/utils';
 
@@ -11,7 +12,7 @@ import styles from './Logo.module.scss';
  * */
 export const Logo: FC<IconProps> = memo(({ ...props }) => {
   return (
-    <Link to='/' className={styles.icon}>
+    <Link to={ROUTES.DEFAULT} className={styles.icon}>
       <svg
         onClick={scrollToTop}
         viewBox='0 16 383.3999938964844 37.5'

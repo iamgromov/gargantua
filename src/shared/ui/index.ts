@@ -1,9 +1,11 @@
 export * from './AccordionItem/AccordionItem';
 export * from './Button/Button';
+export * from './IconButton/IconButton';
 export * from './LinkButton/LinkButton';
 export * from './Logo/Logo';
 export * from './ScrollToTop/ScrollToTop';
 export * from './Select/Select';
+export * from './Spinner/Spinner';
 export * from './ThemeSwitcher/ThemeSwitcher';
 export * from './Typography/Typography';
 

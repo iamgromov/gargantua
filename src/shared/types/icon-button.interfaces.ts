@@ -1,21 +1,18 @@
 import type { CSSProperties, MouseEvent, ReactNode } from 'react';
 
-export type ButtonVariant =
+export type IconButtonVariant =
   | 'primary'
   | 'secondary'
   | 'outline'
   | 'danger'
   | 'success'
-  | 'ghost'
-  | 'link';
-export type ButtonSize = 'small' | 'medium' | 'large' | 'extra-large';
-export type ButtonWidth = 'auto' | 'full';
+  | 'ghost';
+export type IconButtonSize = 'small' | 'medium' | 'large';
 
-export interface ButtonProps {
-  variant?: ButtonVariant;
-  size?: ButtonSize;
-  width?: ButtonWidth;
-  children?: ReactNode;
+export interface IconButtonProps {
+  variant?: IconButtonVariant;
+  size?: IconButtonSize;
+  icon: ReactNode;
   onClick?: (_event: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
   loading?: boolean;
   disabled?: boolean;
@@ -23,4 +20,6 @@ export interface ButtonProps {
   style?: CSSProperties;
   to?: string;
   href?: string;
+  title?: string;
+  'aria-label'?: string;
 }

@@ -1,10 +1,22 @@
 import { useMemo, useState, useCallback, type ChangeEvent, type FC } from 'react';
 
 import { Accordion } from '@/components/';
-import { BUTTON_SIZES, BUTTON_VARIANTS, TYPOGRAPHY_VARIANTS } from '@/shared/constants';
-import type { AccordionItem, ButtonSize, ButtonVariant } from '@/shared/types';
-import { Button, Select, Typography } from '@/shared/ui';
+import {
+  BUTTON_SIZES,
+  BUTTON_VARIANTS,
+  SPINNERS_SIZES,
+  TYPOGRAPHY_VARIANTS,
+} from '@/shared/constants';
+import type {
+  AccordionItem,
+  ButtonSize,
+  ButtonVariant,
+  IconButtonSize,
+  IconButtonVariant,
+} from '@/shared/types';
+import { Button, IconButton, Select, Spinner, Typography } from '@/shared/ui';
 
+import { ArrowUp } from '@/assets/icons';
 import styles from './Home.module.scss';
 
 const getVariantTitle = (variant: string): string => {
@@ -23,7 +35,6 @@ export const Home: FC = () => {
     setSelectedSize(event.target.value as ButtonSize);
   }, []);
 
-  // Статические JSX элементы для аккордеона
   const typographyGrid = useMemo(
     () => (
       <div className={styles.row}>
@@ -69,14 +80,42 @@ export const Home: FC = () => {
     []
   );
 
-  // Мемоизированный массив элементов аккордеона
+  const iconsGrid = useMemo(
+    () =>
+      BUTTON_SIZES.map((size) => (
+        <div key={size.value} className={styles.row}>
+          {BUTTON_VARIANTS.map((variant) => (
+            <IconButton
+              key={`${size.value}-${variant.value}`}
+              icon={<ArrowUp />}
+              variant={variant.value as IconButtonVariant}
+              size={size.value as IconButtonSize}
+            />
+          ))}
+        </div>
+      )),
+    []
+  );
+
+  const spinnerGrid = useMemo(
+    () => (
+      <div className={styles.row}>
+        {SPINNERS_SIZES.map((size) => (
+          <Spinner size={size.value} />
+        ))}
+      </div>
+    ),
+    []
+  );
+
   const ACCORDION_ITEMS = useMemo<AccordionItem[]>(
     () => [
       { header: 'Headers', content: typographyGrid, id: '1' },
       { header: 'Buttons', content: [disabledGrid, buttonsGrid], id: '2' },
       { header: 'Disabled', content: '', id: '3', disabled: true },
+      { header: 'Spinners', content: spinnerGrid, id: '4' },
     ],
-    [typographyGrid, disabledGrid, buttonsGrid]
+    [spinnerGrid, typographyGrid, disabledGrid, buttonsGrid]
   );
 
   return (
@@ -115,6 +154,14 @@ export const Home: FC = () => {
           {buttonsGrid}
         </div>
       </div>
+
+      <Typography variant='h1'>IconButtons</Typography>
+      <div className={styles.row}>
+        <div className={styles.column}>{iconsGrid}</div>
+      </div>
+
+      <Typography variant='h1'>Spinners</Typography>
+      {spinnerGrid}
     </div>
   );
 };
