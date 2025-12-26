@@ -32,13 +32,7 @@ export const ScrollToTop: FC = () => {
 
   return (
     <div className={cn(styles.scroll, styles.visible)}>
-      <IconButton
-        icon={<ArrowUp />}
-        onClick={scrollToTop}
-        variant='outline'
-        size='medium'
-        className={styles.button}
-      />
+      <IconButton icon={<ArrowUp />} onClick={scrollToTop} size='large' className={styles.button} />
     </div>
   );
 };

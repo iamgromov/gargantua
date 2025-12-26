@@ -25,7 +25,7 @@ export const IconButton = forwardRef<HTMLButtonElement | HTMLAnchorElement, Icon
   (props, ref) => {
     const {
       variant = 'ghost',
-      size = 'small',
+      size = 'medium',
       icon,
       onClick,
       loading = false,
