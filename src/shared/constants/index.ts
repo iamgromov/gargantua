@@ -1,32 +1,27 @@
 import type { FunctionComponent } from 'react';
 
-import type {
-  ButtonSize,
-  ButtonVariant,
-  FooterLink,
-  Links,
-  SpinnerSize,
-  TypographyVariant,
-} from '@/shared/types';
+import type { FooterLink, Links, SpinnerSize, TypographyVariant } from '@/shared/types';
 
 import { ReactLogo, ReduxLogo, JSLogo, CSSLogo, HTMLLogo } from '@/assets/icons';
 
+import { Intent, Size } from '../ui/Button';
+
 export const CURRENT_YEAR = new Date().getFullYear();
 
-export const BUTTON_SIZES: Array<{ value: ButtonSize; label: string }> = [
-  { value: 'extra-large', label: 'Extra large' },
-  { value: 'large', label: 'Large' },
-  { value: 'medium', label: 'Medium' },
-  { value: 'small', label: 'Small' },
+export const BUTTON_SIZES: Array<{ value: Size; label: string }> = [
+  { value: Size.ExtraLarge, label: 'Extra large' },
+  { value: Size.Large, label: 'Large' },
+  { value: Size.Medium, label: 'Medium' },
+  { value: Size.Small, label: 'Small' },
 ];
-export const BUTTON_VARIANTS: Array<{ value: ButtonVariant; label: string }> = [
-  { value: 'primary', label: 'Primary' },
-  { value: 'secondary', label: 'Secondary' },
-  { value: 'outline', label: 'Outline' },
-  { value: 'danger', label: 'Danger' },
-  { value: 'success', label: 'Success' },
-  { value: 'ghost', label: 'Ghost' },
-  { value: 'link', label: 'Link' },
+export const BUTTON_VARIANTS: Array<{ value: Intent; label: string }> = [
+  { value: Intent.Primary, label: 'Primary' },
+  { value: Intent.Secondary, label: 'Secondary' },
+  { value: Intent.Outline, label: 'Outline' },
+  { value: Intent.Danger, label: 'Danger' },
+  { value: Intent.Success, label: 'Success' },
+  { value: Intent.Ghost, label: 'Ghost' },
+  { value: Intent.Link, label: 'Link' },
 ];
 
 export const LINKS: Links = {
