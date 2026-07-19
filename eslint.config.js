@@ -15,6 +15,7 @@ export default [
       import: importPlugin,
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
+      '@typescript-eslint': tseslint.plugin,
     },
     languageOptions: {
       ecmaVersion: 2020,
@@ -29,7 +30,8 @@ export default [
       ...tseslint.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
       ...(reactRefresh.configs.vite?.rules || {}),
-      'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: '^_' }],
       'import/order': [
         'error',
         {
@@ -40,52 +42,15 @@ export default [
             caseInsensitive: true,
           },
           pathGroups: [
-            {
-              pattern: 'react**',
-              group: 'external',
-              position: 'before',
-            },
-            {
-              pattern: '@/app/**',
-              group: 'internal',
-              position: 'after',
-            },
-
-            {
-              pattern: '@/components/**',
-              group: 'internal',
-              position: 'after',
-            },
-            {
-              pattern: '@/pages/**',
-              group: 'internal',
-              position: 'after',
-            },
-            {
-              pattern: '@/shared/**',
-              group: 'internal',
-              position: 'after',
-            },
-            {
-              pattern: '@/assets/**',
-              group: 'index',
-              position: 'after',
-            },
-            {
-              pattern: './**/*.scss',
-              group: 'index',
-              position: 'after',
-            },
-            {
-              pattern: '../**/*.scss',
-              group: 'index',
-              position: 'after',
-            },
-            {
-              pattern: '**/*.scss',
-              group: 'index',
-              position: 'after',
-            },
+            { pattern: 'react**', group: 'external', position: 'before' },
+            { pattern: '@/app/**', group: 'internal', position: 'after' },
+            { pattern: '@/components/**', group: 'internal', position: 'after' },
+            { pattern: '@/pages/**', group: 'internal', position: 'after' },
+            { pattern: '@/shared/**', group: 'internal', position: 'after' },
+            { pattern: '@/assets/**', group: 'index', position: 'after' },
+            { pattern: './**/*.scss', group: 'index', position: 'after' },
+            { pattern: '../**/*.scss', group: 'index', position: 'after' },
+            { pattern: '**/*.scss', group: 'index', position: 'after' },
           ],
           distinctGroup: false,
           pathGroupsExcludedImportTypes: ['react'],

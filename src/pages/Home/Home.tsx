@@ -7,14 +7,9 @@ import {
   SPINNERS_SIZES,
   TYPOGRAPHY_VARIANTS,
 } from '@/shared/constants';
-import type {
-  AccordionItem,
-  ButtonSize,
-  ButtonVariant,
-  IconButtonSize,
-  IconButtonVariant,
-} from '@/shared/types';
-import { Button, IconButton, Select, Spinner, Typography } from '@/shared/ui';
+import type { AccordionItem, IconButtonSize, IconButtonVariant } from '@/shared/types';
+import { IconButton, Select, Spinner, Typography } from '@/shared/ui';
+import { Button, Intent, Size } from '@/shared/ui/Button';
 
 import { ArrowUp } from '@/assets/icons';
 import styles from './Home.module.scss';
@@ -24,15 +19,15 @@ const getVariantTitle = (variant: string): string => {
 };
 
 export const Home: FC = () => {
-  const [selectedVariant, setSelectedVariant] = useState<ButtonVariant>('primary');
-  const [selectedSize, setSelectedSize] = useState<ButtonSize>('large');
+  const [selectedVariant, setSelectedVariant] = useState(Intent.Primary);
+  const [selectedSize, setSelectedSize] = useState(Size.Large);
 
   const handleVariantChange = useCallback((event: ChangeEvent<HTMLSelectElement>) => {
-    setSelectedVariant(event.target.value as ButtonVariant);
+    setSelectedVariant(event.target.value as Intent);
   }, []);
 
   const handleSizeChange = useCallback((event: ChangeEvent<HTMLSelectElement>) => {
-    setSelectedSize(event.target.value as ButtonSize);
+    setSelectedSize(event.target.value as Size);
   }, []);
 
   const typographyGrid = useMemo(
@@ -51,10 +46,10 @@ export const Home: FC = () => {
   const disabledGrid = useMemo(
     () => (
       <div className={styles.row}>
-        <Button variant='success' size='large' loading={true}>
+        <Button intent={Intent.Success} size={Size.Large} loading={true}>
           Success
         </Button>
-        <Button variant='success' size='large' disabled={true}>
+        <Button intent={Intent.Success} size={Size.Large} disabled={true}>
           Success
         </Button>
       </div>
@@ -67,11 +62,7 @@ export const Home: FC = () => {
       BUTTON_SIZES.map((size) => (
         <div key={size.value} className={styles.row}>
           {BUTTON_VARIANTS.map((variant) => (
-            <Button
-              key={`${size.value}-${variant.value}`}
-              variant={variant.value}
-              size={size.value}
-            >
+            <Button key={`${size.value}-${variant.value}`} intent={variant.value} size={size.value}>
               {variant.label}
             </Button>
           ))}
@@ -139,7 +130,7 @@ export const Home: FC = () => {
           placeholder='Size'
           onChange={handleSizeChange}
         />
-        <Button variant={selectedVariant} size={selectedSize}>
+        <Button intent={selectedVariant} size={selectedSize}>
           {getVariantTitle(selectedVariant)}
         </Button>
       </div>

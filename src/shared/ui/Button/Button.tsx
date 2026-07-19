@@ -2,12 +2,12 @@ import { type Ref, forwardRef } from 'react';
 import { Link } from 'react-router-dom';
 import cn from 'classnames';
 
-import type { ButtonProps } from '@/shared/types';
-
 import styles from './Button.module.scss';
 
+import { Intent, Size, Width, type ButtonProps } from './types';
+
 /** Button component
- * @param variant - button variant
+ * @param intent - button intent
  * @param size - button size
  * @param width - button width
  * @param children - button content
@@ -23,9 +23,9 @@ import styles from './Button.module.scss';
 export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
   (props, ref) => {
     const {
-      variant = 'primary',
-      size = 'medium',
-      width = 'auto',
+      intent = Intent.Primary,
+      size = Size.Medium,
+      width = Width.Auto,
       children,
       onClick,
       loading = false,
@@ -39,7 +39,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
 
     const buttonClass = cn(
       styles.button,
-      styles[variant],
+      styles[intent],
       styles[size],
       styles[width],
       {

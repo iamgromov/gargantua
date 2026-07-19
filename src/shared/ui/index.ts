@@ -1,5 +1,4 @@
 export * from './AccordionItem/AccordionItem';
-export * from './Button/Button';
 export * from './IconButton/IconButton';
 export * from './LinkButton/LinkButton';
 export * from './Logo/Logo';

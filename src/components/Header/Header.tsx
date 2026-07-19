@@ -1,7 +1,8 @@
 import { memo, type FC, type ReactElement } from 'react';
 
 import { ROUTES } from '@/shared/routes';
-import { Button, IconButton, Logo, ThemeSwitcher } from '@/shared/ui';
+import { IconButton, Logo, ThemeSwitcher } from '@/shared/ui';
+import { Button, Intent, Size } from '@/shared/ui/Button';
 
 import { Profile } from '@/assets/icons';
 import styles from './Header.module.scss';
@@ -12,10 +13,10 @@ export const Header: FC = memo((): ReactElement => {
       <Logo className={styles.logo} />
 
       <div className={styles.controls}>
-        <Button to={ROUTES.ABOUT} variant='ghost' size='small'>
+        <Button to={ROUTES.ABOUT} intent={Intent.Ghost} size={Size.Small}>
           About
         </Button>
-        <Button to={ROUTES.CONTACTS} variant='ghost' size='small'>
+        <Button to={ROUTES.CONTACTS} intent={Intent.Ghost} size={Size.Small}>
           Contacts
         </Button>
 
