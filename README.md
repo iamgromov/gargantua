@@ -67,10 +67,20 @@ npm run stylelint
 
 The project is in active development. To contribute:
 
-1. Create a feature branch
+1. Create a feature branch from `main` named `feature/<your-feature>`
 2. Make the necessary changes
 3. Ensure all linting checks pass
-4. Create a Pull Request
+4. Create a Pull Request into `dev` or `main`
+
+### Branch Rules
+
+| Rule                 | Description                                       |
+| -------------------- | ------------------------------------------------- |
+| **Deployment**       | Only from `main`                                  |
+| **Feature branches** | Must be created from `main` and named `feature/*` |
+| **Merge targets**    | Feature branches merge into `dev` or `main` only  |
+
+These rules are enforced automatically via GitHub Actions on every PR.
 
 ---
 
