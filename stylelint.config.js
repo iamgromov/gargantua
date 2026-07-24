@@ -186,7 +186,6 @@ export default {
         unspecified: 'bottomAlphabetical',
         emptyLineBeforeUnspecified: 'always',
         emptyLineMinimumPropertyThreshold: 2,
-        disableFix: false,
       },
     ],
   },

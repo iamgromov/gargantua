@@ -88,7 +88,7 @@ export const Home: FC = () => {
     () => (
       <div className={styles.row}>
         {SPINNERS_SIZES.map((size) => (
-          <Spinner size={size.value} />
+          <Spinner key={size.value} size={size.value} />
         ))}
       </div>
     ),

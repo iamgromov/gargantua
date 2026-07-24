@@ -1,6 +1,5 @@
 node_modules/
 dist/
 build/
-.coverage/
+coverage/
 *.min.js
-package-lock.json
