@@ -2,7 +2,7 @@
   "name": "gargantua",
   "homepage": "https://iamgromov.github.io/gargantua",
   "private": true,
-  "version": "0.3.3",
+  "version": "0.3.4",
   "type": "module",
   "scripts": {
     "dev": "vite --config vite/vite.dev.ts",
