@@ -1,7 +1,8 @@
 import { memo, type FC, type ReactElement } from 'react';
 
-import { FOOTER_LINKS, LOGOS } from '@/constants';
 import { LinkButton, Logo, ThemeSwitcher } from '@/shared/ui';
+
+import { FOOTER_LINKS, LOGOS } from './constants';
 
 import styles from './Footer.module.scss';
 

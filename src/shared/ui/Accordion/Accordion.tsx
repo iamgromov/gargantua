@@ -32,7 +32,7 @@ export const Accordion: FC<AccordionProps> = ({
   collapsedIcon,
   expandedIcon,
   size = 'medium',
-  borderRadius = 'medium',
+  borderRadius = 'medium'
 }) => {
   // Internal state for uncontrolled mode
   const [internalExpandedIds, setInternalExpandedIds] = useState<string[]>([]);

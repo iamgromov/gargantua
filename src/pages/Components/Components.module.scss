@@ -1,0 +1,37 @@
+@use '../../styles/variables' as *;
+
+.main {
+  min-height: calc(100vh - 80px);
+
+  padding: $spacing-xl;
+
+  & > span {
+    margin-bottom: $spacing-xs;
+  }
+
+  & > .row {
+    margin-bottom: $spacing-4xl;
+  }
+}
+
+.row {
+  display: flex;
+
+  align-items: center;
+
+  gap: $spacing-xl;
+
+  margin-bottom: $spacing-sm;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.column {
+  display: flex;
+
+  flex-direction: column;
+
+  width: 100%;
+}

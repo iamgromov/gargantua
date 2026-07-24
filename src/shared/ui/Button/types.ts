@@ -7,19 +7,19 @@ export enum Intent {
   Danger = 'danger',
   Success = 'success',
   Ghost = 'ghost',
-  Link = 'link',
+  Link = 'link'
 }
 
 export enum Size {
   Small = 'small',
   Medium = 'medium',
   Large = 'large',
-  ExtraLarge = 'extra-large',
+  ExtraLarge = 'extra-large'
 }
 
 export enum Width {
   Auto = 'auto',
-  Full = 'full',
+  Full = 'full'
 }
 
 export interface ButtonProps {

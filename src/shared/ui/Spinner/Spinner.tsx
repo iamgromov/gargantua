@@ -26,7 +26,12 @@ export const Spinner = forwardRef<HTMLDivElement, SpinnerProps>((props, ref) => 
 
   return (
     <div className={ cn({ [styles.wrapper]: fullHeight }) }>
-      <div ref={ ref } className={ spinnerClass } style={ style } { ...restProps } />
+      <div
+        ref={ ref }
+        className={ spinnerClass }
+        style={ style }
+        { ...restProps }
+      />
     </div>
   );
 });

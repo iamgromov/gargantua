@@ -44,7 +44,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
       styles[width],
       {
         [styles.loading]: loading,
-        [styles.disabled]: disabled,
+        [styles.disabled]: disabled
       },
       className
     );
@@ -59,7 +59,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
     const baseProps = {
       className: buttonClass,
       style,
-      disabled: props.disabled || props.loading,
+      disabled: props.disabled || props.loading
     };
 
     /** Router Link */

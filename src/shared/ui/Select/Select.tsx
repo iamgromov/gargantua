@@ -47,7 +47,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) =>
     {
       [styles.disabled]: disabled,
       [styles.loading]: loading,
-      [styles.error]: error,
+      [styles.error]: error
     },
     className
   );
@@ -57,7 +57,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) =>
     styles[width],
     {
       [styles.disabled]: disabled,
-      [styles.error]: error,
+      [styles.error]: error
     },
     className
   );

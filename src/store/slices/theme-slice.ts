@@ -12,6 +12,7 @@ const getTheme = (): ThemeType => {
   }
 
   const storedTheme = localStorage.getItem('theme') as ThemeType;
+
   return storedTheme || 'light';
 };
 
@@ -21,8 +22,8 @@ const themeSlice = createSlice({
   name: SLICE_NAMES.THEME,
   initialState,
   reducers: {
-    setTheme: (_, action: PayloadAction<ThemeType>) => action.payload,
-  },
+    setTheme: (_, action: PayloadAction<ThemeType>) => action.payload
+  }
 });
 
 export const { setTheme } = themeSlice.actions;

@@ -1,3 +1,4 @@
-export * from './About/About';
-export * from './Home/Home';
-export * from './NotFound/NotFound';
+export * from './About';
+export * from './Components';
+export * from './Home';
+export * from './NotFound';

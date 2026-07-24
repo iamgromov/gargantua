@@ -4,9 +4,9 @@ import themeReducer from './slices/theme-slice';
 
 export const store = configureStore({
   reducer: {
-    theme: themeReducer,
+    theme: themeReducer
   },
-  devTools: true,
+  devTools: true
 });
 
 export type RootState = ReturnType<typeof store.getState>;

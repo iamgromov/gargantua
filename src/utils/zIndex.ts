@@ -9,5 +9,5 @@ export enum ZIndex {
   Backdrop = 1400,
   BottomSheet = 1300,
   Topline = 1200,
-  SpeedDial = 1100,
+  SpeedDial = 1100
 }

@@ -14,8 +14,7 @@ export * from './Typography/Typography';
 // Card, Grid, Stack, Container, Tabs, Accordion — композиционные блоки для layout’а и группировки контента.
 // Typography (заголовки, текст), Tag, Badge, Avatar, Skeleton, Spinner — чисто визуальные элементы дизайна‑системы.
 
-// Header, Footer, Sidebar, Navbar — шапка, подвал, общие layout‑блоки приложения. Они могут знать про авторизацию, навигацию и т.п.
-// UserCard, ProductCard, ArticlePreview — карточки доменных сущностей с конкретными полями (имя пользователя, цена товара, дата статьи).
+// Header, Footer, Sidebar, Navbar — шапка, подвал, общие layout‑блоки приложения.
+// UserCard, ProductCard, ArticlePreview — карточки доменных сущностей с конкретными полями.
 // LoginForm, SignupForm, CheckoutForm, SearchForm — формы с валидацией, отправкой на API, локальным стейтом.
-// CartWidget, LanguageSwitcher, ThemeSwitcher, NotificationsPanel — фичевые компоненты с логикой, использующие shared/ui внутри.
 // LayoutMain, DashboardLayout, AuthLayout — макеты страниц, собирающие хедер/сайдбар/контент.

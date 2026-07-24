@@ -45,7 +45,7 @@ export const IconButton = forwardRef<HTMLButtonElement | HTMLAnchorElement, Icon
       styles[size],
       {
         [styles.loading]: loading,
-        [styles.disabled]: disabled,
+        [styles.disabled]: disabled
       },
       className
     );
@@ -64,7 +64,7 @@ export const IconButton = forwardRef<HTMLButtonElement | HTMLAnchorElement, Icon
       style,
       disabled: props.disabled || props.loading,
       title,
-      'aria-label': ariaLabel,
+      'aria-label': ariaLabel
     };
 
     /** Router Link */

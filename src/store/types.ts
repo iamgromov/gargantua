@@ -1,5 +1,5 @@
 export const SLICE_NAMES = {
-  THEME: '@@THEME',
+  THEME: '@@THEME'
 };
 
 export const ACTION_TYPES = {};
