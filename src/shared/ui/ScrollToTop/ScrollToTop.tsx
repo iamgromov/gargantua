@@ -2,10 +2,11 @@ import { useEffect, useState, type FC } from 'react';
 import cn from 'classnames';
 
 import { IconButton } from '@/shared/ui';
-import { scrollToTop } from '@/shared/utils';
 
 import { ArrowUp } from '@/assets/icons';
 import styles from './ScrollToTop.module.scss';
+
+import { scrollToTop } from '@/utils';
 
 export const ScrollToTop: FC = () => {
   const [isVisible, setIsVisible] = useState(false);

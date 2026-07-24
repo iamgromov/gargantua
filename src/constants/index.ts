@@ -4,7 +4,7 @@ import type { FooterLink, Links, SpinnerSize, TypographyVariant } from '@/shared
 
 import { ReactLogo, ReduxLogo, JSLogo, CSSLogo, HTMLLogo } from '@/assets/icons';
 
-import { Intent, Size } from '../ui/Button';
+import { Intent, Size } from '../shared/ui/Button';
 
 export const CURRENT_YEAR = new Date().getFullYear();
 

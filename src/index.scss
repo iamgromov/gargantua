@@ -1,6 +1,6 @@
-@use './scss/libs/normalize';
-@use './scss/variables' as *;
-@use './scss/mixins' as *;
+@use './styles/fonts';
+@use './styles/variables' as *;
+@use './styles/mixins' as *;
 
 body {
   background-color: var(--color-background);

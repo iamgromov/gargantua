@@ -1,7 +1,7 @@
-@use '../../../scss/variables' as *;
+@use '../styles/variables' as *;
 
 .layout {
-  width: 1280px;
+  max-width: 1280px;
 
   margin: 0 auto;
 

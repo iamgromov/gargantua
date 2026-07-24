@@ -1,9 +1,10 @@
 import { memo, type FC, type ReactElement } from 'react';
 
-import { FOOTER_LINKS, LOGOS } from '@/shared/constants';
 import { LinkButton, Logo, ThemeSwitcher } from '@/shared/ui';
 
 import styles from './Footer.module.scss';
+
+import { FOOTER_LINKS, LOGOS } from '@/constants';
 
 export const Footer: FC = memo((): ReactElement => {
   return (
