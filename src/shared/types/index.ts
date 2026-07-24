@@ -1,4 +1,3 @@
-export * from './accordion.interfaces';
 export * from './icon-button.interfaces';
 export * from './link-button.interfaces';
 export * from './footer.interfaces';

@@ -1,10 +1,10 @@
 import { useMemo, useState, useCallback, type ChangeEvent, type FC } from 'react';
 
 import { ArrowUp } from '@/assets/icons';
-import { Accordion } from '@/components/';
 import { BUTTON_SIZES, BUTTON_VARIANTS, SPINNERS_SIZES, TYPOGRAPHY_VARIANTS } from '@/constants';
-import type { AccordionItem, IconButtonSize, IconButtonVariant } from '@/shared/types';
+import type { IconButtonSize, IconButtonVariant } from '@/shared/types';
 import { IconButton, Select, Spinner, Typography } from '@/shared/ui';
+import { Accordion, type AccordionItem } from '@/shared/ui/Accordion';
 import { Button, Intent, Size } from '@/shared/ui/Button';
 
 import styles from './Home.module.scss';

@@ -87,7 +87,16 @@ export default [
       'import/order': [
         'error',
         {
-          groups: ['builtin', 'external', 'internal', 'index', 'object', 'type'],
+          groups: [
+            'builtin',
+            'external',
+            'internal',
+            'parent',
+            'sibling',
+            'type',
+            'object',
+            'index',
+          ],
           'newlines-between': 'always',
           alphabetize: {
             order: 'asc',
@@ -96,6 +105,8 @@ export default [
           pathGroups: [
             { pattern: 'react**', group: 'external', position: 'before' },
             { pattern: '@/**', group: 'internal', position: 'after' },
+            { pattern: './**/*.{ts,tsx}', group: 'internal', position: 'after' },
+            { pattern: '../**/*.{ts,tsx}', group: 'internal', position: 'after' },
             { pattern: './**/*.scss', group: 'index', position: 'after' },
             { pattern: '../**/*.scss', group: 'index', position: 'after' },
             { pattern: '**/*.scss', group: 'index', position: 'after' },

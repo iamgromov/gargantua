@@ -1,4 +1,3 @@
-export * from './AccordionItem/AccordionItem';
 export * from './IconButton/IconButton';
 export * from './LinkButton/LinkButton';
 export * from './Logo/Logo';
@@ -14,3 +13,9 @@ export * from './Typography/Typography';
 // Modal, Drawer, Tooltip, Popover, DropdownMenu — контейнеры/оверлеи, которые просто показывают переданный контент.
 // Card, Grid, Stack, Container, Tabs, Accordion — композиционные блоки для layout’а и группировки контента.
 // Typography (заголовки, текст), Tag, Badge, Avatar, Skeleton, Spinner — чисто визуальные элементы дизайна‑системы.
+
+// Header, Footer, Sidebar, Navbar — шапка, подвал, общие layout‑блоки приложения. Они могут знать про авторизацию, навигацию и т.п.
+// UserCard, ProductCard, ArticlePreview — карточки доменных сущностей с конкретными полями (имя пользователя, цена товара, дата статьи).
+// LoginForm, SignupForm, CheckoutForm, SearchForm — формы с валидацией, отправкой на API, локальным стейтом.
+// CartWidget, LanguageSwitcher, ThemeSwitcher, NotificationsPanel — фичевые компоненты с логикой, использующие shared/ui внутри.
+// LayoutMain, DashboardLayout, AuthLayout — макеты страниц, собирающие хедер/сайдбар/контент.
