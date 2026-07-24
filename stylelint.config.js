@@ -4,8 +4,8 @@ export default {
   overrides: [
     {
       files: ['**/*.scss'],
-      customSyntax: 'postcss-scss',
-    },
+      customSyntax: 'postcss-scss'
+    }
   ],
 
   rules: {
@@ -17,8 +17,8 @@ export default {
     'selector-pseudo-class-no-unknown': [
       true,
       {
-        ignorePseudoClasses: ['global'],
-      },
+        ignorePseudoClasses: ['global']
+      }
     ],
     'no-descending-specificity': null,
     'order/order': [
@@ -28,26 +28,27 @@ export default {
         'declarations',
         'rules',
         { type: 'at-rule', name: 'supports' },
-        { type: 'at-rule', name: 'media' },
+        { type: 'at-rule', name: 'media' }
       ],
-      { unspecified: 'bottom' },
+      { unspecified: 'bottom' }
     ],
     'order/properties-order': [
       [
         {
-          groupName: 'Positioning',
-          emptyLineBefore: 'always',
-          properties: ['position', 'inset', 'top', 'right', 'bottom', 'left', 'z-index'],
-        },
-        {
-          groupName: 'Display & Flow',
-          emptyLineBefore: 'always',
-          properties: ['display', 'visibility', 'float', 'clear', 'content'],
-        },
-        {
-          groupName: 'Flex & Grid',
+          groupName: 'Layout',
           emptyLineBefore: 'always',
           properties: [
+            'position',
+            'inset',
+            'top',
+            'right',
+            'bottom',
+            'left',
+            'z-index',
+            'display',
+            'visibility',
+            'float',
+            'clear',
             'flex',
             'flex-flow',
             'flex-direction',
@@ -80,12 +81,6 @@ export default {
             'place-content',
             'place-items',
             'place-self',
-          ],
-        },
-        {
-          groupName: 'Box Model',
-          emptyLineBefore: 'always',
-          properties: [
             'box-sizing',
             'width',
             'min-width',
@@ -105,8 +100,8 @@ export default {
             'padding-left',
             'overflow',
             'overflow-x',
-            'overflow-y',
-          ],
+            'overflow-y'
+          ]
         },
         {
           groupName: 'Visual',
@@ -131,7 +126,8 @@ export default {
             'outline',
             'box-shadow',
             'opacity',
-          ],
+            'filter'
+          ]
         },
         {
           groupName: 'Typography',
@@ -153,11 +149,11 @@ export default {
             'word-break',
             'word-wrap',
             'hyphens',
-            'color',
-          ],
+            'color'
+          ]
         },
         {
-          groupName: 'Transitions & Animation',
+          groupName: 'Misc',
           emptyLineBefore: 'always',
           properties: [
             'transition',
@@ -174,21 +170,20 @@ export default {
             'animation-direction',
             'animation-fill-mode',
             'animation-play-state',
-          ],
-        },
-        {
-          groupName: 'Misc',
-          emptyLineBefore: 'always',
-          properties: ['cursor', 'pointer-events', 'will-change', 'filter'],
-        },
+            'cursor',
+            'pointer-events',
+            'will-change',
+            'content'
+          ]
+        }
       ],
       {
         unspecified: 'bottomAlphabetical',
         emptyLineBeforeUnspecified: 'always',
-        emptyLineMinimumPropertyThreshold: 2,
-      },
-    ],
+        emptyLineMinimumPropertyThreshold: 2
+      }
+    ]
   },
 
-  ignoreFiles: ['**/node_modules/**', '**/dist/**', '**/build/**', '**/.next/**', '**/coverage/**'],
+  ignoreFiles: ['**/node_modules/**', '**/dist/**', '**/build/**', '**/.next/**', '**/coverage/**']
 };
