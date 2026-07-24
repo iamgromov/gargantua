@@ -46,7 +46,7 @@ try {
   const newVersion = JSON.parse(readFileSync(pkgPath, 'utf-8')).version;
 
   execSync('git add package.json', { stdio: 'inherit' });
-  execSync(`git commit -m "chore(release): ${current} → ${newVersion}"`, { stdio: 'inherit' });
+  execSync(`git commit -m "release: ${current} → ${newVersion}"`, { stdio: 'inherit' });
 
   console.log(`\n✅ Версия обновлена: ${current} → ${newVersion}`);
 } catch {
