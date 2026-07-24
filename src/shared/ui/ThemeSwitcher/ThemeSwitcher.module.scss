@@ -3,7 +3,6 @@
 
 .wrapper {
   transition: all $transition-base;
-
   cursor: pointer;
 
   @include noselect;

@@ -13,10 +13,11 @@ export const Layout: FC = () => {
     <div className={ styles.layout }>
       <Header />
 
-      <Outlet />
+      <main className={ styles.content }>
+        <Outlet />
+      </main>
 
       <Footer />
-
       <ScrollToTop />
     </div>
   );
