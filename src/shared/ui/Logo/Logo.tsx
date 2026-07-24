@@ -1,26 +1,27 @@
 import { memo, type FC } from 'react';
 import { Link } from 'react-router-dom';
 
-import { ROUTES } from '@/shared/routes';
+import { ROUTES } from '@/constants';
 import type { IconProps } from '@/shared/types';
+import { scrollToTop } from '@/utils';
 
 import styles from './Logo.module.scss';
 
-import { scrollToTop } from '@/utils';
-
-/** Logo component.
- *  Made by converting text to SVG using font Climate Crisis
+/**
+ * Логотип
+ *
+ * Сделан конвертированием текста в SVG с использованием шрифта Climate Crisis
  * */
 export const Logo: FC<IconProps> = memo(({ ...props }) => {
   return (
-    <Link to={ROUTES.DEFAULT} className={styles.icon}>
+    <Link to={ ROUTES.MAIN } className={ styles.icon }>
       <svg
-        onClick={scrollToTop}
+        onClick={ scrollToTop }
         viewBox='0 16 383.3999938964844 37.5'
         data-asc='1.07'
         width='383.3999938964844'
         height='37.5'
-        {...props}
+        { ...props }
       >
         <defs />
         <g fill='#000000'>

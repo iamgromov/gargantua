@@ -1,12 +1,11 @@
 import { useEffect, useState, type FC } from 'react';
 import cn from 'classnames';
 
-import { IconButton } from '@/shared/ui';
-
 import { ArrowUp } from '@/assets/icons';
-import styles from './ScrollToTop.module.scss';
-
+import { IconButton } from '@/shared/ui';
 import { scrollToTop } from '@/utils';
+
+import styles from './ScrollToTop.module.scss';
 
 export const ScrollToTop: FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -32,8 +31,13 @@ export const ScrollToTop: FC = () => {
   }
 
   return (
-    <div className={cn(styles.scroll, styles.visible)}>
-      <IconButton icon={<ArrowUp />} onClick={scrollToTop} size='large' className={styles.button} />
+    <div className={ cn(styles.scroll, styles.visible) }>
+      <IconButton
+        icon={ <ArrowUp /> }
+        onClick={ scrollToTop }
+        size='large'
+        className={ styles.button }
+      />
     </div>
   );
 };

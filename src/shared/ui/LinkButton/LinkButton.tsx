@@ -10,13 +10,13 @@ export const LinkButton: FC<LinkButtonProps> = memo(({ href, title, className, .
 
   return (
     <a
-      href={href}
+      href={ href }
       rel='noopener noreferrer'
       target='_blank'
-      className={linkClassName}
-      {...restProps}
+      className={ linkClassName }
+      { ...restProps }
     >
-      {title}
+      { title }
     </a>
   );
 });

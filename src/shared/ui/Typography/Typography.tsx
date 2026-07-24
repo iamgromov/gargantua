@@ -12,8 +12,8 @@ export const Typography: FC<TypographyProps> = ({
   ...props
 }) => {
   return (
-    <span className={cn(styles.typography, styles[variant], styles[weight])} {...props}>
-      {children}
+    <span className={ cn(styles.typography, styles[variant], styles[weight]) } { ...props }>
+      { children }
     </span>
   );
 };

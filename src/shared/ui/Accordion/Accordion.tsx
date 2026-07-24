@@ -1,8 +1,9 @@
 import { type FC, useState, useCallback } from 'react';
 import cn from 'classnames';
 
-import type { AccordionProps } from '@/shared/types';
-import { AccordionItem } from '@/shared/ui';
+import { AccordionItem } from './AccordionItem/AccordionItem';
+
+import type { AccordionProps } from './types';
 
 import styles from './Accordion.module.scss';
 
@@ -31,7 +32,7 @@ export const Accordion: FC<AccordionProps> = ({
   collapsedIcon,
   expandedIcon,
   size = 'medium',
-  borderRadius = 'medium',
+  borderRadius = 'medium'
 }) => {
   // Internal state for uncontrolled mode
   const [internalExpandedIds, setInternalExpandedIds] = useState<string[]>([]);
@@ -68,19 +69,19 @@ export const Accordion: FC<AccordionProps> = ({
   );
 
   return (
-    <div className={cn(styles.accordion, className)} style={style}>
-      {items.map((item) => (
+    <div className={ cn(styles.accordion, className) } style={ style }>
+      { items.map((item) => (
         <AccordionItem
-          key={item.id}
-          item={item}
-          isExpanded={expandedIds.includes(item.id)}
-          onToggle={() => handleToggle(item.id)}
-          collapsedIcon={collapsedIcon}
-          expandedIcon={expandedIcon}
-          size={size}
-          borderRadius={borderRadius}
+          key={ item.id }
+          item={ item }
+          isExpanded={ expandedIds.includes(item.id) }
+          onToggle={ () => handleToggle(item.id) }
+          collapsedIcon={ collapsedIcon }
+          expandedIcon={ expandedIcon }
+          size={ size }
+          borderRadius={ borderRadius }
         />
-      ))}
+      )) }
     </div>
   );
 };
