@@ -1,1 +1,1 @@
-node scripts/bump.mjs
+node scripts/bump.mjs < /dev/tty
