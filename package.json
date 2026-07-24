@@ -12,6 +12,7 @@
     "stylelint": "stylelint \"**/*.scss\"",
     "stylelint:fix": "stylelint \"**/*.scss\" --fix",
     "typecheck": "tsc -b",
+    "bump": "node scripts/bump.mjs",
     "preview": "vite preview",
     "prepare": "husky"
   },
@@ -70,6 +71,7 @@
     "lint-staged": "^16.4.0",
     "postcss-scss": "^4.0.9",
     "prettier": "^3.9.6",
+    "prompts": "^2.4.2",
     "stylelint": "^16.26.1",
     "stylelint-config-standard-scss": "^16.0.0",
     "stylelint-order": "^7.0.1",
