@@ -33,33 +33,51 @@
 
 ## <img src="public/package.png" width="16" alt="package"> Установка
 
-```bash
 # Клонирование репозитория
+
+```bash
 git clone https://github.com/iamgromov/gargantua.git
+```
 
 # Переход в директорию проекта
+
+```bash
 cd gargantua
+```
 
 # Установка зависимостей (pnpm)
+
+```bash
 pnpm install
 ```
 
 ## <img src="public/rocket.png" width="16" alt="rocket"> Запуск
 
-```bash
 # Режим разработки
+
+````bash
 pnpm dev
 
 # Продакшн-сборка
+```bash
 pnpm build
+````
 
 # Предпросмотр сборки
+
+```bash
 pnpm preview
+```
 
 # Линтинг кода
+
+```bash
 pnpm lint
+```
 
 # Линтинг стилей
+
+```bash
 pnpm stylelint
 ```
 
