@@ -11,7 +11,7 @@ export const About: FC = () => {
   console.log(document.timeline);
 
   return (
-    <div className={styles.main}>
+    <div className={ styles.main }>
       <Typography variant='h1'>About</Typography>
     </div>
   );

@@ -27,12 +27,12 @@ export const Home: FC = () => {
 
   const typographyGrid = useMemo(
     () => (
-      <div className={styles.row}>
-        {TYPOGRAPHY_VARIANTS.map((variant) => (
-          <Typography variant={variant} key={variant}>
+      <div className={ styles.row }>
+        { TYPOGRAPHY_VARIANTS.map((variant) => (
+          <Typography variant={ variant } key={ variant }>
             Headline
           </Typography>
-        ))}
+        )) }
       </div>
     ),
     []
@@ -40,11 +40,11 @@ export const Home: FC = () => {
 
   const disabledGrid = useMemo(
     () => (
-      <div className={styles.row}>
-        <Button intent={Intent.Success} size={Size.Large} loading={true}>
+      <div className={ styles.row }>
+        <Button intent={ Intent.Success } size={ Size.Large } loading={ true }>
           Success
         </Button>
-        <Button intent={Intent.Success} size={Size.Large} disabled={true}>
+        <Button intent={ Intent.Success } size={ Size.Large } disabled={ true }>
           Success
         </Button>
       </div>
@@ -55,12 +55,12 @@ export const Home: FC = () => {
   const buttonsGrid = useMemo(
     () =>
       BUTTON_SIZES.map((size) => (
-        <div key={size.value} className={styles.row}>
-          {BUTTON_VARIANTS.map((variant) => (
-            <Button key={`${size.value}-${variant.value}`} intent={variant.value} size={size.value}>
-              {variant.label}
+        <div key={ size.value } className={ styles.row }>
+          { BUTTON_VARIANTS.map((variant) => (
+            <Button key={ `${size.value}-${variant.value}` } intent={ variant.value } size={ size.value }>
+              { variant.label }
             </Button>
-          ))}
+          )) }
         </div>
       )),
     []
@@ -69,15 +69,15 @@ export const Home: FC = () => {
   const iconsGrid = useMemo(
     () =>
       BUTTON_SIZES.map((size) => (
-        <div key={size.value} className={styles.row}>
-          {BUTTON_VARIANTS.map((variant) => (
+        <div key={ size.value } className={ styles.row }>
+          { BUTTON_VARIANTS.map((variant) => (
             <IconButton
-              key={`${size.value}-${variant.value}`}
-              icon={<ArrowUp />}
-              variant={variant.value as IconButtonVariant}
-              size={size.value as IconButtonSize}
+              key={ `${size.value}-${variant.value}` }
+              icon={ <ArrowUp /> }
+              variant={ variant.value as IconButtonVariant }
+              size={ size.value as IconButtonSize }
             />
-          ))}
+          )) }
         </div>
       )),
     []
@@ -85,10 +85,10 @@ export const Home: FC = () => {
 
   const spinnerGrid = useMemo(
     () => (
-      <div className={styles.row}>
-        {SPINNERS_SIZES.map((size) => (
-          <Spinner key={size.value} size={size.value} />
-        ))}
+      <div className={ styles.row }>
+        { SPINNERS_SIZES.map((size) => (
+          <Spinner key={ size.value } size={ size.value } />
+        )) }
       </div>
     ),
     []
@@ -105,49 +105,49 @@ export const Home: FC = () => {
   );
 
   return (
-    <div className={styles.main}>
+    <div className={ styles.main }>
       <Typography variant='h1'>Accordion</Typography>
-      <div className={styles.row}>
-        <Accordion size='large' items={ACCORDION_ITEMS}></Accordion>
+      <div className={ styles.row }>
+        <Accordion size='large' items={ ACCORDION_ITEMS }></Accordion>
       </div>
 
       <Typography variant='h1'>Select</Typography>
-      <div className={styles.row}>
+      <div className={ styles.row }>
         <Select
-          options={BUTTON_VARIANTS}
-          value={selectedVariant}
+          options={ BUTTON_VARIANTS }
+          value={ selectedVariant }
           placeholder='Variant'
-          onChange={handleVariantChange}
+          onChange={ handleVariantChange }
         />
         <Select
-          options={BUTTON_SIZES}
-          value={selectedSize}
+          options={ BUTTON_SIZES }
+          value={ selectedSize }
           placeholder='Size'
-          onChange={handleSizeChange}
+          onChange={ handleSizeChange }
         />
-        <Button intent={selectedVariant} size={selectedSize}>
-          {getVariantTitle(selectedVariant)}
+        <Button intent={ selectedVariant } size={ selectedSize }>
+          { getVariantTitle(selectedVariant) }
         </Button>
       </div>
 
       <Typography variant='h1'>Headers</Typography>
-      {typographyGrid}
+      { typographyGrid }
 
       <Typography variant='h1'>Buttons</Typography>
-      <div className={styles.row}>
-        <div className={styles.column}>
-          {disabledGrid}
-          {buttonsGrid}
+      <div className={ styles.row }>
+        <div className={ styles.column }>
+          { disabledGrid }
+          { buttonsGrid }
         </div>
       </div>
 
       <Typography variant='h1'>IconButtons</Typography>
-      <div className={styles.row}>
-        <div className={styles.column}>{iconsGrid}</div>
+      <div className={ styles.row }>
+        <div className={ styles.column }>{ iconsGrid }</div>
       </div>
 
       <Typography variant='h1'>Spinners</Typography>
-      {spinnerGrid}
+      { spinnerGrid }
     </div>
   );
 };

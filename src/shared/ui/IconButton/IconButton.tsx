@@ -52,9 +52,9 @@ export const IconButton = forwardRef<HTMLButtonElement | HTMLAnchorElement, Icon
 
     const content = (
       <>
-        {loading && <span className={styles.spinner} />}
-        <span className={styles.icon} aria-hidden='true'>
-          {icon}
+        { loading && <span className={ styles.spinner } /> }
+        <span className={ styles.icon } aria-hidden='true'>
+          { icon }
         </span>
       </>
     );
@@ -71,13 +71,13 @@ export const IconButton = forwardRef<HTMLButtonElement | HTMLAnchorElement, Icon
     if (to && !href) {
       return (
         <Link
-          to={to}
-          ref={ref as Ref<HTMLAnchorElement>}
-          onClick={disabled || loading ? undefined : onClick}
-          {...baseProps}
-          {...restProps}
+          to={ to }
+          ref={ ref as Ref<HTMLAnchorElement> }
+          onClick={ disabled || loading ? undefined : onClick }
+          { ...baseProps }
+          { ...restProps }
         >
-          {content}
+          { content }
         </Link>
       );
     }
@@ -86,15 +86,15 @@ export const IconButton = forwardRef<HTMLButtonElement | HTMLAnchorElement, Icon
     if (href) {
       return (
         <a
-          href={href}
-          ref={ref as Ref<HTMLAnchorElement>}
-          onClick={disabled || loading ? undefined : onClick}
+          href={ href }
+          ref={ ref as Ref<HTMLAnchorElement> }
+          onClick={ disabled || loading ? undefined : onClick }
           rel='noopener noreferrer'
           target='_blank'
-          {...baseProps}
-          {...restProps}
+          { ...baseProps }
+          { ...restProps }
         >
-          {content}
+          { content }
         </a>
       );
     }
@@ -103,12 +103,12 @@ export const IconButton = forwardRef<HTMLButtonElement | HTMLAnchorElement, Icon
     return (
       <button
         type='button'
-        ref={ref as Ref<HTMLButtonElement>}
-        onClick={disabled || loading ? undefined : onClick}
-        {...baseProps}
-        {...restProps}
+        ref={ ref as Ref<HTMLButtonElement> }
+        onClick={ disabled || loading ? undefined : onClick }
+        { ...baseProps }
+        { ...restProps }
       >
-        {content}
+        { content }
       </button>
     );
   }

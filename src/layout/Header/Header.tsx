@@ -9,18 +9,18 @@ import styles from './Header.module.scss';
 
 export const Header: FC = memo((): ReactElement => {
   return (
-    <div className={styles.header}>
-      <Logo className={styles.logo} />
+    <div className={ styles.header }>
+      <Logo className={ styles.logo } />
 
-      <div className={styles.controls}>
-        <Button to={ROUTES.ABOUT} intent={Intent.Ghost} size={Size.Small}>
+      <div className={ styles.controls }>
+        <Button to={ ROUTES.ABOUT } intent={ Intent.Ghost } size={ Size.Small }>
           About
         </Button>
-        <Button to={ROUTES.CONTACTS} intent={Intent.Ghost} size={Size.Small}>
+        <Button to={ ROUTES.CONTACTS } intent={ Intent.Ghost } size={ Size.Small }>
           Contacts
         </Button>
 
-        <IconButton to={ROUTES.AUTH} icon={<Profile />} variant='ghost' size='small' />
+        <IconButton to={ ROUTES.AUTH } icon={ <Profile /> } variant='ghost' size='small' />
 
         <ThemeSwitcher />
       </div>

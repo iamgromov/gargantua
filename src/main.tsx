@@ -12,8 +12,8 @@ const basename = import.meta.env.BASE_URL;
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Provider store={store}>
-      <Router basename={basename}>
+    <Provider store={ store }>
+      <Router basename={ basename }>
         <App />
       </Router>
     </Provider>

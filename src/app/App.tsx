@@ -15,12 +15,12 @@ const NotFound = lazy(() =>
 
 export const App: FC = () => {
   return (
-    <Suspense fallback={<Spinner size='large' fullHeight={true} />}>
+    <Suspense fallback={ <Spinner size='large' fullHeight={ true } /> }>
       <Routes>
-        <Route path={ROUTES.DEFAULT} element={<Layout />}>
-          <Route path={ROUTES.DEFAULT} element={<Home />} />
-          <Route path={ROUTES.ABOUT} element={<About />} />
-          <Route path={ROUTES.NOT_FOUND} element={<NotFound />} />
+        <Route path={ ROUTES.DEFAULT } element={ <Layout /> }>
+          <Route path={ ROUTES.DEFAULT } element={ <Home /> } />
+          <Route path={ ROUTES.ABOUT } element={ <About /> } />
+          <Route path={ ROUTES.NOT_FOUND } element={ <NotFound /> } />
         </Route>
       </Routes>
     </Suspense>

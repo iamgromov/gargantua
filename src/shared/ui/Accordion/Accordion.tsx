@@ -69,19 +69,19 @@ export const Accordion: FC<AccordionProps> = ({
   );
 
   return (
-    <div className={cn(styles.accordion, className)} style={style}>
-      {items.map((item) => (
+    <div className={ cn(styles.accordion, className) } style={ style }>
+      { items.map((item) => (
         <AccordionItem
-          key={item.id}
-          item={item}
-          isExpanded={expandedIds.includes(item.id)}
-          onToggle={() => handleToggle(item.id)}
-          collapsedIcon={collapsedIcon}
-          expandedIcon={expandedIcon}
-          size={size}
-          borderRadius={borderRadius}
+          key={ item.id }
+          item={ item }
+          isExpanded={ expandedIds.includes(item.id) }
+          onToggle={ () => handleToggle(item.id) }
+          collapsedIcon={ collapsedIcon }
+          expandedIcon={ expandedIcon }
+          size={ size }
+          borderRadius={ borderRadius }
         />
-      ))}
+      )) }
     </div>
   );
 };

@@ -12,14 +12,14 @@ import styles from './Logo.module.scss';
  * */
 export const Logo: FC<IconProps> = memo(({ ...props }) => {
   return (
-    <Link to={ROUTES.DEFAULT} className={styles.icon}>
+    <Link to={ ROUTES.DEFAULT } className={ styles.icon }>
       <svg
-        onClick={scrollToTop}
+        onClick={ scrollToTop }
         viewBox='0 16 383.3999938964844 37.5'
         data-asc='1.07'
         width='383.3999938964844'
         height='37.5'
-        {...props}
+        { ...props }
       >
         <defs />
         <g fill='#000000'>

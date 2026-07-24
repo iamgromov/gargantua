@@ -63,31 +63,31 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) =>
   );
 
   return (
-    <div className={wrapperClass} style={style}>
-      {label && <label className={styles.label}>{label}</label>}
-      <div className={styles.selectWrapper}>
+    <div className={ wrapperClass } style={ style }>
+      { label && <label className={ styles.label }>{ label }</label> }
+      <div className={ styles.selectWrapper }>
         <select
-          ref={ref}
-          className={selectClass}
-          value={value}
-          disabled={disabled || loading}
-          onChange={onChange}
-          {...restProps}
+          ref={ ref }
+          className={ selectClass }
+          value={ value }
+          disabled={ disabled || loading }
+          onChange={ onChange }
+          { ...restProps }
         >
-          {placeholder && (
+          { placeholder && (
             <option value='' disabled>
-              {placeholder}
+              { placeholder }
             </option>
-          )}
-          {options.map((option) => (
-            <option key={option.value} value={option.value} disabled={option.disabled}>
-              {option.label}
+          ) }
+          { options.map((option) => (
+            <option key={ option.value } value={ option.value } disabled={ option.disabled }>
+              { option.label }
             </option>
-          ))}
+          )) }
         </select>
-        {loading && <div className={styles.spinner} />}
+        { loading && <div className={ styles.spinner } /> }
       </div>
-      {error && <span className={styles.errorMessage}>{error}</span>}
+      { error && <span className={ styles.errorMessage }>{ error }</span> }
     </div>
   );
 });
