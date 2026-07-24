@@ -1,8 +1,7 @@
 import type { FunctionComponent } from 'react';
 
-import type { FooterLink, Links, SpinnerSize, TypographyVariant } from '@/shared/types';
-
 import { ReactLogo, ReduxLogo, JSLogo, CSSLogo, HTMLLogo } from '@/assets/icons';
+import type { FooterLink, Links, SpinnerSize, TypographyVariant } from '@/shared/types';
 
 import { Intent, Size } from '../shared/ui/Button';
 

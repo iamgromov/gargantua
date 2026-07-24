@@ -1,9 +1,9 @@
 import { type FC, useCallback } from 'react';
 import cn from 'classnames';
 
+import ChevronDown from '@/assets/icons/chevron-down.svg?react';
 import type { AccordionItemProps } from '@/shared/types';
 
-import ChevronDown from '@/assets/icons/chevron-down.svg?react';
 import styles from './AccordionItem.module.scss';
 
 /** Chevron icon component */

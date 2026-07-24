@@ -1,10 +1,10 @@
 import { memo, type FC, type ReactElement } from 'react';
 
+import { Profile } from '@/assets/icons';
 import { ROUTES } from '@/shared/routes';
 import { IconButton, Logo, ThemeSwitcher } from '@/shared/ui';
 import { Button, Intent, Size } from '@/shared/ui/Button';
 
-import { Profile } from '@/assets/icons';
 import styles from './Header.module.scss';
 
 export const Header: FC = memo((): ReactElement => {

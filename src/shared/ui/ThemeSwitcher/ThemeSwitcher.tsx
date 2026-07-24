@@ -1,10 +1,9 @@
 import { memo, type FC } from 'react';
 
+import { useTheme } from '@/hooks';
 import type { IconProps } from '@/shared/types';
 
 import styles from './ThemeSwitcher.module.scss';
-
-import { useTheme } from '@/hooks';
 
 /** Switcher for changing themes */
 export const ThemeSwitcher: FC<IconProps> = memo(({ ...props }) => {

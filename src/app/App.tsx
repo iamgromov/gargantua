@@ -1,10 +1,9 @@
 import { type FC, lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
+import { Layout } from '@/layout';
 import { ROUTES } from '@/shared/routes';
 import { Spinner } from '@/shared/ui';
-
-import { Layout } from '@/layout';
 
 const Home = lazy(() => import('@/pages/Home/Home').then((module) => ({ default: module.Home })));
 const About = lazy(() =>

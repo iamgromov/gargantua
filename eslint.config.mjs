@@ -5,6 +5,7 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import tseslint from 'typescript-eslint';
 import importPlugin from 'eslint-plugin-import';
+import sonarjs from 'eslint-plugin-sonarjs';
 
 export default [
   {
@@ -30,6 +31,7 @@ export default [
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
       '@typescript-eslint': tseslint.plugin,
+      sonarjs,
     },
     languageOptions: {
       ecmaVersion: 2020,
@@ -48,6 +50,12 @@ export default [
       react: {
         version: 'detect',
       },
+      'import/resolver': {
+        typescript: {
+          alwaysTryTypes: true,
+          project: './tsconfig.app.json',
+        },
+      },
     },
     rules: {
       ...js.configs.recommended.rules,
@@ -55,11 +63,27 @@ export default [
       ...reactPlugin.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
       ...(reactRefresh.configs.vite?.rules || {}),
+      ...sonarjs.configs.recommended.rules,
       'no-unused-vars': 'off',
-      '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          args: 'all',
+          argsIgnorePattern: '^_',
+          caughtErrors: 'all',
+          caughtErrorsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          ignoreRestSiblings: true,
+        },
+      ],
+      'sonarjs/no-misused-promises': 'off',
+      'sonarjs/todo-tag': 'off',
+      'id-length': ['error', { exceptionPatterns: ['^_*'] }],
       'react/react-in-jsx-scope': 'off',
       'react/display-name': 'off',
       'react/prop-types': 'off',
+      'react/jsx-curly-spacing': ['error', { when: 'always', children: true }],
       'import/order': [
         'error',
         {
@@ -71,11 +95,7 @@ export default [
           },
           pathGroups: [
             { pattern: 'react**', group: 'external', position: 'before' },
-            { pattern: '@/app/**', group: 'internal', position: 'after' },
-            { pattern: '@/components/**', group: 'internal', position: 'after' },
-            { pattern: '@/pages/**', group: 'internal', position: 'after' },
-            { pattern: '@/shared/**', group: 'internal', position: 'after' },
-            { pattern: '@/assets/**', group: 'index', position: 'after' },
+            { pattern: '@/**', group: 'internal', position: 'after' },
             { pattern: './**/*.scss', group: 'index', position: 'after' },
             { pattern: '../**/*.scss', group: 'index', position: 'after' },
             { pattern: '**/*.scss', group: 'index', position: 'after' },

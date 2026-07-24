@@ -1,6 +1,6 @@
 export * from './Accordion/Accordion';
 
-//TODO:
+// TODO:
 // Header, Footer, Sidebar, Navbar — шапка, подвал, общие layout‑блоки приложения. Они могут знать про авторизацию, навигацию и т.п.
 // UserCard, ProductCard, ArticlePreview — карточки доменных сущностей с конкретными полями (имя пользователя, цена товара, дата статьи).
 // LoginForm, SignupForm, CheckoutForm, SearchForm — формы с валидацией, отправкой на API, локальным стейтом.
