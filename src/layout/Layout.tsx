@@ -1,12 +1,14 @@
-import { type FC, type ReactElement } from 'react';
+import { type FC } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import { Footer, Header } from '@/components/';
 import { ScrollToTop } from '@/shared/ui';
 
-import styles from './MainLayout.module.scss';
+import styles from './Layout.module.scss';
 
-export const MainLayout: FC = (): ReactElement => {
+import { Footer } from './Footer/Footer';
+import { Header } from './Header/Header';
+
+export const Layout: FC = () => {
   return (
     <div className={styles.layout}>
       <Header />

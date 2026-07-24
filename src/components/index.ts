@@ -1,6 +1,4 @@
 export * from './Accordion/Accordion';
-export * from './Footer/Footer';
-export * from './Header/Header';
 
 //TODO:
 // Header, Footer, Sidebar, Navbar — шапка, подвал, общие layout‑блоки приложения. Они могут знать про авторизацию, навигацию и т.п.

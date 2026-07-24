@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 
 import { ROUTES } from '@/shared/routes';
 import type { IconProps } from '@/shared/types';
-import { scrollToTop } from '@/shared/utils';
 
 import styles from './Logo.module.scss';
+
+import { scrollToTop } from '@/utils';
 
 /** Logo component.
  *  Made by converting text to SVG using font Climate Crisis

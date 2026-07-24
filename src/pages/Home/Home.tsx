@@ -1,18 +1,14 @@
 import { useMemo, useState, useCallback, type ChangeEvent, type FC } from 'react';
 
 import { Accordion } from '@/components/';
-import {
-  BUTTON_SIZES,
-  BUTTON_VARIANTS,
-  SPINNERS_SIZES,
-  TYPOGRAPHY_VARIANTS,
-} from '@/shared/constants';
 import type { AccordionItem, IconButtonSize, IconButtonVariant } from '@/shared/types';
 import { IconButton, Select, Spinner, Typography } from '@/shared/ui';
 import { Button, Intent, Size } from '@/shared/ui/Button';
 
 import { ArrowUp } from '@/assets/icons';
 import styles from './Home.module.scss';
+
+import { BUTTON_SIZES, BUTTON_VARIANTS, SPINNERS_SIZES, TYPOGRAPHY_VARIANTS } from '@/constants';
 
 const getVariantTitle = (variant: string): string => {
   return variant.charAt(0).toUpperCase() + variant.slice(1);

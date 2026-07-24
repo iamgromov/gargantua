@@ -5,8 +5,8 @@
   "version": "0.3.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "dev": "vite --config vite/vite.dev.ts",
+    "build": "tsc -b && vite build --config vite/vite.prod.ts",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "stylelint": "stylelint \"**/*.scss\"",
@@ -41,7 +41,7 @@
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.1",
+    "@vitejs/plugin-react": "^6.0.4",
     "baseline-browser-mapping": "^2.10.43",
     "eslint": "^9.39.1",
     "eslint-plugin-import": "^2.32.0",
@@ -57,7 +57,7 @@
     "stylelint-scss": "^6.12.1",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
-    "vite": "^7.2.4",
+    "vite": "8.0.14",
     "vite-plugin-svgr": "^4.5.0"
   }
 }
