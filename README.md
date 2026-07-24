@@ -4,85 +4,92 @@
 
 # <img src="public/favicon.png" width="24" alt="favicon"> Gargantua
 
-**Gargantua** is a React project template that lets you quickly start a new project without additional setup. It features a basic project structure, configured linters, automatic linting and formatting on commit, and deployment to GitHub Pages via GitHub Actions
+**Gargantua** — шаблон React-проекта, позволяющий быстро начать новый проект без дополнительной настройки. Включает базовую структуру, настроенные линтеры, автоматическую проверку и форматирование кода при коммите, а также деплой на GitHub Pages через GitHub Actions.
 
-## <img src="public/television.png" width="16" alt="television"> Demo
+## <img src="public/television.png" width="16" alt="television"> Демо
 
-View the demo here: [iamgromov.github.io/gargantua](https://iamgromov.github.io/gargantua)
+Демо-версия доступна по ссылке: [iamgromov.github.io/gargantua](https://iamgromov.github.io/gargantua)
 
-## <img src="public/joystick.png" width="16" alt="joystick"> Features
+## <img src="public/joystick.png" width="16" alt="joystick"> Возможности
 
-- **Modular architecture** - components organized by separation of concerns
-- **Theme support** - switching between light and dark themes
-- **Responsive design** - components adapt to various screen sizes
-- **TypeScript** - full typing for better DX
-- **Reusable components** - set of ready-to-use UI elements
-- **Modern stack** - React 19, Vite, Redux Toolkit, SCSS
+- **Модульная архитектура** — компоненты разделены по зонам ответственности
+- **Поддержка тем** — переключение между светлой и тёмной темами
+- **Адаптивный дизайн** — компоненты подстраиваются под различные размеры экрана
+- **TypeScript** — полная типизация для улучшенного DX
+- **Переиспользуемые компоненты** — набор готовых UI-элементов
+- **Актуальный стек** — React 19, Vite, Redux Toolkit, SCSS
 
-## <img src="public/tools.png" width="16" alt="tools"> Technologies
+## <img src="public/tools.png" width="16" alt="tools"> Технологии
 
-- **React** - library for building user interfaces
-- **TypeScript** - typed JavaScript
-- **Vite** - fast build tool
-- **Redux Toolkit** - application state management
-- **React Router DOM** - routing
-- **SCSS** - CSS preprocessor
-- **ESLint + Stylelint** - code and styles linting
-- **Prettier** - code formatting
-- **Husky** - Git hooks
+- **React** — библиотека для построения пользовательских интерфейсов
+- **TypeScript** — типизированный JavaScript
+- **Vite** — быстрый сборщик проекта
+- **Redux Toolkit** — управление состоянием приложения
+- **React Router DOM** — маршрутизация
+- **SCSS** — CSS-препроцессор
+- **ESLint + Stylelint** — линтинг кода и стилей
+- **Prettier** — форматирование кода
+- **Husky** — Git-хуки
 
-## <img src="public/package.png" width="16" alt="package"> Installation
+## <img src="public/package.png" width="16" alt="package"> Установка
 
 ```bash
-# Clone the repository
+# Клонирование репозитория
 git clone https://github.com/iamgromov/gargantua.git
 
-# Navigate to project directory
+# Переход в директорию проекта
 cd gargantua
 
-# Install dependencies
-npm install
+# Установка зависимостей (pnpm)
+pnpm install
 ```
 
-## <img src="public/rocket.png" width="16" alt="rocket"> Running
+## <img src="public/rocket.png" width="16" alt="rocket"> Запуск
 
 ```bash
-# Development mode
-npm run dev
+# Режим разработки
+pnpm dev
 
-# Production build
-npm run build
+# Продакшн-сборка
+pnpm build
 
-# Preview build
-npm run preview
+# Предпросмотр сборки
+pnpm preview
 
-# Lint code
-npm run lint
+# Линтинг кода
+pnpm lint
 
-# Lint styles
-npm run stylelint
+# Линтинг стилей
+pnpm stylelint
 ```
 
-## <img src="public/handshake.png" width="16" alt="handshake"> Contributing
+Также доступны команды с автоисправлением:
 
-The project is in active development. To contribute:
+```bash
+pnpm lint:fix       # ESLint с автофиксом
+pnpm stylelint:fix  # Stylelint с автофиксом
+```
 
-1. Create a feature branch from `main` named `feature/<your-feature>`
-2. Make the necessary changes
-3. Ensure all linting checks pass
-4. Create a Pull Request into `dev` or `main`
+## <img src="public/handshake.png" width="16" alt="handshake"> Участие в развитии
 
-### Branch Rules
+Проект находится в активной разработке. Чтобы внести свой вклад:
 
-| Rule                 | Description                                       |
+1. Создайте feature-ветку от `main` с именем `feature/<например-дата-в-формате-ДД-ММ-ГГ>`
+2. Внесите необходимые изменения
+3. Убедитесь, что все проверки линтеров проходят успешно
+4. Создайте Pull Request в `dev` или `main`
+
+### Правила работы с ветками
+
+| Правило              | Описание                                          |
 | -------------------- | ------------------------------------------------- |
-| **Deployment**       | Only from `main`                                  |
-| **Feature branches** | Must be created from `main` and named `feature/*` |
-| **Merge targets**    | Feature branches merge into `dev` or `main` only  |
+| **Деплой**           | Только из `main`                                  |
+| **Feature-ветки**    | Создаются от `main`, имя вида `feature/*`         |
+| **Цели для слияния** | Feature-ветки сливаются только в `dev` или `main` |
 
-These rules are enforced automatically via GitHub Actions on every PR.
+Эти правила проверяются автоматически через GitHub Actions при каждом PR.
 
 ---
 
-**Author**: [iamgromov](https://github.com/iamgromov)
-**Demo**: [https://iamgromov.github.io/gargantua](https://iamgromov.github.io/gargantua)
+**Автор**: [iamgromov](https://github.com/iamgromov)
+**Демо**: [https://iamgromov.github.io/gargantua](https://iamgromov.github.io/gargantua)
