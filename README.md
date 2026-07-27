@@ -59,7 +59,7 @@ pnpm install
 pnpm dev
 ```
 
-# Продакшн-сборка
+### Продакшн-сборка
 
 ```bash
 pnpm build
