@@ -7,6 +7,7 @@ import { FOOTER_LINKS, LOGOS } from './constants';
 import styles from './Footer.module.scss';
 
 export const Footer: FC = memo((): ReactElement => {
+
   return (
     <footer className={ styles.footer }>
       <div className={ styles.column }>

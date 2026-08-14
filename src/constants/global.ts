@@ -1,4 +1,3 @@
-
 export enum MEDIA {
   DESKTOP = 'desktop',
   TABLET = 'tablet',
@@ -7,7 +6,7 @@ export enum MEDIA {
 
 export enum BREAKPOINTS {
   TABLET = 768,
-  DESKTOP = 1280
+  DESKTOP = 1024
 }
 
 export enum ROUTES {

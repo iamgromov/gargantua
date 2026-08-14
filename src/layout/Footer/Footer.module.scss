@@ -9,9 +9,9 @@
 
   border-top: $border-width-1 solid var(--color-border);
 
-  &.mobile {
-    flex-direction: column;
-    gap: $spacing-xl;
+  @include mobile {
+    flex-direction: column-reverse;
+    gap: 16px;
   }
 
   .column {
@@ -35,6 +35,10 @@
 
     &:not(:first-child) {
       align-items: end;
+
+      @include mobile {
+        align-items: start;
+      }
     }
 
     a {

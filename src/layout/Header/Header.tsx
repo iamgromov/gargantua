@@ -1,12 +1,15 @@
 import { memo, type FC, type ReactElement } from 'react';
 
 import { ROUTES } from '@/constants';
+import { useBreakpoint } from '@/hooks';
 import { Logo, ThemeSwitcher } from '@/shared/ui';
 import { Button, Intent, Size } from '@/shared/ui/Button';
 
+import { HeaderMobile } from './HeaderMobile/HeaderMobile';
+
 import styles from './Header.module.scss';
 
-export const Header: FC = memo((): ReactElement => {
+const HeaderDesktop: FC = memo((): ReactElement => {
   return (
     <div className={ styles.header }>
       <Logo className={ styles.logo } />
@@ -25,4 +28,14 @@ export const Header: FC = memo((): ReactElement => {
       </div>
     </div>
   );
+});
+
+export const Header: FC = memo((): ReactElement => {
+  const { isMobile } = useBreakpoint();
+
+  if (isMobile) {
+    return <HeaderMobile />;
+  }
+
+  return <HeaderDesktop />;
 });
