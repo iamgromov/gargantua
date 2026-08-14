@@ -3,10 +3,8 @@
 
 .header {
   display: flex;
-
   justify-content: space-between;
   align-items: center;
-
   padding: $spacing-xl;
 
   border-bottom: $border-width-1 solid var(--color-border);
@@ -35,9 +33,7 @@
 
   .controls {
     display: flex;
-
     align-items: center;
-
     gap: $spacing-base;
   }
 }

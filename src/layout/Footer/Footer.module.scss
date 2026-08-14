@@ -3,19 +3,20 @@
 
 .footer {
   display: flex;
-
   justify-content: space-between;
-
   padding: $spacing-xl;
   padding-bottom: $spacing-5xl;
 
   border-top: $border-width-1 solid var(--color-border);
 
+  &.mobile {
+    flex-direction: column;
+    gap: $spacing-xl;
+  }
+
   .column {
     display: flex;
-
     flex-direction: column;
-
     gap: $spacing-sm;
 
     .row {

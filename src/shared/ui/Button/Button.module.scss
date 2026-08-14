@@ -4,16 +4,14 @@
 // Base button styles
 .button {
   position: relative;
-
   display: inline-flex;
-
   justify-content: center;
   align-items: center;
   gap: $spacing-xs;
-
   overflow: hidden;
 
   border: $border-width-1 solid transparent;
+  border-radius: $border-radius-xl;
   outline: none;
 
   text-align: center;
@@ -21,7 +19,6 @@
   white-space: nowrap;
 
   transition: all $transition-base;
-
   cursor: pointer;
 
   user-select: none;
@@ -48,7 +45,6 @@
       position: absolute;
       top: 50%;
       left: 50%;
-
       width: $spacing-base;
       height: $spacing-base;
 
@@ -69,14 +65,17 @@
     cursor: not-allowed;
     pointer-events: none;
   }
+
+  @supports (corner-shape: superellipse(2)) {
+    border-radius: calc($border-radius-xl * 2);
+    corner-shape: superellipse(2);
+  }
 }
 
 // Size variants
 .small {
   min-height: 32px;
   padding: $spacing-xs $spacing-sm;
-
-  border-radius: $border-radius-lg;
 
   font-size: $font-size-sm;
 }
@@ -85,8 +84,6 @@
   min-height: 40px;
   padding: $spacing-xs $spacing-base;
 
-  border-radius: $border-radius-lg;
-
   font-size: $font-size-sm;
 }
 
@@ -94,16 +91,12 @@
   min-height: 48px;
   padding: $spacing-sm $spacing-xl;
 
-  border-radius: $border-radius-xl;
-
   font-size: $font-size-base;
 }
 
 .extra-large {
   min-height: 56px;
   padding: $spacing-base $spacing-3xl;
-
-  border-radius: $border-radius-xl;
 
   font-size: $font-size-lg;
 }
@@ -225,7 +218,7 @@
   background-color: transparent;
   border-color: transparent;
 
-  color: var(--color-gray-700);
+  color: var(--color-text-primary);
 
   &:hover:not(.disabled, .loading) {
     background-color: var(--color-surface);

@@ -33,7 +33,6 @@
 // Aligns blocks to the center
 @mixin flex-children($flex-direction: row, $justify-content: center, $align-items: center) {
   display: flex;
-
   flex-direction: $flex-direction;
   justify-content: $justify-content;
   align-items: $align-items;
@@ -48,7 +47,6 @@
 // Limits text to a number of lines
 @mixin line-clamp($lines) {
   display: block;
-
   overflow: hidden;
 
   text-overflow: ellipsis;
@@ -83,7 +81,6 @@
 @mixin svg-fill() {
   svg {
     display: block;
-
     margin: 0 auto;
 
     path {
