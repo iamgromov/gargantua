@@ -1,0 +1,13 @@
+// ===== ТОКЕНЫ АНИМАЦИИ =====
+
+// Переходы-переменные (используются в миксинах)
+:root {
+  --transition-duration: 300ms;
+  --transition-theme: 200ms;
+  --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// Переходы-константы
+$transition-fast: 150ms ease-in-out;
+$transition-base: 200ms ease-in-out;
+$transition-slow: 300ms ease-in-out;

@@ -1,0 +1,26 @@
+// ===== ТОКЕНЫ ТИПОГРАФИКИ =====
+
+// Размеры шрифта
+$font-size-xs: 0.75rem; // 12px
+$font-size-sm: 0.875rem; // 14px
+$font-size-base: 1rem; // 16px
+$font-size-lg: 1.125rem; // 18px
+$font-size-h6: 1.25rem; // 20px
+$font-size-h5: 1.5rem; // 24px
+$font-size-h4: 1.75rem; // 28px
+$font-size-h3: 2rem; // 32px
+$font-size-h2: 2.25rem; // 36px
+$font-size-h1: 2.5rem; // 40px
+
+// Начертания шрифта
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+$font-weight-black: 900;
+
+// Семейство шрифта
+$font-family-sans: 'Proxima Nova', roboto, system-ui, tahoma, sans-serif;
+$font-family-mono: 'Fira Code', 'Monaco', 'Cascadia Code', monospace;
