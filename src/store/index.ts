@@ -1,8 +1,8 @@
-// store
+// хранилище
 export { store, type RootState, type AppDispatch } from './store';
 
-// slices
+// слайсы
 export * from './slices/theme-slice';
 
-// types
+// типы
 export * from './types';

@@ -6,19 +6,19 @@ import type { IconButtonProps } from '@/shared/types';
 
 import styles from './IconButton.module.scss';
 
-/** IconButton component
- * @param variant - button variant
- * @param size - button size
- * @param icon - button icon
- * @param onClick - button click handler
- * @param loading - button loading state
- * @param disabled - button disabled state
- * @param className - button class name
- * @param style - custom styles
- * @param to - internal route path
- * @param href - external URL
- * @param title - button title attribute
- * @param aria-label - button aria-label for accessibility
+/** Компонент кнопки-иконки
+ * @param variant - вариант оформления кнопки
+ * @param size - размер кнопки
+ * @param icon - иконка кнопки
+ * @param onClick - обработчик клика
+ * @param loading - состояние загрузки
+ * @param disabled - состояние неактивности
+ * @param className - дополнительный класс
+ * @param style - пользовательские стили
+ * @param to - путь внутреннего маршрута
+ * @param href - внешний URL
+ * @param title - атрибут title кнопки
+ * @param aria-label - aria-label кнопки для доступности
  * @returns {JSX.Element}
  */
 export const IconButton = forwardRef<HTMLButtonElement | HTMLAnchorElement, IconButtonProps>(
@@ -67,7 +67,7 @@ export const IconButton = forwardRef<HTMLButtonElement | HTMLAnchorElement, Icon
       'aria-label': ariaLabel
     };
 
-    /** Router Link */
+    /** Внутренняя ссылка (React Router) */
     if (to && !href) {
       return (
         <Link
@@ -82,7 +82,7 @@ export const IconButton = forwardRef<HTMLButtonElement | HTMLAnchorElement, Icon
       );
     }
 
-    /** External Link */
+    /** Внешняя ссылка */
     if (href) {
       return (
         <a
@@ -99,7 +99,7 @@ export const IconButton = forwardRef<HTMLButtonElement | HTMLAnchorElement, Icon
       );
     }
 
-    /** Button */
+    /** Кнопка */
     return (
       <button
         type='button'

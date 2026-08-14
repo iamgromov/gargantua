@@ -30,7 +30,7 @@
   }
 }
 
-// Aligns blocks to the center
+// Центрирует блоки
 @mixin flex-children($flex-direction: row, $justify-content: center, $align-items: center) {
   display: flex;
   flex-direction: $flex-direction;
@@ -38,13 +38,13 @@
   align-items: $align-items;
 }
 
-// Prevents the user from selecting elements
+// Запрещает выделение элементов
 @mixin noselect {
   -webkit-touch-callout: none;
   user-select: none;
 }
 
-// Limits text to a number of lines
+// Ограничивает текст заданным числом строк
 @mixin line-clamp($lines) {
   display: block;
   overflow: hidden;
@@ -58,7 +58,7 @@
   line-clamp: $lines;
 }
 
-// Hide scrollbar
+// Скрывает полосу прокрутки
 @mixin hide-scrollbar {
   -ms-overflow-style: none;
 
@@ -69,7 +69,7 @@
   }
 }
 
-// Transitions
+// Переходы
 @mixin smooth-transition($properties: all) {
   transition: $properties var(--transition-duration) var(--transition-timing);
 }

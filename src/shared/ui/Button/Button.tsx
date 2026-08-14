@@ -6,18 +6,18 @@ import { Intent, Size, Width, type ButtonProps } from './types';
 
 import styles from './Button.module.scss';
 
-/** Button component
- * @param intent - button intent
- * @param size - button size
- * @param width - button width
- * @param children - button content
- * @param onClick - button click handler
- * @param loading - button loading state
- * @param disabled - button disabled state
- * @param className - button class name
- * @param style - custom styles
- * @param to - internal route path
- * @param href - external URL
+/** Компонент кнопки
+ * @param intent - вариант оформления кнопки
+ * @param size - размер кнопки
+ * @param width - ширина кнопки
+ * @param children - содержимое кнопки
+ * @param onClick - обработчик клика
+ * @param loading - состояние загрузки
+ * @param disabled - состояние неактивности
+ * @param className - дополнительный класс
+ * @param style - пользовательские стили
+ * @param to - путь внутреннего маршрута
+ * @param href - внешний URL
  * @returns {JSX.Element}
  */
 export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
@@ -62,7 +62,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
       disabled: props.disabled || props.loading
     };
 
-    /** Router Link */
+    /** Внутренняя ссылка (React Router) */
     if (to && !href) {
       return (
         <Link
@@ -77,7 +77,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
       );
     }
 
-    /** External Link */
+    /** Внешняя ссылка */
     if (href) {
       return (
         <a
@@ -94,7 +94,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
       );
     }
 
-    /** Button */
+    /** Кнопка */
     return (
       <button
         type='button'
