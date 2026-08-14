@@ -5,20 +5,20 @@ import type { SelectProps } from '@/shared/types';
 
 import styles from './Select.module.scss';
 
-/** Select component
- * @param options - array of select options
- * @param value - selected value
- * @param placeholder - placeholder text
- * @param label - select label
- * @param disabled - select disabled state
- * @param loading - select loading state
- * @param error - error message
- * @param variant - select variant
- * @param size - select size
- * @param width - select width
- * @param className - select class name
- * @param style - custom styles
- * @param onChange - select change handler
+/** Компонент выпадающего списка
+ * @param options - массив вариантов выбора
+ * @param value - выбранное значение
+ * @param placeholder - текст подсказки
+ * @param label - подпись списка
+ * @param disabled - состояние неактивности
+ * @param loading - состояние загрузки
+ * @param error - сообщение об ошибке
+ * @param variant - вариант оформления
+ * @param size - размер списка
+ * @param width - ширина списка
+ * @param className - дополнительный класс
+ * @param style - пользовательские стили
+ * @param onChange - обработчик изменения выбора
  * @returns {JSX.Element}
  */
 export const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) => {

@@ -1,3 +1,4 @@
+export * from './BottomSheet';
 export * from './IconButton/IconButton';
 export * from './LinkButton/LinkButton';
 export * from './Logo/Logo';

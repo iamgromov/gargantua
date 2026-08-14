@@ -1,13 +1,19 @@
-@use '../../styles/variables' as *;
-@use '../../styles/mixins' as *;
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
 
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: $spacing-xl;
 
+  background-color: var(--color-background);
   border-bottom: $border-width-1 solid var(--color-border);
+
+  @include theme-transition(background-color);
 
   a {
     cursor: pointer;

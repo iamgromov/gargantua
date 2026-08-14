@@ -1,15 +1,11 @@
 @use '../variables' as *;
 
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--color-surface);
-
-  &:hover {
-    background: var(--color-border);
-  }
+html,
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  scrollbar-color: var(--color-surface) transparent;
+  scrollbar-gutter: stable;
 }
 
 button,
@@ -62,16 +58,6 @@ summary {
   &::selection {
     background-color: var(--color-error);
   }
-}
-
-html {
-  scrollbar-gutter: stable both-edges;
-  text-size-adjust: 100%;
-}
-
-body {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
 }
 
 a,

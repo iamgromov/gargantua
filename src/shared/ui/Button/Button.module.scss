@@ -1,7 +1,7 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
 
-// Base button styles
+// Базовые стили кнопки
 .button {
   position: relative;
   display: inline-flex;
@@ -31,7 +31,7 @@
     transform: translateY(1px);
   }
 
-  // Loading state
+  // Состояние загрузки
   &.loading {
     opacity: $opacity-loading;
 
@@ -58,7 +58,7 @@
     }
   }
 
-  // Disabled state
+  // Состояние неактивности
   &.disabled {
     opacity: $opacity-disabled;
 
@@ -72,7 +72,7 @@
   }
 }
 
-// Size variants
+// Варианты размеров
 .small {
   min-height: 32px;
   padding: $spacing-xs $spacing-sm;
@@ -101,7 +101,7 @@
   font-size: $font-size-lg;
 }
 
-// Width variants
+// Варианты ширины
 .auto {
   width: auto;
 }
@@ -110,7 +110,7 @@
   width: 100%;
 }
 
-// Color variants
+// Варианты цветов
 .primary {
   background-color: var(--color-primary);
   border-color: var(--color-primary);
@@ -249,7 +249,7 @@
   }
 }
 
-// Animations
+// Анимации
 @keyframes spin {
   0% {
     transform: translate(-50%, -50%) rotate(0deg);
