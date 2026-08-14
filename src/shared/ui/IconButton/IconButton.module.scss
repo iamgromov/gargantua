@@ -4,12 +4,9 @@
 // Base icon button styles
 .iconButton {
   position: relative;
-
   display: inline-flex;
-
   justify-content: center;
   align-items: center;
-
   overflow: hidden;
 
   border: $border-width-1 solid transparent;
@@ -21,7 +18,6 @@
   white-space: nowrap;
 
   transition: all $transition-base;
-
   cursor: pointer;
 
   user-select: none;
@@ -48,7 +44,6 @@
       position: absolute;
       top: 50%;
       left: 50%;
-
       width: $spacing-sm;
       height: $spacing-sm;
 

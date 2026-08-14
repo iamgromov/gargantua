@@ -3,19 +3,20 @@
 
 .footer {
   display: flex;
-
   justify-content: space-between;
-
   padding: $spacing-xl;
   padding-bottom: $spacing-5xl;
 
   border-top: $border-width-1 solid var(--color-border);
 
+  @include mobile {
+    flex-direction: column-reverse;
+    gap: 16px;
+  }
+
   .column {
     display: flex;
-
     flex-direction: column;
-
     gap: $spacing-sm;
 
     .row {
@@ -34,6 +35,10 @@
 
     &:not(:first-child) {
       align-items: end;
+
+      @include mobile {
+        align-items: start;
+      }
     }
 
     a {

@@ -1,6 +1,7 @@
 import { useMemo, useState, useCallback, type ChangeEvent, type FC } from 'react';
 
 import { ArrowUp } from '@/assets/icons';
+import { useDocumentTitle } from '@/hooks';
 import type { IconButtonSize, IconButtonVariant } from '@/shared/types';
 import { IconButton, Select, Spinner, Typography } from '@/shared/ui';
 import { Accordion, type AccordionItem } from '@/shared/ui/Accordion';
@@ -15,6 +16,7 @@ const getVariantTitle = (variant: string): string => {
 };
 
 export const Components: FC = () => {
+  useDocumentTitle('Components');
   const [selectedVariant, setSelectedVariant] = useState(Intent.Primary);
   const [selectedSize, setSelectedSize] = useState(Size.Large);
 

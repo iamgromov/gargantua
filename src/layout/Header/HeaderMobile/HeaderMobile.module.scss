@@ -1,0 +1,33 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-base;
+  padding: $spacing-base;
+
+  border-bottom: $border-width-1 solid var(--color-border);
+
+  a {
+    cursor: pointer;
+
+    .logo {
+      width: auto;
+      height: 20px;
+
+      svg {
+        width: 200px;
+        height: 20px;
+      }
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+
+    &:first-child {
+      height: 20px;
+    }
+  }
+}

@@ -3,17 +3,14 @@
 
 .wrapper {
   display: flex;
-
   justify-content: center;
   align-items: center;
-
   height: 100vh;
 }
 
 // Base spinner styles
 .spinner {
   display: inline-block;
-
   width: $spacing-base;
   height: $spacing-base;
 

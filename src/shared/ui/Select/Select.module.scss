@@ -3,7 +3,6 @@
 // Wrapper styles
 .wrapper {
   display: flex;
-
   flex-direction: column;
   gap: $spacing-xs;
 
@@ -34,9 +33,7 @@
 // Select wrapper for loading spinner positioning
 .selectWrapper {
   position: relative;
-
   display: inline-flex;
-
   width: 100%;
 
   &.full {
@@ -65,7 +62,6 @@
   line-height: inherit;
 
   transition: all $transition-base;
-
   cursor: pointer;
 
   &:focus-visible {
@@ -206,7 +202,6 @@
   position: absolute;
   top: 50%;
   right: $spacing-sm;
-
   width: $spacing-base;
   height: $spacing-base;
 

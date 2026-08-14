@@ -21,6 +21,12 @@ export default {
       }
     ],
     'no-descending-specificity': null,
+    'property-no-unknown': [
+      true,
+      {
+        ignoreProperties: ['corner-shape']
+      }
+    ],
     'order/order': [
       [
         'dollar-variables',
@@ -37,6 +43,7 @@ export default {
         {
           groupName: 'Layout',
           emptyLineBefore: 'always',
+          noEmptyLineBetween: true,
           properties: [
             'position',
             'inset',
@@ -106,6 +113,7 @@ export default {
         {
           groupName: 'Visual',
           emptyLineBefore: 'always',
+          noEmptyLineBetween: true,
           properties: [
             'appearance',
             'background',
@@ -123,6 +131,7 @@ export default {
             'border-bottom',
             'border-left',
             'border-radius',
+            'corner-shape',
             'outline',
             'box-shadow',
             'opacity',
@@ -132,6 +141,7 @@ export default {
         {
           groupName: 'Typography',
           emptyLineBefore: 'always',
+          noEmptyLineBetween: true,
           properties: [
             'font',
             'font-family',
@@ -155,6 +165,7 @@ export default {
         {
           groupName: 'Misc',
           emptyLineBefore: 'always',
+          noEmptyLineBetween: true,
           properties: [
             'transition',
             'transition-property',
