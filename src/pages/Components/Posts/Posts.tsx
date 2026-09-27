@@ -8,7 +8,7 @@ import { Button, Intent, Size } from '@/shared/ui/Button';
 import styles from './Posts.module.scss';
 
 const Posts: FC = () => {
-  const { data, isPending, isError, isFetching, refetch } = useGetPosts();
+  const { data, isPending, isError, isFetching, refetch } = useGetPosts({ _limit: 5 });
 
   const handleRefetch = useCallback(() => {
     void refetch();
@@ -16,7 +16,7 @@ const Posts: FC = () => {
 
   const postsItems = useMemo<AccordionItem[]>(
     () =>
-      (data ?? []).slice(0, 5).map((post) => ({
+      (data ?? []).map((post) => ({
         id: String(post.id),
         header: post.title.trim(),
         content: post.body
