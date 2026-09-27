@@ -8,6 +8,7 @@ import { Accordion, type AccordionItem } from '@/shared/ui/Accordion';
 import { Button, Intent, Size } from '@/shared/ui/Button';
 
 import { BUTTON_SIZES, BUTTON_VARIANTS, SPINNERS_SIZES, TYPOGRAPHY_VARIANTS } from './constants';
+import Posts from './Posts/Posts';
 
 import styles from './Components.module.scss';
 
@@ -109,6 +110,8 @@ export const Components: FC = () => {
 
   return (
     <div className={ styles.main }>
+      <Posts />
+
       <Typography variant='h1'>Accordion</Typography>
       <div className={ styles.row }>
         <Accordion size='large' items={ ACCORDION_ITEMS }></Accordion>

@@ -17,7 +17,8 @@
 - **Адаптивный дизайн** — компоненты подстраиваются под различные размеры экрана
 - **TypeScript** — полная типизация для улучшенного DX
 - **Переиспользуемые компоненты** — набор готовых UI-элементов
-- **Актуальный стек** — React 19, Vite, Redux Toolkit, SCSS
+- **Работа с API** — TanStack Query и axios из коробки
+- **Актуальный стек** — React 19, Vite, Redux Toolkit, TanStack Query, SCSS
 
 ## <img src="public/tools.png" width="16" alt="tools"> Технологии
 
@@ -25,6 +26,8 @@
 - **TypeScript** — типизированный JavaScript
 - **Vite** — быстрый сборщик проекта
 - **Redux Toolkit** — управление состоянием приложения
+- **TanStack Query** — кеширование и синхронизация серверного состояния
+- **Axios** — HTTP-клиент
 - **React Router DOM** — маршрутизация
 - **SCSS** — CSS-препроцессор
 - **ESLint + Stylelint** — линтинг кода и стилей
