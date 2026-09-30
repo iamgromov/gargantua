@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 
 import { ScrollToTop } from '@/shared/ui';
 
+import { ErrorBoundary } from './ErrorBoundary/ErrorBoundary';
 import { Footer } from './Footer/Footer';
 import { Header } from './Header/Header';
 
@@ -14,7 +15,9 @@ export const Layout: FC = () => {
       <Header />
 
       <main className={ styles.content }>
-        <Outlet />
+        <ErrorBoundary>
+          <Outlet />
+        </ErrorBoundary>
       </main>
 
       <Footer />

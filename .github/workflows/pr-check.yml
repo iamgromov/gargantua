@@ -19,15 +19,15 @@ jobs:
         run: |
           echo "PR title: ${TITLE}"
 
-          if echo "${TITLE}" | grep -qE '^(feat|fix|refactor|test|chore|revert|ci)(\(.+\))?!?: .+'; then
+          if echo "${TITLE}" | grep -qE '^(feature|fix|refactor|test|chore|revert|ci)(\(.+\))?!?: .+'; then
             echo "✅ PR title follows Conventional Commits"
           else
             echo "⛔ ERROR: PR title must follow Conventional Commits format:"
             echo "  type(scope): description"
             echo ""
-            echo "Allowed types: feat, fix, refactor, test, chore, revert, ci"
+            echo "Allowed types: feature, fix, refactor, test, chore, revert, ci"
             echo "Examples:"
-            echo "  feat: add new component"
+            echo "  feature: add new component"
             echo "  fix(button): correct hover state"
             echo "  chore: update dependencies"
             exit 1
