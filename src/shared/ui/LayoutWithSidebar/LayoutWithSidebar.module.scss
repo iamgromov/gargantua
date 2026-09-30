@@ -1,0 +1,36 @@
+@use '../../../styles/variables' as *;
+
+// Двухколоночная раскладка с сайдбаром
+.layout {
+  --sidebar-width: 240px;
+
+  display: grid;
+  align-items: start;
+  gap: $spacing-4xl;
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+}
+
+// Ширина сайдбара
+.large {
+  --sidebar-width: 320px;
+}
+
+// Сайдбар справа от контента
+.right {
+  grid-template-columns: minmax(0, 1fr) var(--sidebar-width);
+}
+
+.sidebar {
+  min-width: 0;
+}
+
+.sticky {
+  position: sticky;
+}
+
+// Одноколоночная раскладка
+.singleColumn {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2xl;
+}
