@@ -1,0 +1,17 @@
+@use '../../styles/variables' as *;
+
+.fallback {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-base;
+  padding: $spacing-xl;
+
+  text-align: center;
+}
+
+.message {
+  color: var(--color-text-secondary);
+}

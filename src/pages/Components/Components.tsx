@@ -1,159 +1,97 @@
-import { useMemo, useState, useCallback, type ChangeEvent, type FC } from 'react';
+import { useCallback, useState, type ChangeEvent, type ComponentType, type FC } from 'react';
+import cn from 'classnames';
 
-import { ArrowUp } from '@/assets/icons';
-import { useDocumentTitle } from '@/hooks';
-import type { IconButtonSize, IconButtonVariant } from '@/shared/types';
-import { IconButton, Select, Spinner, Typography } from '@/shared/ui';
-import { Accordion, type AccordionItem } from '@/shared/ui/Accordion';
-import { Button, Intent, Size } from '@/shared/ui/Button';
+import { useBreakpoint, useDocumentTitle } from '@/hooks';
+import { Content, LayoutWithSidebar, Select, Sidebar } from '@/shared/ui';
 
-import { BUTTON_SIZES, BUTTON_VARIANTS, SPINNERS_SIZES, TYPOGRAPHY_VARIANTS } from './constants';
-import Posts from './Posts/Posts';
+import { AccordionDemo } from './sections/AccordionDemo/AccordionDemo';
+import { ButtonsDemo } from './sections/ButtonsDemo/ButtonsDemo';
+import { IconButtonsDemo } from './sections/IconButtonsDemo/IconButtonsDemo';
+import { Posts } from './sections/Posts/Posts';
+import { Section } from './sections/Section/Section';
+import { SelectDemo } from './sections/SelectDemo/SelectDemo';
+import { SpinnersDemo } from './sections/SpinnersDemo/SpinnersDemo';
+import { TypographyDemo } from './sections/TypographyDemo/TypographyDemo';
 
 import styles from './Components.module.scss';
 
-const getVariantTitle = (variant: string): string => {
-  return variant.charAt(0).toUpperCase() + variant.slice(1);
-};
+interface ComponentSection {
+  id: string;
+  title: string;
+  Component: ComponentType;
+}
+
+/** Секция с несколькими демо-компонентами */
+const AccordionSection: FC = () => (
+  <>
+    <AccordionDemo />
+    <Posts />
+  </>
+);
+
+/** Компоненты, отображаемые на странице */
+const SECTIONS: ComponentSection[] = [
+  { id: 'accordion', title: 'Accordion', Component: AccordionSection },
+  { id: 'select', title: 'Select', Component: SelectDemo },
+  { id: 'headers', title: 'Headers', Component: TypographyDemo },
+  { id: 'buttons', title: 'Buttons', Component: ButtonsDemo },
+  { id: 'icon-buttons', title: 'IconButtons', Component: IconButtonsDemo },
+  { id: 'spinners', title: 'Spinners', Component: SpinnersDemo }
+];
+
+/** Опции выпадающего списка для навигации по компонентам на узких экранах */
+const SECTION_OPTIONS = SECTIONS.map(({ id, title }) => ({ value: id, label: title }));
 
 export const Components: FC = () => {
   useDocumentTitle('Components');
-  const [selectedVariant, setSelectedVariant] = useState(Intent.Primary);
-  const [selectedSize, setSelectedSize] = useState(Size.Large);
 
-  const handleVariantChange = useCallback((event: ChangeEvent<HTMLSelectElement>) => {
-    setSelectedVariant(event.target.value as Intent);
+  const { isDesktop } = useBreakpoint();
+  const [activeId, setActiveId] = useState(SECTIONS[0].id);
+
+  const handleSelect = useCallback((id: string) => {
+    setActiveId(id);
   }, []);
 
-  const handleSizeChange = useCallback((event: ChangeEvent<HTMLSelectElement>) => {
-    setSelectedSize(event.target.value as Size);
+  const handleChange = useCallback((event: ChangeEvent<HTMLSelectElement>) => {
+    setActiveId(event.target.value);
   }, []);
 
-  const typographyGrid = useMemo(
-    () => (
-      <div className={ styles.row }>
-        { TYPOGRAPHY_VARIANTS.map((variant) => (
-          <Typography variant={ variant } key={ variant }>
-            Headline
-          </Typography>
-        )) }
-      </div>
-    ),
-    []
-  );
-
-  const disabledGrid = useMemo(
-    () => (
-      <div className={ styles.row }>
-        <Button intent={ Intent.Success } size={ Size.Large } loading={ true }>
-          Success
-        </Button>
-        <Button intent={ Intent.Success } size={ Size.Large } disabled={ true }>
-          Success
-        </Button>
-      </div>
-    ),
-    []
-  );
-
-  const buttonsGrid = useMemo(
-    () =>
-      BUTTON_SIZES.map((size) => (
-        <div key={ size.value } className={ styles.row }>
-          { BUTTON_VARIANTS.map((variant) => (
-            <Button key={ `${size.value}-${variant.value}` } intent={ variant.value } size={ size.value }>
-              { variant.label }
-            </Button>
-          )) }
-        </div>
-      )),
-    []
-  );
-
-  const iconsGrid = useMemo(
-    () =>
-      BUTTON_SIZES.map((size) => (
-        <div key={ size.value } className={ styles.row }>
-          { BUTTON_VARIANTS.map((variant) => (
-            <IconButton
-              key={ `${size.value}-${variant.value}` }
-              icon={ <ArrowUp /> }
-              variant={ variant.value as IconButtonVariant }
-              size={ size.value as IconButtonSize }
-            />
-          )) }
-        </div>
-      )),
-    []
-  );
-
-  const spinnerGrid = useMemo(
-    () => (
-      <div className={ styles.row }>
-        { SPINNERS_SIZES.map((size) => (
-          <Spinner key={ size.value } size={ size.value } />
-        )) }
-      </div>
-    ),
-    []
-  );
-
-  const ACCORDION_ITEMS = useMemo<AccordionItem[]>(
-    () => [
-      { header: 'Headers', content: typographyGrid, id: '1' },
-      { header: 'Buttons', content: [disabledGrid, buttonsGrid], id: '2' },
-      { header: 'Disabled', content: '', id: '3', disabled: true },
-      { header: 'Spinners', content: spinnerGrid, id: '4' }
-    ],
-    [spinnerGrid, typographyGrid, disabledGrid, buttonsGrid]
-  );
+  const activeSection = SECTIONS.find((section) => section.id === activeId) ?? SECTIONS[0];
+  const ActiveComponent = activeSection.Component;
 
   return (
-    <div className={ styles.main }>
-      <Posts />
-
-      <Typography variant='h1'>Accordion</Typography>
-      <div className={ styles.row }>
-        <Accordion size='large' items={ ACCORDION_ITEMS }></Accordion>
-      </div>
-
-      <Typography variant='h1'>Select</Typography>
-      <div className={ styles.row }>
+    <div className={ styles.wrapper }>
+      { !isDesktop && (
         <Select
-          options={ BUTTON_VARIANTS }
-          value={ selectedVariant }
-          placeholder='Variant'
-          onChange={ handleVariantChange }
+          options={ SECTION_OPTIONS }
+          value={ activeId }
+          width='full'
+          onChange={ handleChange }
         />
-        <Select
-          options={ BUTTON_SIZES }
-          value={ selectedSize }
-          placeholder='Size'
-          onChange={ handleSizeChange }
-        />
-        <Button intent={ selectedVariant } size={ selectedSize }>
-          { getVariantTitle(selectedVariant) }
-        </Button>
-      </div>
+      ) }
+      <LayoutWithSidebar>
+        <Sidebar>
+          <nav className={ styles.nav }>
+            { SECTIONS.map(({ id, title }) => (
+              <button
+                key={ id }
+                type='button'
+                className={ cn(styles.navItem, { [styles.active]: id === activeId }) }
+                onClick={ () => handleSelect(id) }
+              >
+                { title }
+              </button>
+            )) }
+          </nav>
+        </Sidebar>
 
-      <Typography variant='h1'>Headers</Typography>
-      { typographyGrid }
+        <Content className={ styles.content }>
 
-      <Typography variant='h1'>Buttons</Typography>
-      <div className={ styles.row }>
-        <div className={ styles.column }>
-          { disabledGrid }
-          { buttonsGrid }
-        </div>
-      </div>
-
-      <Typography variant='h1'>IconButtons</Typography>
-      <div className={ styles.row }>
-        <div className={ styles.column }>{ iconsGrid }</div>
-      </div>
-
-      <Typography variant='h1'>Spinners</Typography>
-      { spinnerGrid }
+          <Section title={ activeSection.title }>
+            <ActiveComponent />
+          </Section>
+        </Content>
+      </LayoutWithSidebar>
     </div>
   );
 };

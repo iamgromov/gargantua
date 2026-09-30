@@ -1,5 +1,6 @@
 export * from './BottomSheet';
 export * from './IconButton/IconButton';
+export * from './LayoutWithSidebar';
 export * from './LinkButton/LinkButton';
 export * from './Logo/Logo';
 export * from './ScrollToTop/ScrollToTop';

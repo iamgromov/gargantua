@@ -1,4 +1,9 @@
-import type { SpinnerSize, TypographyVariant } from '@/shared/types';
+import type {
+  IconButtonSize,
+  IconButtonVariant,
+  SpinnerSize,
+  TypographyVariant
+} from '@/shared/types';
 import { Intent, Size } from '@/shared/ui/Button';
 
 export const BUTTON_SIZES: Array<{ value: Size; label: string }> = [
@@ -15,6 +20,21 @@ export const BUTTON_VARIANTS: Array<{ value: Intent; label: string }> = [
   { value: Intent.Success, label: 'Success' },
   { value: Intent.Ghost, label: 'Ghost' },
   { value: Intent.Link, label: 'Link' }
+];
+
+export const ICON_BUTTON_SIZES: Array<{ value: IconButtonSize; label: string }> = [
+  { value: 'small', label: 'Small' },
+  { value: 'medium', label: 'Medium' },
+  { value: 'large', label: 'Large' }
+];
+
+export const ICON_BUTTON_VARIANTS: Array<{ value: IconButtonVariant; label: string }> = [
+  { value: 'primary', label: 'Primary' },
+  { value: 'secondary', label: 'Secondary' },
+  { value: 'outline', label: 'Outline' },
+  { value: 'danger', label: 'Danger' },
+  { value: 'success', label: 'Success' },
+  { value: 'ghost', label: 'Ghost' }
 ];
 
 export const SPINNERS_SIZES: Array<{ value: SpinnerSize; label: string }> = [
