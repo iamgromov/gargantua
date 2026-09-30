@@ -20,16 +20,22 @@
     gap: $spacing-sm;
 
     .row {
-      gap: $spacing-xs;
+      gap: $spacing-sm;
 
       @include flex-children(row, start, center);
 
-      svg:hover {
-        cursor: pointer;
+      svg {
+        flex-shrink: 0;
+        width: auto;
+        height: $spacing-2xl;
 
-        transform: translateY(-2px);
+        &:hover {
+          cursor: pointer;
 
-        @include smooth-transition;
+          transform: translateY(-2px);
+
+          @include smooth-transition;
+        }
       }
     }
 
