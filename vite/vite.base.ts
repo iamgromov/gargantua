@@ -12,10 +12,13 @@ export const baseConfig = {
     react(),
     svgr(),
     checker({
-      typescript: true,
+      typescript: { tsconfigPath: './tsconfig.app.json' },
       eslint: {
         lintCommand: 'eslint "./src/**/*.{ts,tsx}"',
         useFlatConfig: true
+      },
+      overlay: {
+        panelStyle: 'top: 0; left: 0; right: 0; bottom: 0; width: 100vw; height: 100vh; max-height: 100vh;'
       },
       terminal: true
     })

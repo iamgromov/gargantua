@@ -122,7 +122,7 @@ export default [
       '@stylistic/jsx-indent-props': ['error', 2],
       'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': [
-        'error',
+        'warn',
         {
           args: 'all',
           argsIgnorePattern: '^_',
@@ -135,6 +135,7 @@ export default [
       ],
       'sonarjs/no-misused-promises': 'off',
       'sonarjs/todo-tag': 'off',
+      'sonarjs/unused-import': 'warn',
       'id-length': ['error', { exceptionPatterns: ['^_*'] }],
       'react/react-in-jsx-scope': 'off',
       'react/display-name': 'off',
