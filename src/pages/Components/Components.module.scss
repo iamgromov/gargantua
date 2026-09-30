@@ -1,30 +1,76 @@
 @use '../../styles/variables' as *;
 
-.main {
-  // padding: $spacing-xl;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 
-  & > span {
-    margin-bottom: $spacing-xs;
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xxs;
+  padding: $spacing-xs;
+
+  background-color: var(--color-surface);
+  border: $border-width-1 solid var(--color-border);
+  border-radius: $border-radius-lg;
+}
+
+.navItem {
+  padding: $spacing-sm $spacing-base;
+
+  background-color: transparent;
+  border: none;
+  border-radius: $border-radius-md;
+  outline: none;
+
+  font-family: inherit;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  text-align: left;
+  color: var(--color-text-secondary);
+
+  transition:
+    background-color $transition-base,
+    color $transition-base;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-gray-100);
+
+    color: var(--color-text-primary);
   }
 
-  & > .row {
-    margin-bottom: $spacing-4xl;
+  &.active {
+    background-color: var(--color-primary);
+
+    color: var(--color-white);
   }
+
+  &.active:hover {
+    background-color: color-mix(in srgb, var(--color-primary) 90%, white);
+
+    color: var(--color-white);
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2xl;
 }
 
 .row {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: $spacing-xl;
-  margin-bottom: $spacing-sm;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
 }
 
 .column {
   display: flex;
   flex-direction: column;
+  gap: $spacing-sm;
   width: 100%;
 }
