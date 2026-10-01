@@ -11,8 +11,8 @@
   margin: $spacing-xs;
   padding: $spacing-base;
 
-  background-color: var(--color-background);
-  border: $border-width-1 solid var(--color-border);
+  background-color: $color-background;
+  border: $border-width-1 solid $color-border;
   border-radius: $border-radius-lg;
 
   @include theme-transition(background-color);

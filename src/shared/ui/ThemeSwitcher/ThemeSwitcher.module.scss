@@ -11,13 +11,13 @@
     transform: scaleX(var(--rotation));
 
     rect {
-      fill: var(--color-text-secondary);
-      stroke: var(--color-text-primary);
+      fill: $color-text-secondary;
+      stroke: $color-text-primary;
     }
 
     path {
-      fill: var(--color-surface);
-      stroke: var(--color-text-primary);
+      fill: $color-surface;
+      stroke: $color-text-primary;
     }
   }
 

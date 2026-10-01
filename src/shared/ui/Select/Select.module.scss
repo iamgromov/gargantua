@@ -18,7 +18,7 @@
 
   &.error {
     .label {
-      color: var(--color-error);
+      color: $color-error;
     }
   }
 }
@@ -27,7 +27,7 @@
 .label {
   font-size: $font-size-sm;
   font-weight: $font-weight-medium;
-  color: var(--color-text-primary);
+  color: $color-text-primary;
 }
 
 // Обёртка списка для позиционирования спиннера загрузки
@@ -50,7 +50,8 @@
   background: transparent;
 
   // Убираем стандартную стрелку и добавляем кастомную
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  // Цвет стрелки — токен --icon-chevron-down (объявлен в global/_tokens.scss)
+  background-image: var(--icon-chevron-down);
   background-position: right $spacing-xs center;
   background-size: 16px 16px;
   background-repeat: no-repeat;
@@ -65,7 +66,7 @@
   cursor: pointer;
 
   &:focus-visible {
-    box-shadow: 0 0 0 2px rgb(var(--color-primary), 0.5);
+    box-shadow: 0 0 0 2px color-mix(in srgb, $color-primary 50%, transparent);
   }
 
   // Кастомный скроллбар для вариантов
@@ -74,16 +75,16 @@
   }
 
   &::-webkit-scrollbar-track {
-    background: var(--color-gray-100);
+    background: $color-scrollbar-track;
   }
 
   &::-webkit-scrollbar-thumb {
-    background: var(--color-gray-300);
+    background: $color-scrollbar-thumb;
     border-radius: $border-radius-base;
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background: var(--color-gray-400);
+    background: $color-scrollbar-thumb-hover;
   }
 
   // Состояние загрузки
@@ -95,10 +96,10 @@
 
   // Состояние ошибки
   &.error {
-    border-color: var(--color-error);
+    border-color: $color-error;
 
     &:focus-visible {
-      box-shadow: 0 0 0 2px rgb(var(--color-error), 0.5);
+      box-shadow: 0 0 0 2px color-mix(in srgb, $color-error 50%, transparent);
     }
   }
 
@@ -148,52 +149,52 @@
 
 // Стили вариантов
 .default {
-  background-color: var(--color-background);
-  border-color: var(--color-border);
+  background-color: $color-background;
+  border-color: $color-border;
 
-  color: var(--color-text-primary);
+  color: $color-text-primary;
 
   &:hover:not(.disabled, .loading) {
-    border-color: var(--color-border-hover);
+    border-color: $color-border-hover;
   }
 
   &:focus {
-    background-color: var(--color-surface);
-    border-color: var(--color-primary);
+    background-color: $color-surface;
+    border-color: $color-primary;
   }
 }
 
 .filled {
-  background-color: var(--color-gray-50);
-  border-color: var(--color-gray-50);
+  background-color: $color-input-filled-background;
+  border-color: $color-input-filled-background;
 
-  color: var(--color-text-primary);
+  color: $color-text-primary;
 
   &:hover:not(.disabled, .loading) {
-    background-color: var(--color-gray-100);
-    border-color: var(--color-gray-100);
+    background-color: $color-input-filled-background-hover;
+    border-color: $color-input-filled-background-hover;
   }
 
   &:focus {
-    background-color: var(--color-background);
-    border-color: var(--color-primary);
+    background-color: $color-background;
+    border-color: $color-primary;
   }
 }
 
 .outline {
   background-color: transparent;
-  border-color: var(--color-gray-300);
+  border-color: $color-input-outline-border;
 
-  color: var(--color-text-primary);
+  color: $color-text-primary;
 
   &:hover:not(.disabled, .loading) {
-    background-color: var(--color-gray-50);
-    border-color: var(--color-gray-400);
+    background-color: $color-input-outline-background-hover;
+    border-color: $color-input-outline-border-hover;
   }
 
   &:focus {
-    background-color: var(--color-surface);
-    border-color: var(--color-primary);
+    background-color: $color-surface;
+    border-color: $color-primary;
   }
 }
 
@@ -206,7 +207,7 @@
   height: $spacing-base;
 
   border: $border-width-2 solid transparent;
-  border-top: $border-width-2 solid var(--color-text-secondary);
+  border-top: $border-width-2 solid $color-text-secondary;
   border-radius: 50%;
 
   animation: spin 1s linear infinite;
@@ -218,76 +219,7 @@
 .errorMessage {
   font-size: $font-size-xs;
   line-height: 1.4;
-  color: var(--color-error);
-}
-
-// Переопределения для тёмной темы
-[data-theme='dark'] {
-  .select {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23b4b4be' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
-
-    &::-webkit-scrollbar-track {
-      background: var(--color-gray-800);
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background: var(--color-gray-600);
-    }
-
-    &::-webkit-scrollbar-thumb:hover {
-      background: var(--color-gray-500);
-    }
-  }
-
-  .default {
-    background-color: var(--color-background);
-    border-color: var(--color-border);
-
-    color: var(--color-text-primary);
-
-    &:hover:not(.disabled, .loading) {
-      border-color: var(--color-border-hover);
-    }
-
-    &:focus {
-      background-color: var(--color-surface);
-      border-color: var(--color-primary);
-    }
-  }
-
-  .filled {
-    background-color: var(--color-gray-800);
-    border-color: var(--color-gray-800);
-
-    color: var(--color-text-primary);
-
-    &:hover:not(.disabled, .loading) {
-      background-color: var(--color-gray-700);
-      border-color: var(--color-gray-700);
-    }
-
-    &:focus {
-      background-color: var(--color-background);
-      border-color: var(--color-primary);
-    }
-  }
-
-  .outline {
-    background-color: transparent;
-    border-color: var(--color-gray-600);
-
-    color: var(--color-text-primary);
-
-    &:hover:not(.disabled, .loading) {
-      background-color: var(--color-gray-800);
-      border-color: var(--color-gray-500);
-    }
-
-    &:focus {
-      background-color: var(--color-surface);
-      border-color: var(--color-primary);
-    }
-  }
+  color: $color-error;
 }
 
 // Анимации

@@ -23,7 +23,7 @@
   user-select: none;
 
   &:focus-visible {
-    box-shadow: 0 0 0 2px rgb(var(--color-primary), 0.5);
+    box-shadow: 0 0 0 2px color-mix(in srgb, $color-primary 50%, transparent);
   }
 
   &:active {
@@ -88,76 +88,76 @@
 
 // Варианты цветов
 .primary {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
+  background-color: $color-primary;
+  border-color: $color-primary;
 
   .icon {
     svg {
       path {
-        fill: var(--color-white);
+        fill: $color-white;
       }
     }
   }
 
   &:hover:not(.disabled, .loading) {
-    background-color: color-mix(in srgb, var(--color-primary) 90%, white);
-    border-color: color-mix(in srgb, var(--color-primary) 90%, white);
+    background-color: color-mix(in srgb, $color-primary 90%, white);
+    border-color: color-mix(in srgb, $color-primary 90%, white);
   }
 
   &:active:not(.disabled, .loading) {
-    background-color: color-mix(in srgb, var(--color-primary) 80%, white);
-    border-color: color-mix(in srgb, var(--color-primary) 80%, white);
+    background-color: color-mix(in srgb, $color-primary 80%, white);
+    border-color: color-mix(in srgb, $color-primary 80%, white);
   }
 }
 
 .secondary {
-  background-color: var(--color-secondary);
-  border-color: var(--color-secondary);
+  background-color: $color-secondary;
+  border-color: $color-secondary;
 
   .icon {
     svg {
       path {
-        fill: var(--color-white);
+        fill: $color-white;
       }
     }
   }
 
   &:hover:not(.disabled, .loading) {
-    background-color: color-mix(in srgb, var(--color-secondary) 90%, white);
-    border-color: color-mix(in srgb, var(--color-secondary) 90%, white);
+    background-color: color-mix(in srgb, $color-secondary 90%, white);
+    border-color: color-mix(in srgb, $color-secondary 90%, white);
   }
 
   &:active:not(.disabled, .loading) {
-    background-color: color-mix(in srgb, var(--color-secondary) 80%, white);
-    border-color: color-mix(in srgb, var(--color-secondary) 80%, white);
+    background-color: color-mix(in srgb, $color-secondary 80%, white);
+    border-color: color-mix(in srgb, $color-secondary 80%, white);
   }
 }
 
 .outline {
-  background: var(--color-background);
-  border-color: var(--color-gray-300);
+  background: $color-background;
+  border-color: $color-gray-300;
 
   &:hover:not(.disabled, .loading) {
-    background-color: var(--color-gray-50);
-    border-color: var(--color-gray-400);
+    background-color: $color-gray-50;
+    border-color: $color-gray-400;
 
     .icon {
       svg {
         path {
-          fill: var(--color-black);
+          fill: $color-black;
         }
       }
     }
   }
 
   &:active:not(.disabled, .loading) {
-    background-color: var(--color-gray-100);
-    border-color: var(--color-secondary);
+    background-color: $color-gray-100;
+    border-color: $color-secondary;
 
     .icon {
       svg {
         path {
-          fill: var(--color-black);
+          fill: $color-black;
         }
       }
     }
@@ -165,48 +165,48 @@
 }
 
 .danger {
-  background-color: var(--color-danger);
-  border-color: var(--color-danger);
+  background-color: $color-danger;
+  border-color: $color-danger;
 
   .icon {
     svg {
       path {
-        fill: var(--color-white);
+        fill: $color-white;
       }
     }
   }
 
   &:hover:not(.disabled, .loading) {
-    background-color: color-mix(in srgb, var(--color-danger) 90%, white);
-    border-color: color-mix(in srgb, var(--color-danger) 90%, white);
+    background-color: color-mix(in srgb, $color-danger 90%, white);
+    border-color: color-mix(in srgb, $color-danger 90%, white);
   }
 
   &:active:not(.disabled, .loading) {
-    background-color: color-mix(in srgb, var(--color-danger) 80%, white);
-    border-color: color-mix(in srgb, var(--color-danger) 80%, white);
+    background-color: color-mix(in srgb, $color-danger 80%, white);
+    border-color: color-mix(in srgb, $color-danger 80%, white);
   }
 }
 
 .success {
-  background-color: var(--color-success);
-  border-color: var(--color-success);
+  background-color: $color-success;
+  border-color: $color-success;
 
   .icon {
     svg {
       path {
-        fill: var(--color-white);
+        fill: $color-white;
       }
     }
   }
 
   &:hover:not(.disabled, .loading) {
-    background-color: color-mix(in srgb, var(--color-success) 90%, white);
-    border-color: color-mix(in srgb, var(--color-success) 90%, white);
+    background-color: color-mix(in srgb, $color-success 90%, white);
+    border-color: color-mix(in srgb, $color-success 90%, white);
   }
 
   &:active:not(.disabled, .loading) {
-    background-color: color-mix(in srgb, var(--color-success) 80%, white);
-    border-color: color-mix(in srgb, var(--color-success) 80%, white);
+    background-color: color-mix(in srgb, $color-success 80%, white);
+    border-color: color-mix(in srgb, $color-success 80%, white);
   }
 }
 
@@ -215,11 +215,11 @@
   border-color: transparent;
 
   &:hover:not(.disabled, .loading) {
-    background-color: var(--color-surface);
+    background-color: $color-surface;
   }
 
   &:active:not(.disabled, .loading) {
-    background-color: var(--color-surface);
+    background-color: $color-surface;
   }
 }
 

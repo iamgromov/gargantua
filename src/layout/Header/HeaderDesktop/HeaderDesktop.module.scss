@@ -10,8 +10,8 @@
   align-items: center;
   padding: $spacing-xl;
 
-  background-color: var(--color-background);
-  border-bottom: $border-width-1 solid var(--color-border);
+  background-color: $color-background;
+  border-bottom: $border-width-1 solid $color-border;
 
   @include theme-transition(background-color);
 

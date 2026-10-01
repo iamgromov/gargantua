@@ -42,12 +42,12 @@
   padding: $spacing-xl;
   overflow-y: auto;
 
-  background-color: var(--color-background);
-  border: $border-width-1 solid var(--color-border);
+  background-color: $color-background;
+  border: $border-width-1 solid $color-border;
   border-radius: $border-radius-xl $border-radius-xl 0 0;
   box-shadow: $shadow-2xl;
 
-  color: var(--color-text-primary);
+  color: $color-text-primary;
 
   animation: slide-up $transition-fast;
 

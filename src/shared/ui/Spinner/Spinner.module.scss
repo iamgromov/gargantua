@@ -51,15 +51,15 @@
 
 // Color variants
 .primary {
-  color: var(--color-primary);
+  color: $color-primary;
 }
 
 .secondary {
-  color: var(--color-secondary);
+  color: $color-secondary;
 }
 
 .white {
-  color: var(--color-white);
+  color: $color-white;
 }
 
 // Animations

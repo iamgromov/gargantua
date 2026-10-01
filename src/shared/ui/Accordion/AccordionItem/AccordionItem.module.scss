@@ -4,8 +4,8 @@
 .accordionItem {
   width: 100%;
 
-  background-color: var(--color-background);
-  border: $border-width-1 solid var(--color-border);
+  background-color: $color-background;
+  border: $border-width-1 solid $color-border;
 
   @include smooth-transition(all);
 
@@ -14,7 +14,7 @@
   }
 
   &:hover:not(.disabled) {
-    border-color: var(--color-border-hover);
+    border-color: $color-border-hover;
     box-shadow: $shadow-sm;
   }
 
@@ -91,7 +91,7 @@
   cursor: pointer;
 
   &:focus-visible {
-    box-shadow: 0 0 0 2px rgb(var(--color-primary) / 50%);
+    box-shadow: 0 0 0 2px color-mix(in srgb, $color-primary 50%, transparent);
   }
 
   &:active:not(.disabled) {
@@ -107,13 +107,13 @@
 
   &.expanded {
     .headerContent {
-      color: var(--color-primary);
+      color: $color-primary;
     }
   }
 
   &:not(.disabled):hover {
     .headerContent {
-      color: var(--color-primary);
+      color: $color-primary;
     }
   }
 
@@ -125,7 +125,7 @@
   flex: 1;
 
   font-weight: $font-weight-medium;
-  color: var(--color-text-primary);
+  color: $color-text-primary;
 
   @include smooth-transition(color);
 }
@@ -134,17 +134,17 @@
   flex-shrink: 0;
   margin-left: $spacing-sm;
 
-  color: var(--color-text-secondary);
+  color: $color-text-secondary;
 
   @include smooth-transition(all);
   @include svg-fill;
 
   .button.expanded & {
-    color: var(--color-primary);
+    color: $color-primary;
   }
 
   .button:not(.disabled):hover & {
-    color: var(--color-primary);
+    color: $color-primary;
   }
 }
 
@@ -171,8 +171,8 @@
 }
 
 .contentInner {
-  border-top: $border-width-1 solid var(--color-border);
+  border-top: $border-width-1 solid $color-border;
 
   line-height: 1.6;
-  color: var(--color-text-secondary);
+  color: $color-text-secondary;
 }
