@@ -13,13 +13,11 @@ export const Layout: FC = () => {
   return (
     <div className={ styles.layout }>
       <Header />
-
       <main className={ styles.content }>
         <ErrorBoundary>
           <Outlet />
         </ErrorBoundary>
       </main>
-
       <Footer />
       <ScrollToTop />
     </div>

@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: $spacing-xs;
+  margin: $spacing-sm;
   padding: $spacing-base;
 
   background-color: $color-background;
@@ -44,9 +44,9 @@
     right: $spacing-base;
   }
 
-  @supports (corner-shape: superellipse(2)) {
-    border-radius: calc($border-radius-lg * 2);
-    corner-shape: superellipse(2);
+  @supports (corner-shape: superellipse(1.5)) {
+    border-radius: calc($border-radius-sm * 5);
+    corner-shape: superellipse(1.5);
   }
 }
 
