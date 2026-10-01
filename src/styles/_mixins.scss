@@ -12,6 +12,12 @@
   }
 }
 
+@mixin tablet-and-more {
+  @media (width >= $breakpoint-md) {
+    @content;
+  }
+}
+
 @mixin desktop {
   @media (width >= $breakpoint-lg) {
     @content;

@@ -3,66 +3,60 @@
 
 .footer {
   display: flex;
-  justify-content: space-between;
-  padding: $spacing-xl;
-  padding-bottom: $spacing-5xl;
+  flex-direction: column-reverse;
+  gap: $spacing-2xl;
+  margin: 0 $spacing-sm;
+  padding: $spacing-base $spacing-sm $spacing-5xl $spacing-sm;
 
   border-top: $border-width-1 solid $color-border;
 
-  @include mobile {
-    flex-direction: column-reverse;
-    gap: 16px;
+  @include tablet-and-more {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0;
+    padding: $spacing-xl $spacing-xl $spacing-5xl $spacing-xl;
   }
+}
 
-  .column {
-    display: flex;
-    flex-direction: column;
-    gap: $spacing-sm;
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
 
-    .row {
-      gap: $spacing-sm;
+  &:last-child {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 
-      @include flex-children(row, start, center);
-
-      svg {
-        flex-shrink: 0;
-        width: auto;
-        height: $spacing-2xl;
-
-        &:hover {
-          cursor: pointer;
-
-          transform: translateY(-2px);
-
-          @include smooth-transition;
-        }
-      }
+    @include tablet-and-more {
+      flex-direction: column;
+      align-items: flex-end;
     }
+  }
+}
 
-    &:not(:first-child) {
-      align-items: end;
+.logos {
+  gap: $spacing-sm;
 
-      @include mobile {
-        align-items: start;
-      }
-    }
+  @include flex-children(row, start, center);
 
-    a {
+  svg {
+    flex-shrink: 0;
+    width: auto;
+    height: $spacing-2xl;
+
+    &:hover {
       cursor: pointer;
 
-      .logo {
-        width: auto;
-        height: 12.5px;
+      transform: translateY(-2px);
 
-        svg {
-          width: 128px;
-          height: 12.5px;
-        }
-      }
-
-      &:active {
-        transform: translateY(1px);
-      }
+      @include smooth-transition;
     }
   }
+}
+
+.logo {
+  width: auto;
+  height: 16px;
 }

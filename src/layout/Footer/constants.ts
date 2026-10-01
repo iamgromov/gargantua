@@ -2,14 +2,16 @@ import type { FC } from 'react';
 import dayjs from 'dayjs';
 
 import { ReactLogo, ReduxLogo, JSLogo, TanstackLogo } from '@/assets/logos';
-import type { FooterLink, Links } from '@/shared/types';
+import type { FooterLink } from '@/shared/types';
+
+import type { Links } from './types';
 
 export const CURRENT_YEAR = dayjs().year();
 
 export const LINKS: Links = {
   REPO: 'https://github.com/iamgromov/gargantua',
-  STUB: 'https://www.youtube.com/watch?v=K5zP7eQltDE',
-  TELEGRAM: 'https://t.me/iamgromov'
+  TELEGRAM: 'https://t.me/iamgromov',
+  STUB: 'https://www.youtube.com/watch?v=K5zP7eQltDE'
 };
 
 export const FOOTER_LINKS: FooterLink[] = [
@@ -20,14 +22,6 @@ export const FOOTER_LINKS: FooterLink[] = [
   {
     href: LINKS.TELEGRAM,
     title: `@iamgromov / ${CURRENT_YEAR}`
-  },
-  {
-    href: '',
-    title: ''
-  },
-  {
-    href: LINKS.STUB,
-    title: 'Created with:'
   }
 ];
 
