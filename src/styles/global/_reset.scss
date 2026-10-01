@@ -1,10 +1,10 @@
-@use '../variables' as *;
+@use '../tokens' as *;
 
 html,
 body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  scrollbar-color: var(--color-surface) transparent;
+  scrollbar-color: $color-surface transparent;
   scrollbar-gutter: stable;
 }
 
@@ -56,7 +56,7 @@ summary {
   list-style: none;
 
   &::selection {
-    background-color: var(--color-error);
+    background-color: $color-error;
   }
 }
 
@@ -69,7 +69,7 @@ h2,
 h3,
 h4,
 h5 {
-  color: var(--color-text-primary);
+  color: $color-text-primary;
 }
 
 a {

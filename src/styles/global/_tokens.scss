@@ -1,0 +1,87 @@
+// ----- Светлая тема -----
+:root {
+  // Основные цвета
+  --color-primary: #fe5f1e;
+  --color-secondary: #232323;
+
+  // Семантические цвета
+  --color-success: #28a745;
+  --color-danger: #dc3545;
+
+  // Нейтральные цвета
+  --color-white: #fff;
+  --color-black: #000;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+
+  // Фон, текст, границы
+  --color-background: #fff;
+  --color-surface: #f8f9fa;
+  --color-text-primary: #1b1b23;
+  --color-text-secondary: #52515b;
+  --color-border: #e1dfe7;
+  --color-border-hover: #adb5bd;
+  --color-error: #d32f2f;
+
+  // Формы
+  // Значения — ссылки на палитру: правятся в одном месте.
+  --color-input-filled-background: var(--color-gray-50);
+  --color-input-filled-background-hover: var(--color-gray-100);
+  --color-input-outline-border: var(--color-gray-300);
+  --color-input-outline-border-hover: var(--color-gray-400);
+  --color-input-outline-background-hover: var(--color-gray-50);
+
+  // Скроллбар
+  --color-scrollbar-track: var(--color-gray-100);
+  --color-scrollbar-thumb: var(--color-gray-300);
+  --color-scrollbar-thumb-hover: var(--color-gray-400);
+
+  // Иконки
+  // Значение — готовый url(): внутри data-URI var() не работает,
+  // поэтому цвет стрелки меняется здесь, а не в компонентах.
+  --icon-chevron-down: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+
+  // Анимация
+  --transition-duration: 300ms;
+  --transition-theme: 200ms;
+  --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+
+  // Переключатель темы
+  --rotation: 1;
+}
+
+// ----- Тёмная тема -----
+[data-theme='dark'] {
+  // Фон, текст, границы
+  --color-background: #1b1b23;
+  --color-surface: #2d2d35;
+  --color-text-primary: #fff;
+  --color-text-secondary: #b4b4be;
+  --color-border: #3d3d45;
+  --color-border-hover: #5d5d65;
+  --color-error: #ef4444;
+
+  // Формы
+  --color-input-filled-background: var(--color-gray-800);
+  --color-input-filled-background-hover: var(--color-gray-700);
+  --color-input-outline-border: var(--color-gray-600);
+  --color-input-outline-border-hover: var(--color-gray-500);
+  --color-input-outline-background-hover: var(--color-gray-800);
+
+  // Скроллбар
+  --color-scrollbar-track: var(--color-gray-800);
+  --color-scrollbar-thumb: var(--color-gray-600);
+  --color-scrollbar-thumb-hover: var(--color-gray-500);
+
+  // Иконки
+  --icon-chevron-down: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23b4b4be' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+
+  // Переключатель темы
+  --rotation: -1;
+}

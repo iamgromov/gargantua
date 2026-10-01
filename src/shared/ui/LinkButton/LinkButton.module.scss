@@ -2,11 +2,11 @@
 
 .link {
   text-decoration: none;
-  color: var(--color-text-primary);
+  color: $color-text-primary;
 
   &:hover {
     text-decoration: underline;
 
-    text-decoration-color: var(--color-primary);
+    text-decoration-color: $color-primary;
   }
 }

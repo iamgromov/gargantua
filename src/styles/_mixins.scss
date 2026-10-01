@@ -1,4 +1,4 @@
-@use './variables' as *;
+@use './tokens' as *;
 
 @mixin mobile {
   @media (width < $breakpoint-md) {
@@ -84,7 +84,7 @@
     margin: 0 auto;
 
     path {
-      fill: var(--color-text-primary);
+      fill: $color-text-primary;
     }
   }
 }

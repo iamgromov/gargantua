@@ -7,7 +7,7 @@
   padding: $spacing-xl;
   padding-bottom: $spacing-5xl;
 
-  border-top: $border-width-1 solid var(--color-border);
+  border-top: $border-width-1 solid $color-border;
 
   @include mobile {
     flex-direction: column-reverse;

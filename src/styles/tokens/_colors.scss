@@ -1,0 +1,40 @@
+// Основные цвета
+$color-primary: var(--color-primary);
+$color-secondary: var(--color-secondary);
+
+// Семантические цвета
+$color-success: var(--color-success);
+$color-danger: var(--color-danger);
+
+// Нейтральные цвета
+$color-white: var(--color-white);
+$color-black: var(--color-black);
+$color-gray-50: var(--color-gray-50);
+$color-gray-100: var(--color-gray-100);
+$color-gray-300: var(--color-gray-300);
+$color-gray-400: var(--color-gray-400);
+$color-gray-500: var(--color-gray-500);
+$color-gray-600: var(--color-gray-600);
+$color-gray-700: var(--color-gray-700);
+$color-gray-800: var(--color-gray-800);
+
+// Фон, текст, границы
+$color-background: var(--color-background);
+$color-surface: var(--color-surface);
+$color-text-primary: var(--color-text-primary);
+$color-text-secondary: var(--color-text-secondary);
+$color-border: var(--color-border);
+$color-border-hover: var(--color-border-hover);
+$color-error: var(--color-error);
+
+// Формы
+$color-input-filled-background: var(--color-input-filled-background);
+$color-input-filled-background-hover: var(--color-input-filled-background-hover);
+$color-input-outline-border: var(--color-input-outline-border);
+$color-input-outline-border-hover: var(--color-input-outline-border-hover);
+$color-input-outline-background-hover: var(--color-input-outline-background-hover);
+
+// Скроллбар
+$color-scrollbar-track: var(--color-scrollbar-track);
+$color-scrollbar-thumb: var(--color-scrollbar-thumb);
+$color-scrollbar-thumb-hover: var(--color-scrollbar-thumb-hover);

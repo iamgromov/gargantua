@@ -12,8 +12,8 @@
   gap: $spacing-xxs;
   padding: $spacing-xs;
 
-  background-color: var(--color-surface);
-  border: $border-width-1 solid var(--color-border);
+  background-color: $color-surface;
+  border: $border-width-1 solid $color-border;
   border-radius: $border-radius-lg;
 }
 
@@ -29,7 +29,7 @@
   font-size: $font-size-sm;
   font-weight: $font-weight-medium;
   text-align: left;
-  color: var(--color-text-secondary);
+  color: $color-text-secondary;
 
   transition:
     background-color $transition-base,
@@ -37,21 +37,21 @@
   cursor: pointer;
 
   &:hover {
-    background-color: var(--color-gray-100);
+    background-color: $color-gray-100;
 
-    color: var(--color-text-primary);
+    color: $color-text-primary;
   }
 
   &.active {
-    background-color: var(--color-primary);
+    background-color: $color-primary;
 
-    color: var(--color-white);
+    color: $color-white;
   }
 
   &.active:hover {
-    background-color: color-mix(in srgb, var(--color-primary) 90%, white);
+    background-color: color-mix(in srgb, $color-primary 90%, white);
 
-    color: var(--color-white);
+    color: $color-white;
   }
 }
 
