@@ -5,7 +5,7 @@ import type { IconProps } from '@/shared/types';
 
 import styles from './ThemeSwitcher.module.scss';
 
-/** Switcher for changing themes */
+/** Свитчер темы */
 export const ThemeSwitcher: FC<IconProps> = memo(({ ...props }) => {
   const toggleTheme = useTheme();
 

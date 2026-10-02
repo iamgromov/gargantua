@@ -2,12 +2,12 @@ import { memo, useCallback, useState, type FC, type ReactElement } from 'react';
 
 import { Menu } from '@/assets/icons';
 import { ROUTES } from '@/constants';
-import { BottomSheet, IconButton, Logo } from '@/shared/ui';
+import { BottomSheet, IconButton, Logo, ThemeSwitcher } from '@/shared/ui';
 import { Button, Intent, Size } from '@/shared/ui/Button';
 
-import styles from './HeaderMobile.module.scss';
+import styles from './HeaderTablet.module.scss';
 
-export const HeaderMobile: FC = memo((): ReactElement => {
+export const HeaderTablet: FC = memo((): ReactElement => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const openMenu = useCallback(() => setIsMenuOpen(true), []);
@@ -16,12 +16,15 @@ export const HeaderMobile: FC = memo((): ReactElement => {
   return (
     <div className={ styles.header }>
       <Logo className={ styles.logo } />
-      <IconButton
-        variant='ghost'
-        icon={ <Menu /> }
-        className={ styles.menu }
-        onClick={ openMenu }
-      />
+      <div className={ styles.controls }>
+        <ThemeSwitcher />
+        <IconButton
+          variant='ghost'
+          icon={ <Menu /> }
+          className={ styles.menu }
+          onClick={ openMenu }
+        />
+      </div>
       <BottomSheet open={ isMenuOpen } onClose={ closeMenu }>
         <nav className={ styles.nav }>
           <Button

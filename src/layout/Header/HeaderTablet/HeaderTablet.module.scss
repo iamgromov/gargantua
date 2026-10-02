@@ -1,0 +1,52 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-xl;
+
+  background-color: $color-background;
+  border-bottom: $border-width-1 solid $color-border;
+
+  @include theme-transition(background-color);
+
+  a {
+    cursor: pointer;
+
+    .logo {
+      width: auto;
+      height: 25px;
+
+      svg {
+        width: 256px;
+        height: 25px;
+      }
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+
+    &:first-child {
+      height: 25px;
+    }
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: $spacing-base;
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: $spacing-base;
+}

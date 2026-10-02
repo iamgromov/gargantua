@@ -12,11 +12,11 @@ export const HeaderDesktop: FC = memo((): ReactElement => {
       <Logo className={ styles.logo } />
 
       <div className={ styles.controls }>
-        <Button to={ ROUTES.ABOUT } intent={ Intent.Ghost } size={ Size.Small }>
-          About
-        </Button>
         <Button to={ ROUTES.COMPONENTS } intent={ Intent.Ghost } size={ Size.Small }>
           Components
+        </Button>
+        <Button to={ ROUTES.ABOUT } intent={ Intent.Ghost } size={ Size.Small }>
+          About
         </Button>
         <Button to={ ROUTES.CONTACTS } intent={ Intent.Ghost } size={ Size.Small }>
           Contacts
