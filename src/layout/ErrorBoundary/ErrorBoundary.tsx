@@ -1,7 +1,7 @@
 import { Component, type ErrorInfo, type ReactNode } from 'react';
 
-import { Typography, TypographyVariant, TypographyWeight } from '@/shared/ui';
-import { Button, Intent } from '@/shared/ui/Button';
+import { ROUTES } from '@/constants';
+import { EmptyState, Intent } from '@/shared/ui';
 
 import type { ErrorBoundaryProps, ErrorBoundaryState } from './types';
 
@@ -45,24 +45,15 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
     }
 
     return (
-      <div className={ styles.fallback }>
-        <Typography variant={ TypographyVariant.H2 }>Something went wrong</Typography>
-
-        <Typography
-          variant={ TypographyVariant.H6 }
-          weight={ TypographyWeight.Regular }
-          className={ styles.message }
-        >
-          { error.message }
-        </Typography>
-
-        <Button
-          intent={ Intent.Primary }
-          onClick={ this.reset }
-        >
-          Try again
-        </Button>
-      </div>
+      <EmptyState
+        className={ styles.fallback }
+        title='Что-то пошло не так'
+        subtitle={ error.message }
+        buttons={ [
+          { intent: Intent.Primary, key: 'refresh', children: 'Обновить', onClick: () => location.reload() },
+          { intent: Intent.Secondary, key:'main', children: 'На главную', to: ROUTES.MAIN }
+        ] }
+      />
     );
   }
 }

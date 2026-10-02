@@ -1,0 +1,57 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-2xl;
+  width: 100%;
+  padding: 0 $spacing-2xl;
+
+  text-align: center;
+
+  @include mobile {
+    padding: 0;
+  }
+}
+
+.image {
+  width: 180px;
+  height: 180px;
+
+  object-fit: contain;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-xs;
+  width: 100%;
+  max-width: 600px;
+
+  overflow-wrap: break-word;
+}
+
+.subtitle {
+  margin: 0;
+
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-sm;
+  width: 100%;
+
+  @include mobile {
+    flex-flow: column-reverse nowrap;
+    align-items: stretch;
+  }
+}

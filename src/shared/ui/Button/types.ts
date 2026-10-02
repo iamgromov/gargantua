@@ -23,6 +23,8 @@ export enum Width {
 }
 
 export interface ButtonProps {
+  /** Идентификатор */
+  key?: string;
   /** Вариант оформления кнопки. */
   intent?: Intent;
   /** Размер кнопки. */
