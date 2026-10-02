@@ -2,42 +2,28 @@ import { type FC, useState, useCallback } from 'react';
 import cn from 'classnames';
 
 import { AccordionItem } from './AccordionItem/AccordionItem';
-
-import type { AccordionProps } from './types';
+import { AccordionBorderRadius, AccordionSize, type AccordionProps } from './types';
 
 import styles from './Accordion.module.scss';
 
-/** Accordion component
- * @param items - array of accordion items
- * @param expandedIds - currently expanded item IDs (controlled)
- * @param allowMultiple - whether multiple items can be expanded simultaneously
- * @param className - custom class name
- * @param style - custom styles
- * @param onExpand - called when an item is expanded
- * @param onCollapse - called when an item is collapsed
- * @param collapsedIcon - icon to display when item is collapsed
- * @param expandedIcon - icon to display when item is expanded
- * @param size - size of the accordion items
- * @param borderRadius - border radius variant
- * @returns {JSX.Element}
- */
+/** Аккордеон со сворачиваемыми пунктами */
 export const Accordion: FC<AccordionProps> = ({
   items,
   expandedIds: controlledExpandedIds,
   allowMultiple = false,
-  className,
-  style,
+  size = AccordionSize.Medium,
+  borderRadius = AccordionBorderRadius.Medium,
   onExpand,
   onCollapse,
   collapsedIcon,
   expandedIcon,
-  size = 'medium',
-  borderRadius = 'medium'
+  className,
+  style
 }) => {
-  // Internal state for uncontrolled mode
+  // Внутреннее состояние для неконтролируемого режима
   const [internalExpandedIds, setInternalExpandedIds] = useState<string[]>([]);
 
-  // Use controlled or internal state
+  // Контролируемое или внутреннее состояние раскрытых пунктов
   const expandedIds = controlledExpandedIds ?? internalExpandedIds;
 
   const handleToggle = useCallback(
@@ -47,11 +33,11 @@ export const Accordion: FC<AccordionProps> = ({
       let newExpandedIds: string[];
 
       if (isCurrentlyExpanded) {
-        // Collapse item
+        // Сворачивание пункта
         newExpandedIds = expandedIds.filter((expandedId) => expandedId !== id);
         onCollapse?.(id);
       } else {
-        // Expand item
+        // Раскрытие пункта
         if (allowMultiple) {
           newExpandedIds = [...expandedIds, id];
         } else {
@@ -60,7 +46,7 @@ export const Accordion: FC<AccordionProps> = ({
         onExpand?.(id);
       }
 
-      // Update internal state if not controlled
+      // Обновление внутреннего состояния вне контролируемого режима
       if (controlledExpandedIds === undefined) {
         setInternalExpandedIds(newExpandedIds);
       }

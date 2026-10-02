@@ -1,6 +1,6 @@
 import { type FC, useMemo } from 'react';
 
-import { Accordion, type AccordionItem } from '@/shared/ui/Accordion';
+import { Accordion, AccordionSize, type AccordionItem } from '@/shared/ui/Accordion';
 import { Button, Intent, Size } from '@/shared/ui/Button';
 
 export const AccordionDemo: FC = () => {
@@ -21,5 +21,5 @@ export const AccordionDemo: FC = () => {
     []
   );
 
-  return <Accordion size='large' items={ items } />;
+  return <Accordion size={ AccordionSize.Large } items={ items } />;
 };

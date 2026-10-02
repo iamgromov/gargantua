@@ -3,40 +3,25 @@ import cn from 'classnames';
 
 import ChevronDown from '@/assets/icons/chevron-down.svg?react';
 
-import type { AccordionItemProps } from '../types';
+import { AccordionBorderRadius, AccordionSize, type AccordionItemProps } from '../types';
 
 import styles from './AccordionItem.module.scss';
 
-/** Chevron icon component */
+/** Шеврон, поворачивающийся при раскрытии пункта */
 const ChevronIcon: FC<{ isExpanded: boolean }> = ({ isExpanded }) => (
-  <ChevronDown
-    style={ {
-      transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
-      transition: 'transform 200ms ease-in-out'
-    } }
-  />
+  <ChevronDown className={ cn(styles.chevron, { [styles.chevronExpanded]: isExpanded }) } />
 );
 
-/** Accordion item component
- * @param item - accordion item data
- * @param isExpanded - whether the item is currently expanded
- * @param onToggle - toggle function
- * @param className - custom class name
- * @param collapsedIcon - icon to display when item is collapsed
- * @param expandedIcon - icon to display when item is expanded
- * @param size - size of the accordion item
- * @param borderRadius - border radius variant
- * @returns {JSX.Element}
- */
+/** Пункт аккордеона */
 export const AccordionItem: FC<AccordionItemProps> = ({
   item,
   isExpanded,
   onToggle,
-  className,
+  size = AccordionSize.Medium,
+  borderRadius = AccordionBorderRadius.Medium,
   collapsedIcon,
   expandedIcon,
-  size = 'medium',
-  borderRadius = 'medium'
+  className
 }) => {
   const handleToggle = useCallback(() => {
     if (!item.disabled) {
@@ -44,20 +29,17 @@ export const AccordionItem: FC<AccordionItemProps> = ({
     }
   }, [item.disabled, onToggle]);
 
-  const itemClass = styles.accordionItem;
-  const headerClass = styles.header;
-  const contentClass = styles.content;
-  const buttonClass = styles.button;
-
   return (
-    <div className={ cn(itemClass, styles[size], styles[borderRadius], className) }>
-      <div className={ headerClass }>
+    <div className={ cn(styles.accordionItem, styles[size], styles[borderRadius], className) }>
+      <div className={ styles.header }>
         <button
           type='button'
           className={ cn(
-            buttonClass,
-            item.disabled ? styles.disabled : '',
-            isExpanded ? styles.expanded : ''
+            styles.button,
+            {
+              [styles.disabled]: item.disabled,
+              [styles.expanded]: isExpanded
+            }
           ) }
           onClick={ handleToggle }
           disabled={ item.disabled }
@@ -74,7 +56,10 @@ export const AccordionItem: FC<AccordionItemProps> = ({
         </button>
       </div>
       <div
-        className={ cn(contentClass, isExpanded ? styles.expanded : styles.collapsed) }
+        className={ cn(
+          styles.content,
+          { [styles.expanded]: isExpanded, [styles.collapsed]: !isExpanded }
+        ) }
         id={ `accordion-content-${item.id}` }
         role='region'
         aria-labelledby={ `accordion-header-${item.id}` }

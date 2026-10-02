@@ -1,6 +1,6 @@
 import { type FC, type ReactNode } from 'react';
 
-import { Typography } from '@/shared/ui';
+import { Typography, TypographyVariant } from '@/shared/ui';
 
 import styles from './Section.module.scss';
 
@@ -11,7 +11,7 @@ interface SectionProps {
 
 export const Section: FC<SectionProps> = ({ title, children }) => (
   <section className={ styles.section }>
-    <Typography variant='h1'>{ title }</Typography>
+    <Typography variant={ TypographyVariant.H1 }>{ title }</Typography>
 
     { children }
   </section>

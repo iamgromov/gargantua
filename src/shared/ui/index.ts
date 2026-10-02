@@ -1,16 +1,19 @@
+export * from './Accordion';
 export * from './BottomSheet';
+export * from './Button';
 export * from './Drawer';
-export * from './IconButton/IconButton';
+export * from './IconButton';
 export * from './LayoutWithSidebar';
 export * from './Link';
-export * from './Logo/Logo';
-export * from './ScrollToTop/ScrollToTop';
-export * from './Select/Select';
-export * from './Spinner/Spinner';
-export * from './ThemeSwitcher/ThemeSwitcher';
-export * from './Typography/Typography';
+export * from './Logo';
+export * from './ScrollToTop';
+export * from './Select';
+export * from './Spinner';
+export * from './ThemeSwitcher';
+export * from './Typography';
 
 // Примитивы
+// Overlay — единая подложка для всех оверлеев (модалки, шторки, drawer и т.д.)
 export * from './primitives/Overlay';
 
 // TODO:

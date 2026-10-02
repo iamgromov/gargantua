@@ -1,26 +1,11 @@
-import { forwardRef } from 'react';
+import { forwardRef, useId } from 'react';
 import cn from 'classnames';
 
-import type { SelectProps } from '@/shared/types';
+import { SelectSize, SelectVariant, SelectWidth, type SelectProps } from './types';
 
 import styles from './Select.module.scss';
 
-/** Компонент выпадающего списка
- * @param options - массив вариантов выбора
- * @param value - выбранное значение
- * @param placeholder - текст подсказки
- * @param label - подпись списка
- * @param disabled - состояние неактивности
- * @param loading - состояние загрузки
- * @param error - сообщение об ошибке
- * @param variant - вариант оформления
- * @param size - размер списка
- * @param width - ширина списка
- * @param className - дополнительный класс
- * @param style - пользовательские стили
- * @param onChange - обработчик изменения выбора
- * @returns {JSX.Element}
- */
+/** Выпадающий список с подписью, состояниями загрузки и ошибки */
 export const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) => {
   const {
     options,
@@ -30,14 +15,16 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) =>
     disabled = false,
     loading = false,
     error,
-    variant = 'default',
-    size = 'large',
-    width = 'auto',
+    variant = SelectVariant.Default,
+    size = SelectSize.Large,
+    width = SelectWidth.Auto,
     className,
     style,
     onChange,
     ...restProps
   } = props;
+
+  const selectId = useId();
 
   const selectClass = cn(
     styles.select,
@@ -48,8 +35,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) =>
       [styles.disabled]: disabled,
       [styles.loading]: loading,
       [styles.error]: error
-    },
-    className
+    }
   );
 
   const wrapperClass = cn(
@@ -64,10 +50,15 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) =>
 
   return (
     <div className={ wrapperClass } style={ style }>
-      { label && <label className={ styles.label }>{ label }</label> }
+      { label && (
+        <label className={ styles.label } htmlFor={ selectId }>
+          { label }
+        </label>
+      ) }
       <div className={ styles.selectWrapper }>
         <select
           ref={ ref }
+          id={ selectId }
           className={ selectClass }
           value={ value }
           disabled={ disabled || loading }

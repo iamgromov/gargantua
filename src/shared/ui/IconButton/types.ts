@@ -1,36 +1,29 @@
 import type { CSSProperties, MouseEvent, ReactNode } from 'react';
 
-export enum Intent {
+export enum IconButtonVariant {
   Primary = 'primary',
   Secondary = 'secondary',
   Outline = 'outline',
   Danger = 'danger',
   Success = 'success',
-  Ghost = 'ghost',
-  Link = 'link'
+  Ghost = 'ghost'
 }
 
-export enum Size {
+export enum IconButtonSize {
   Small = 'small',
   Medium = 'medium',
-  Large = 'large',
-  ExtraLarge = 'extra-large'
+  Large = 'large'
 }
 
-export enum Width {
-  Auto = 'auto',
-  Full = 'full'
-}
-
-export interface ButtonProps {
+export interface IconButtonProps {
+  /** Иконка кнопки. */
+  icon: ReactNode;
   /** Вариант оформления кнопки. */
-  intent?: Intent;
+  variant?: IconButtonVariant;
   /** Размер кнопки. */
-  size?: Size;
-  /** Ширина кнопки. */
-  width?: Width;
-  /** Содержимое кнопки. */
-  children?: ReactNode;
+  size?: IconButtonSize;
+  /** Обработчик клика. */
+  onClick?: (_event: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
   /** Состояние загрузки. */
   loading?: boolean;
   /** Состояние неактивности. */
@@ -43,6 +36,8 @@ export interface ButtonProps {
   to?: string;
   /** Внешний URL, открывается в новой вкладке. */
   href?: string;
-  /** Обработчик клика. */
-  onClick?: (_event: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
+  /** Всплывающая подсказка. */
+  title?: string;
+  /** Текст для скринридеров. */
+  'aria-label'?: string;
 }

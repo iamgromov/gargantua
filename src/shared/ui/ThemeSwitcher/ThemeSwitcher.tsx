@@ -1,12 +1,13 @@
 import { memo, type FC } from 'react';
 
 import { useTheme } from '@/hooks';
-import type { IconProps } from '@/shared/types';
+
+import { type ThemeSwitcherProps } from './types';
 
 import styles from './ThemeSwitcher.module.scss';
 
-/** Свитчер темы */
-export const ThemeSwitcher: FC<IconProps> = memo(({ ...props }) => {
+/** Переключатель светлой и тёмной темы */
+export const ThemeSwitcher: FC<ThemeSwitcherProps> = memo(({ ...props }) => {
   const toggleTheme = useTheme();
 
   return (

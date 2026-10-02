@@ -2,7 +2,7 @@ import { memo, useCallback, useState, type FC, type ReactElement } from 'react';
 
 import { Menu } from '@/assets/icons';
 import { ROUTES } from '@/constants';
-import { Drawer, IconButton, Logo, ThemeSwitcher } from '@/shared/ui';
+import { Drawer, IconButton, IconButtonVariant, Logo, ThemeSwitcher } from '@/shared/ui';
 import { Button, Intent, Size } from '@/shared/ui/Button';
 
 import styles from './HeaderTablet.module.scss';
@@ -19,7 +19,7 @@ export const HeaderTablet: FC = memo((): ReactElement => {
       <div className={ styles.controls }>
         <ThemeSwitcher />
         <IconButton
-          variant='ghost'
+          variant={ IconButtonVariant.Ghost }
           icon={ <Menu /> }
           className={ styles.menu }
           onClick={ openMenu }

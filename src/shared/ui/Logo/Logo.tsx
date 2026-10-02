@@ -2,17 +2,14 @@ import { memo, type FC } from 'react';
 import { Link } from 'react-router-dom';
 
 import { ROUTES } from '@/constants';
-import type { IconProps } from '@/shared/types';
 import { scrollToTop } from '@/utils';
+
+import { type LogoProps } from './types';
 
 import styles from './Logo.module.scss';
 
-/**
- * Логотип
- *
- * Сделан конвертированием текста в SVG с использованием шрифта Climate Crisis
- * */
-export const Logo: FC<IconProps> = memo(({ ...props }) => {
+/** Логотип, ведущий на главную страницу */
+export const Logo: FC<LogoProps> = memo(({ ...props }) => {
   return (
     <Link to={ ROUTES.MAIN } className={ styles.icon }>
       <svg

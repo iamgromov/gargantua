@@ -1,6 +1,9 @@
 import type { CSSProperties, ReactNode } from 'react';
 
-export type DrawerSide = 'left' | 'right';
+export enum DrawerSide {
+  Left = 'left',
+  Right = 'right'
+}
 
 export interface DrawerProps {
   /** Управляет видимостью панели. */

@@ -1,8 +1,8 @@
 import { useCallback, useMemo, type FC } from 'react';
 
 import { useGetPosts } from '@/api/queries/post';
-import { Spinner, Typography } from '@/shared/ui';
-import { Accordion, type AccordionItem } from '@/shared/ui/Accordion';
+import { Spinner, SpinnerSize, Typography, TypographyVariant } from '@/shared/ui';
+import { Accordion, AccordionSize, type AccordionItem } from '@/shared/ui/Accordion';
 import { Button, Intent, Size } from '@/shared/ui/Button';
 
 import styles from '../../Components.module.scss';
@@ -17,7 +17,7 @@ export const Posts: FC = () => {
   const items = useMemo<AccordionItem[]>(() => {
     if (isPending) {
       return [
-        { id: 'posts-loading', header: 'Загрузка постов…', content: <Spinner size='medium' /> }
+        { id: 'posts-loading', header: 'Загрузка постов…', content: <Spinner size={ SpinnerSize.Medium } /> }
       ];
     }
 
@@ -28,7 +28,7 @@ export const Posts: FC = () => {
           header: 'Не удалось загрузить данные',
           content: (
             <div className={ styles.column }>
-              <Typography variant='h4'>Попробуйте повторить запрос</Typography>
+              <Typography variant={ TypographyVariant.H4 }>Попробуйте повторить запрос</Typography>
               <Button
                 intent={ Intent.Danger }
                 size={ Size.Medium }
@@ -54,5 +54,5 @@ export const Posts: FC = () => {
     }));
   }, [data, isError, isPending, isFetching, handleRefetch]);
 
-  return <Accordion size='large' items={ items } />;
+  return <Accordion size={ AccordionSize.Large } items={ items } />;
 };

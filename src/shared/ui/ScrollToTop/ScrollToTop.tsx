@@ -2,12 +2,15 @@ import { useEffect, useState, type FC } from 'react';
 import cn from 'classnames';
 
 import { ArrowUp } from '@/assets/icons';
-import { IconButton } from '@/shared/ui';
+import { IconButton, IconButtonSize } from '@/shared/ui/IconButton';
 import { scrollToTop } from '@/utils';
+
+import { type ScrollToTopProps } from './types';
 
 import styles from './ScrollToTop.module.scss';
 
-export const ScrollToTop: FC = () => {
+/** Кнопка плавного возврата наверх страницы */
+export const ScrollToTop: FC<ScrollToTopProps> = ({ className }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -31,11 +34,11 @@ export const ScrollToTop: FC = () => {
   }
 
   return (
-    <div className={ cn(styles.scroll, styles.visible) }>
+    <div className={ cn(styles.scroll, styles.visible, className) }>
       <IconButton
         icon={ <ArrowUp /> }
         onClick={ scrollToTop }
-        size='large'
+        size={ IconButtonSize.Large }
         className={ styles.button }
       />
     </div>

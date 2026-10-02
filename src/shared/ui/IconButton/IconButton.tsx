@@ -2,30 +2,16 @@ import { type Ref, forwardRef } from 'react';
 import { Link } from 'react-router-dom';
 import cn from 'classnames';
 
-import type { IconButtonProps } from '@/shared/types';
+import { IconButtonSize, IconButtonVariant, type IconButtonProps } from './types';
 
 import styles from './IconButton.module.scss';
 
-/** Компонент кнопки-иконки
- * @param variant - вариант оформления кнопки
- * @param size - размер кнопки
- * @param icon - иконка кнопки
- * @param onClick - обработчик клика
- * @param loading - состояние загрузки
- * @param disabled - состояние неактивности
- * @param className - дополнительный класс
- * @param style - пользовательские стили
- * @param to - путь внутреннего маршрута
- * @param href - внешний URL
- * @param title - атрибут title кнопки
- * @param aria-label - aria-label кнопки для доступности
- * @returns {JSX.Element}
- */
+/** Круглая кнопка с иконкой, поддерживающая ссылки и состояния */
 export const IconButton = forwardRef<HTMLButtonElement | HTMLAnchorElement, IconButtonProps>(
   (props, ref) => {
     const {
-      variant = 'ghost',
-      size = 'medium',
+      variant = IconButtonVariant.Ghost,
+      size = IconButtonSize.Medium,
       icon,
       onClick,
       loading = false,
@@ -59,10 +45,12 @@ export const IconButton = forwardRef<HTMLButtonElement | HTMLAnchorElement, Icon
       </>
     );
 
+    const isInactive = disabled || loading;
+
     const baseProps = {
       className: buttonClass,
       style,
-      disabled: props.disabled || props.loading,
+      disabled: isInactive,
       title,
       'aria-label': ariaLabel
     };
@@ -73,7 +61,7 @@ export const IconButton = forwardRef<HTMLButtonElement | HTMLAnchorElement, Icon
         <Link
           to={ to }
           ref={ ref as Ref<HTMLAnchorElement> }
-          onClick={ disabled || loading ? undefined : onClick }
+          onClick={ isInactive ? undefined : onClick }
           { ...baseProps }
           { ...restProps }
         >
@@ -88,7 +76,7 @@ export const IconButton = forwardRef<HTMLButtonElement | HTMLAnchorElement, Icon
         <a
           href={ href }
           ref={ ref as Ref<HTMLAnchorElement> }
-          onClick={ disabled || loading ? undefined : onClick }
+          onClick={ isInactive ? undefined : onClick }
           rel='noopener noreferrer'
           target='_blank'
           { ...baseProps }
@@ -104,7 +92,7 @@ export const IconButton = forwardRef<HTMLButtonElement | HTMLAnchorElement, Icon
       <button
         type='button'
         ref={ ref as Ref<HTMLButtonElement> }
-        onClick={ disabled || loading ? undefined : onClick }
+        onClick={ isInactive ? undefined : onClick }
         { ...baseProps }
         { ...restProps }
       >

@@ -1,6 +1,6 @@
 import { Component, type ErrorInfo, type ReactNode } from 'react';
 
-import { Typography } from '@/shared/ui';
+import { Typography, TypographyVariant, TypographyWeight } from '@/shared/ui';
 import { Button, Intent } from '@/shared/ui/Button';
 
 import type { ErrorBoundaryProps, ErrorBoundaryState } from './types';
@@ -46,11 +46,11 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
 
     return (
       <div className={ styles.fallback }>
-        <Typography variant='h2'>Something went wrong</Typography>
+        <Typography variant={ TypographyVariant.H2 }>Something went wrong</Typography>
 
         <Typography
-          variant='h6'
-          weight='regular'
+          variant={ TypographyVariant.H6 }
+          weight={ TypographyWeight.Regular }
           className={ styles.message }
         >
           { error.message }

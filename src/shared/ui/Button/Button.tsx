@@ -6,20 +6,7 @@ import { Intent, Size, Width, type ButtonProps } from './types';
 
 import styles from './Button.module.scss';
 
-/** Компонент кнопки
- * @param intent - вариант оформления кнопки
- * @param size - размер кнопки
- * @param width - ширина кнопки
- * @param children - содержимое кнопки
- * @param onClick - обработчик клика
- * @param loading - состояние загрузки
- * @param disabled - состояние неактивности
- * @param className - дополнительный класс
- * @param style - пользовательские стили
- * @param to - путь внутреннего маршрута
- * @param href - внешний URL
- * @returns {JSX.Element}
- */
+/** Кнопка с вариантами оформления, размерами и поддержкой ссылок */
 export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
   (props, ref) => {
     const {
@@ -56,10 +43,12 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
       </>
     );
 
+    const isInactive = disabled || loading;
+
     const baseProps = {
       className: buttonClass,
       style,
-      disabled: props.disabled || props.loading
+      disabled: isInactive
     };
 
     /** Внутренняя ссылка (React Router) */
@@ -68,7 +57,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
         <Link
           to={ to }
           ref={ ref as Ref<HTMLAnchorElement> }
-          onClick={ disabled || loading ? undefined : onClick }
+          onClick={ isInactive ? undefined : onClick }
           { ...baseProps }
           { ...restProps }
         >
@@ -83,7 +72,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
         <a
           href={ href }
           ref={ ref as Ref<HTMLAnchorElement> }
-          onClick={ disabled || loading ? undefined : onClick }
+          onClick={ isInactive ? undefined : onClick }
           rel='noopener noreferrer'
           target='_blank'
           { ...baseProps }
@@ -99,7 +88,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
       <button
         type='button'
         ref={ ref as Ref<HTMLButtonElement> }
-        onClick={ disabled || loading ? undefined : onClick }
+        onClick={ isInactive ? undefined : onClick }
         { ...baseProps }
         { ...restProps }
       >
