@@ -152,6 +152,10 @@
   @include smooth-transition(transform);
 }
 
+.chevronExpanded {
+  transform: rotate(180deg);
+}
+
 .content {
   overflow: hidden;
 

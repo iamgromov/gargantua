@@ -1,7 +1,5 @@
 import type { CSSProperties, ReactNode } from 'react';
 
-export type BottomSheetBackdrop = 'dim' | 'blur';
-
 export interface BottomSheetProps {
   /** Управляет видимостью компонента. */
   open: boolean;
@@ -9,8 +7,6 @@ export interface BottomSheetProps {
   onClose: () => void;
   /** Произвольный контент внутри шторки. */
   children?: ReactNode;
-  /** Стиль подложки: затемнение или блюр. */
-  backdrop?: BottomSheetBackdrop;
   /** Закрывать ли при клике по подложке. */
   closeOnBackdrop?: boolean;
   /** Закрывать ли по нажатию Escape. */

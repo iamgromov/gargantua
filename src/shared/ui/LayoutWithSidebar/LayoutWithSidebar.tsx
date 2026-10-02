@@ -5,15 +5,17 @@ import { useBreakpoint } from '@/hooks';
 
 import { Content } from './Content';
 import { Sidebar } from './Sidebar';
-import { SidebarMobilePosition, SidebarPosition, SidebarSize, type LayoutWithSidebarProps, type SidebarProps } from './types';
+import {
+  SidebarMobilePosition,
+  SidebarPosition,
+  SidebarSize,
+  type LayoutWithSidebarProps,
+  type SidebarProps
+} from './types';
 
 import styles from './LayoutWithSidebar.module.scss';
 
-/** LayoutWithSidebar component — двухколоночная раскладка с сайдбаром
- * @param children - компоненты Content и Sidebar в любом порядке
- * @param className - дополнительный класс корневого элемента
- * @returns {JSX.Element | null}
- */
+/** Двухколоночная раскладка с сайдбаром */
 export const LayoutWithSidebar: FC<LayoutWithSidebarProps> = ({ children, className }) => {
   const { isDesktop } = useBreakpoint();
 

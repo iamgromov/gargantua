@@ -7,13 +7,7 @@ import type { SidebarProps } from './types';
 
 import styles from './LayoutWithSidebar.module.scss';
 
-/** Sidebar component — контейнер сайдбара раскладки
- * @param children - содержимое сайдбара
- * @param sticky - прилипание сайдбара при прокрутке (только десктоп)
- * @param topOffset - отступ прилипания сайдбара сверху, в пикселях
- * @param className - дополнительный класс контейнера
- * @returns {JSX.Element}
- */
+/** Контейнер сайдбара раскладки */
 export const Sidebar: FC<SidebarProps> = ({ children, sticky = false, topOffset = 0, className }) => {
   const { isDesktop } = useBreakpoint();
   const isSticky = sticky && isDesktop;

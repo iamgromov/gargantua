@@ -4,26 +4,17 @@ import cn from 'classnames';
 
 import { ZIndex } from '@/utils/zIndex';
 
+import { Overlay } from '../primitives/Overlay';
+
 import { type BottomSheetProps } from './types';
 
 import styles from './BottomSheet.module.scss';
 
-/** BottomSheet component
- * @param open - управляет видимостью шторки
- * @param onClose - вызывается при закрытии (клик по подложке, Escape)
- * @param children - контент шторки
- * @param backdrop - стиль подложки: затемнение (`dim`) или блюр (`blur`)
- * @param closeOnBackdrop - закрывать ли при клике по подложке
- * @param closeOnEscape - закрывать ли по нажатию Escape
- * @param className - дополнительный класс для панели шторки
- * @param style - дополнительные стили для панели шторки
- * @returns {JSX.Element | null}
- */
+/** Выезжающая снизу шторка */
 export const BottomSheet: FC<BottomSheetProps> = ({
   open,
   onClose,
   children,
-  backdrop = 'dim',
   closeOnBackdrop = true,
   closeOnEscape = true,
   className,
@@ -74,18 +65,14 @@ export const BottomSheet: FC<BottomSheetProps> = ({
   }
 
   return createPortal(
-    <div
-      className={ cn(styles.overlay, styles[backdrop]) }
-      style={ { zIndex: ZIndex.BottomSheet } }
-    >
-      <div
-        className={ styles.backdrop }
+    <>
+      <Overlay
         onClick={ handleBackdropClick }
-        aria-hidden='true'
+        style={ { zIndex: ZIndex.BottomSheet } }
       />
       <section
         className={ cn(styles.sheet, className) }
-        style={ style }
+        style={ { ...style, zIndex: ZIndex.BottomSheet } }
         role='dialog'
         aria-modal='true'
         aria-labelledby={ titleId }
@@ -95,7 +82,7 @@ export const BottomSheet: FC<BottomSheetProps> = ({
         </h2>
         { children }
       </section>
-    </div>,
+    </>,
     document.body
   );
 };

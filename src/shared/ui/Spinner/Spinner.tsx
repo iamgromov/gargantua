@@ -1,21 +1,15 @@
 import { forwardRef } from 'react';
 import cn from 'classnames';
 
-import type { SpinnerProps } from '@/shared/types';
+import { SpinnerColor, SpinnerSize, type SpinnerProps } from './types';
 
 import styles from './Spinner.module.scss';
 
-/** Spinner component for loading states
- * @param size - spinner size variant
- * @param color - spinner color variant
- * @param className - additional CSS classes
- * @param style - custom styles
- * @returns {JSX.Element}
- */
+/** Индикатор загрузки с настраиваемыми размером и цветом */
 export const Spinner = forwardRef<HTMLDivElement, SpinnerProps>((props, ref) => {
   const {
-    size = 'medium',
-    color = 'primary',
+    size = SpinnerSize.Medium,
+    color = SpinnerColor.Primary,
     className,
     style,
     fullHeight = false,
@@ -35,5 +29,3 @@ export const Spinner = forwardRef<HTMLDivElement, SpinnerProps>((props, ref) => 
     </div>
   );
 });
-
-Spinner.displayName = 'Spinner';

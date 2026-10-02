@@ -1,20 +1,12 @@
-import type { FC } from 'react';
 import dayjs from 'dayjs';
 
 import { ReactLogo, ReduxLogo, JSLogo, TanstackLogo } from '@/assets/logos';
-import type { FooterLink } from '@/shared/types';
 
-import type { Links } from './types';
+import { LINKS, type FooterLink, type FooterLogo } from './types';
 
 export const CURRENT_YEAR = dayjs().year();
 
-export const LINKS: Links = {
-  REPO: 'https://github.com/iamgromov/gargantua',
-  TELEGRAM: 'https://t.me/iamgromov',
-  STUB: 'https://www.youtube.com/watch?v=K5zP7eQltDE'
-};
-
-export const FOOTER_LINKS: FooterLink[] = [
+export const PROFILE_LINKS: FooterLink[] = [
   {
     href: LINKS.REPO,
     title: 'GitHub Repo'
@@ -25,9 +17,16 @@ export const FOOTER_LINKS: FooterLink[] = [
   }
 ];
 
-export const LOGOS: Array<{ id: number; value: FC }> = [
-  { id: 1, value: ReactLogo },
-  { id: 2, value: TanstackLogo },
-  { id: 3, value: ReduxLogo },
-  { id: 4, value: JSLogo }
+export const STUB_LINKS: FooterLink[] = [
+  {
+    href: LINKS.STUB,
+    title: 'Created with:'
+  }
+];
+
+export const DOCS_LINKS: FooterLogo[] = [
+  { id: 'react', Component: ReactLogo, href: LINKS.REACT },
+  { id: 'tanstack', Component: TanstackLogo, href: LINKS.TANSTACK },
+  { id: 'redux', Component: ReduxLogo, href: LINKS.REDUX },
+  { id: 'js', Component: JSLogo, href: LINKS.JS }
 ];

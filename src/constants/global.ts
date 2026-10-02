@@ -12,9 +12,7 @@ export enum BREAKPOINTS {
 export enum ROUTES {
   MAIN = '/',
   ABOUT = '/about',
-  AUTH = '/auth',
   COMPONENTS = '/components',
   CONTACTS = '/contacts',
-  PRODUCTS = '/products',
   NOT_FOUND = '*'
 }

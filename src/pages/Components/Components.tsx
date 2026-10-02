@@ -2,7 +2,7 @@ import { useCallback, useState, type ChangeEvent, type ComponentType, type FC } 
 import cn from 'classnames';
 
 import { useBreakpoint, useDocumentTitle } from '@/hooks';
-import { Content, LayoutWithSidebar, Select, Sidebar } from '@/shared/ui';
+import { Content, LayoutWithSidebar, Select, SelectWidth, Sidebar } from '@/shared/ui';
 
 import { AccordionDemo } from './sections/AccordionDemo/AccordionDemo';
 import { ButtonsDemo } from './sections/ButtonsDemo/ButtonsDemo';
@@ -65,7 +65,7 @@ export const Components: FC = () => {
         <Select
           options={ SECTION_OPTIONS }
           value={ activeId }
-          width='full'
+          width={ SelectWidth.Full }
           onChange={ handleChange }
         />
       ) }

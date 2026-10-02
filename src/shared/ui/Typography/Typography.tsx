@@ -1,13 +1,14 @@
-import type { FC } from 'react';
+import { type FC } from 'react';
 import cn from 'classnames';
 
-import type { TypographyProps } from '@/shared/types';
+import { TypographyWeight, type TypographyProps } from './types';
 
 import styles from './Typography.module.scss';
 
+/** Текстовый элемент дизайн-системы */
 export const Typography: FC<TypographyProps> = ({
   variant,
-  weight = 'black',
+  weight = TypographyWeight.Black,
   children,
   ...props
 }) => {

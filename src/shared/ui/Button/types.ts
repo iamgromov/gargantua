@@ -23,15 +23,26 @@ export enum Width {
 }
 
 export interface ButtonProps {
+  /** Вариант оформления кнопки. */
   intent?: Intent;
+  /** Размер кнопки. */
   size?: Size;
+  /** Ширина кнопки. */
   width?: Width;
+  /** Содержимое кнопки. */
   children?: ReactNode;
+  /** Состояние загрузки. */
   loading?: boolean;
+  /** Состояние неактивности. */
   disabled?: boolean;
+  /** Дополнительный класс. */
   className?: string;
+  /** Дополнительные инлайн-стили. */
   style?: CSSProperties;
+  /** Путь внутреннего маршрута (React Router). */
   to?: string;
+  /** Внешний URL, открывается в новой вкладке. */
   href?: string;
-  onClick?: (_e: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
+  /** Обработчик клика. */
+  onClick?: (_event: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
 }
