@@ -1,0 +1,75 @@
+@use '../../../styles/variables' as *;
+
+// Прямоугольная боковая панель без скруглений углов
+.drawer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  box-sizing: border-box;
+  width: min(85vw, 360px);
+  height: 100%;
+  padding: $spacing-xl;
+  overflow-y: auto;
+
+  background-color: $color-background;
+  box-shadow: $shadow-2xl;
+
+  color: $color-text-primary;
+}
+
+// Выезд справа
+.right {
+  right: 0;
+
+  border-left: $border-width-1 solid $color-border;
+
+  animation: slide-in-right $transition-fast;
+}
+
+// Выезд слева
+.left {
+  left: 0;
+
+  border-right: $border-width-1 solid $color-border;
+
+  animation: slide-in-left $transition-fast;
+}
+
+// Скрытый заголовок для доступности
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+
+  border: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(50%);
+}
+
+// Появление панели справа
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+// Появление панели слева
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

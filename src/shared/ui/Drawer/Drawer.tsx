@@ -6,15 +6,26 @@ import { ZIndex } from '@/utils/zIndex';
 
 import { Overlay } from '../primitives/overlay';
 
-import { type BottomSheetProps } from './types';
+import { type DrawerProps } from './types';
 
-import styles from './BottomSheet.module.scss';
+import styles from './Drawer.module.scss';
 
-/** Выезжающая снизу шторка */
-export const BottomSheet: FC<BottomSheetProps> = ({
+/** Drawer — боковая выезжающая панель
+ * @param open - управляет видимостью панели
+ * @param onClose - вызывается при закрытии (клик по подложке, Escape)
+ * @param children - произвольный контент панели
+ * @param side - сторона выезда панели: `left` или `right`
+ * @param closeOnBackdrop - закрывать ли при клике по подложке
+ * @param closeOnEscape - закрывать ли по нажатию Escape
+ * @param className - дополнительный класс для панели
+ * @param style - дополнительные стили для панели
+ * @returns {JSX.Element | null}
+ */
+export const Drawer: FC<DrawerProps> = ({
   open,
   onClose,
   children,
+  side = 'right',
   closeOnBackdrop = true,
   closeOnEscape = true,
   className,
@@ -39,7 +50,7 @@ export const BottomSheet: FC<BottomSheetProps> = ({
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [open, closeOnEscape, onClose]);
 
-  // Блокировка прокрутки страницы под шторкой
+  // Блокировка прокрутки страницы под панелью
   useEffect(() => {
     if (!open) {
       return undefined;
@@ -70,18 +81,18 @@ export const BottomSheet: FC<BottomSheetProps> = ({
         onClick={ handleBackdropClick }
         style={ { zIndex: ZIndex.BottomSheet } }
       />
-      <section
-        className={ cn(styles.sheet, className) }
+      <aside
+        className={ cn(styles.drawer, styles[side], className) }
         style={ { ...style, zIndex: ZIndex.BottomSheet } }
         role='dialog'
         aria-modal='true'
         aria-labelledby={ titleId }
       >
         <h2 className={ styles.visuallyHidden } id={ titleId }>
-          Bottom sheet
+          Drawer
         </h2>
         { children }
-      </section>
+      </aside>
     </>,
     document.body
   );

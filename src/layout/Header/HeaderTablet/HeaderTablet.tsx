@@ -2,7 +2,7 @@ import { memo, useCallback, useState, type FC, type ReactElement } from 'react';
 
 import { Menu } from '@/assets/icons';
 import { ROUTES } from '@/constants';
-import { BottomSheet, IconButton, Logo, ThemeSwitcher } from '@/shared/ui';
+import { Drawer, IconButton, Logo, ThemeSwitcher } from '@/shared/ui';
 import { Button, Intent, Size } from '@/shared/ui/Button';
 
 import styles from './HeaderTablet.module.scss';
@@ -25,7 +25,7 @@ export const HeaderTablet: FC = memo((): ReactElement => {
           onClick={ openMenu }
         />
       </div>
-      <BottomSheet open={ isMenuOpen } onClose={ closeMenu }>
+      <Drawer open={ isMenuOpen } onClose={ closeMenu }>
         <nav className={ styles.nav }>
           <Button
             to={ ROUTES.COMPONENTS }
@@ -52,7 +52,7 @@ export const HeaderTablet: FC = memo((): ReactElement => {
             Contacts
           </Button>
         </nav>
-      </BottomSheet>
+      </Drawer>
     </div>
   );
 });

@@ -1,4 +1,5 @@
 export * from './BottomSheet';
+export * from './Drawer';
 export * from './IconButton/IconButton';
 export * from './LayoutWithSidebar';
 export * from './Link';
@@ -8,6 +9,10 @@ export * from './Select/Select';
 export * from './Spinner/Spinner';
 export * from './ThemeSwitcher/ThemeSwitcher';
 export * from './Typography/Typography';
+
+// Примитивы
+// Overlay — единая подложка для всех оверлеев (модалки, шторки, drawer и т.д.)
+export * from './primitives/overlay';
 
 // TODO:
 // Button, IconButton, Link — универсальные кнопки со всеми вариантами размеров/цветов.
