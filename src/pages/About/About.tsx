@@ -9,7 +9,7 @@ export const About: FC = () => {
   useDocumentTitle('About');
 
   return (
-    <div className={ styles.main }>
+    <div className={ styles.wrapper }>
       <Typography variant={ TypographyVariant.H1 }>About</Typography>
     </div>
   );

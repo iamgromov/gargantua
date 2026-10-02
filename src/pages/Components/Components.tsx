@@ -6,6 +6,7 @@ import { Content, LayoutWithSidebar, Select, SelectWidth, Sidebar } from '@/shar
 
 import { AccordionDemo } from './sections/AccordionDemo/AccordionDemo';
 import { ButtonsDemo } from './sections/ButtonsDemo/ButtonsDemo';
+import { EmptyStateDemo } from './sections/EmptyStateDemo/EmptyStateDemo';
 import { IconButtonsDemo } from './sections/IconButtonsDemo/IconButtonsDemo';
 import { Posts } from './sections/Posts/Posts';
 import { Section } from './sections/Section/Section';
@@ -36,7 +37,8 @@ const SECTIONS: ComponentSection[] = [
   { id: 'headers', title: 'Headers', Component: TypographyDemo },
   { id: 'buttons', title: 'Buttons', Component: ButtonsDemo },
   { id: 'icon-buttons', title: 'IconButtons', Component: IconButtonsDemo },
-  { id: 'spinners', title: 'Spinners', Component: SpinnersDemo }
+  { id: 'spinners', title: 'Spinners', Component: SpinnersDemo },
+  { id: 'empty-state', title: 'EmptyState', Component: EmptyStateDemo }
 ];
 
 /** Опции выпадающего списка для навигации по компонентам на узких экранах */

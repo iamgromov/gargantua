@@ -2,6 +2,7 @@ export * from './Accordion';
 export * from './BottomSheet';
 export * from './Button';
 export * from './Drawer';
+export * from './EmptyState';
 export * from './IconButton';
 export * from './LayoutWithSidebar';
 export * from './Link';

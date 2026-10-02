@@ -1,6 +1,6 @@
 import { useEffect, type FC, type ReactNode } from 'react';
 import { QueryClientProvider, focusManager } from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+// import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 import queryClient from './queryClient';
 
@@ -23,9 +23,9 @@ export const QueryProvider: FC<QueryProviderProps> = ({ children }) => {
   return (
     <QueryClientProvider client={ queryClient }>
       { children }
-      { import.meta.env.DEV && (
+      { /* { import.meta.env.DEV && (
         <ReactQueryDevtools initialIsOpen={ false } buttonPosition='top-left' />
-      ) }
+      ) } */ }
     </QueryClientProvider>
   );
 };
