@@ -4,7 +4,7 @@
 .footer {
   display: flex;
   flex-direction: column-reverse;
-  gap: $spacing-2xl;
+  gap: $spacing-xl;
   margin: 0 $spacing-sm;
   padding: $spacing-base $spacing-sm $spacing-5xl $spacing-sm;
 
@@ -17,17 +17,19 @@
     margin: 0;
     padding: $spacing-xl $spacing-xl $spacing-5xl $spacing-xl;
   }
-}
 
-.column {
-  display: flex;
-  flex-direction: column;
-  gap: $spacing-sm;
+  &_left_column {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xl;
+  }
 
-  &:last-child {
+  &_right_column {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap: $spacing-xxs;
 
     @include tablet-and-more {
       flex-direction: column;
@@ -36,19 +38,21 @@
   }
 }
 
-.logos {
+.links_block {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xxs;
+}
+
+.dependencies {
   gap: $spacing-sm;
 
   @include flex-children(row, start, center);
 
-  svg {
-    flex-shrink: 0;
-    width: auto;
+  .dependency_logo {
     height: $spacing-2xl;
 
     &:hover {
-      cursor: pointer;
-
       transform: translateY(-2px);
 
       @include smooth-transition;

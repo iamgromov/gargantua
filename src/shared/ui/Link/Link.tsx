@@ -12,7 +12,7 @@ import styles from './Link.module.scss';
  * @returns {JSX.Element}
  */
 export const Link = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
-  const { href, title, className, ...restProps } = props;
+  const { href, title, className, children, ...restProps } = props;
 
   const linkClassName = cn(styles.link, className);
 
@@ -25,7 +25,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
       className={ linkClassName }
       { ...restProps }
     >
-      { title }
+      { children ?? title }
     </a>
   );
 });
