@@ -4,7 +4,7 @@ import cn from 'classnames';
 
 import { ZIndex } from '@/utils/zIndex';
 
-import { Overlay } from '../primitives/overlay';
+import { Overlay } from '../primitives/Overlay';
 
 import { type DrawerProps } from './types';
 

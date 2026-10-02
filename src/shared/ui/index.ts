@@ -11,17 +11,11 @@ export * from './ThemeSwitcher/ThemeSwitcher';
 export * from './Typography/Typography';
 
 // Примитивы
-// Overlay — единая подложка для всех оверлеев (модалки, шторки, drawer и т.д.)
-export * from './primitives/overlay';
+export * from './primitives/Overlay';
 
 // TODO:
-// Button, IconButton, Link — универсальные кнопки со всеми вариантами размеров/цветов.
+// Button, Link — универсальные кнопки со всеми вариантами размеров/цветов.
 // Input, Textarea, Select, Checkbox, Radio, Switch — базовые поля ввода без знания о том, какие именно данные вводятся.
 // Modal, Drawer, Tooltip, Popover, DropdownMenu — контейнеры/оверлеи, которые просто показывают переданный контент.
 // Card, Grid, Stack, Container, Tabs, Accordion — композиционные блоки для layout’а и группировки контента.
 // Typography (заголовки, текст), Tag, Badge, Avatar, Skeleton, Spinner — чисто визуальные элементы дизайна‑системы.
-
-// Header, Footer, Sidebar, Navbar — шапка, подвал, общие layout‑блоки приложения.
-// UserCard, ProductCard, ArticlePreview — карточки доменных сущностей с конкретными полями.
-// LoginForm, SignupForm, CheckoutForm, SearchForm — формы с валидацией, отправкой на API, локальным стейтом.
-// LayoutMain, DashboardLayout, AuthLayout — макеты страниц, собирающие хедер/сайдбар/контент.

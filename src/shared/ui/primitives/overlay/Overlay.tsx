@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 import cn from 'classnames';
 
-import { type OverlayProps } from './types';
+import type { OverlayProps } from './types';
 
 import styles from './Overlay.module.scss';
 

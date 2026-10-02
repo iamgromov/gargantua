@@ -5,9 +5,7 @@ import { CANCELLED_ERROR_NAME, HTTP_STATUS_TO_NOT_RETRY, RETRY_COUNT } from './c
 
 import type { DefaultError } from './apiService';
 
-/**
- * TODO: когда появится слайс алертов — заменить на показ уведомления об ошибке в тостах
- */
+// TODO: когда появится слайс алертов — заменить на показ уведомления об ошибке в тостах
 const logQueryError = (error: DefaultError, queryKey: string): void => {
   if (error?.name === CANCELLED_ERROR_NAME) {
     return;
