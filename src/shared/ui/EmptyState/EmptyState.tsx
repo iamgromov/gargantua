@@ -2,7 +2,7 @@ import { type FC } from 'react';
 import cn from 'classnames';
 
 import { Button } from '../Button';
-import { Typography, TypographyVariant } from '../Typography';
+import { BodyXLargeRegular, HeadingSmall } from '../Typography';
 
 import { type EmptyStateProps } from './types';
 
@@ -22,8 +22,8 @@ export const EmptyState: FC<EmptyStateProps> = ({
     { image && <img className={ styles.image } src={ image } alt={ imageAlt } /> }
 
     <div className={ styles.title }>
-      <Typography variant={ TypographyVariant.H4 }>{ title }</Typography>
-      { subtitle && <p className={ styles.subtitle }>{ subtitle }</p> }
+      <HeadingSmall>{ title }</HeadingSmall>
+      { subtitle && <BodyXLargeRegular className={ styles.subtitle }>{ subtitle }</BodyXLargeRegular> }
     </div>
 
     { buttons && buttons.length > 0 && (

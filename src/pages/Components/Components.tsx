@@ -2,7 +2,7 @@ import { useCallback, useState, type ChangeEvent, type ComponentType, type FC } 
 import cn from 'classnames';
 
 import { useBreakpoint, useDocumentTitle } from '@/hooks';
-import { Content, LayoutWithSidebar, Select, SelectWidth, Sidebar } from '@/shared/ui';
+import { Content, HeadingLarge, LayoutWithSidebar, Select, SelectWidth, Sidebar } from '@/shared/ui';
 
 import { AccordionDemo } from './sections/AccordionDemo/AccordionDemo';
 import { ButtonsDemo } from './sections/ButtonsDemo/ButtonsDemo';
@@ -63,6 +63,7 @@ export const Components: FC = () => {
 
   return (
     <div className={ styles.wrapper }>
+      <HeadingLarge>Components</HeadingLarge>
       { !isDesktop && (
         <Select
           options={ SECTION_OPTIONS }

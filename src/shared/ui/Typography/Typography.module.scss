@@ -1,34 +1,156 @@
 @use '../../../styles/variables' as *;
 
+// База для всех вариантов
 .typography {
-  display: flex;
-  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+
+  font-family: $font-family-sans;
 }
 
-.h1 {
+// Заголовки
+.headingLarge {
   font-size: $font-size-h1;
-}
-
-.h2 {
-  font-size: $font-size-h2;
-}
-
-.h3 {
-  font-size: $font-size-h3;
-}
-
-.h4 {
-  font-size: $font-size-h4;
-}
-
-.h5 {
-  font-size: $font-size-h5;
-}
-
-.h6 {
-  font-size: $font-size-h6;
-}
-
-.black {
   font-weight: $font-weight-black;
+  line-height: 40px;
+}
+
+.headingStandard {
+  font-size: $font-size-h2;
+  font-weight: $font-weight-black;
+  line-height: 32px;
+}
+
+.headingSmall {
+  font-size: $font-size-h3;
+  font-weight: $font-weight-black;
+  line-height: 28px;
+}
+
+// Подписи
+.labelLargeSemibold {
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  line-height: 20px;
+  letter-spacing: -0.32px;
+}
+
+.labelLargeMedium {
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  line-height: 20px;
+  letter-spacing: -0.32px;
+}
+
+.labelLargeRegular {
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: 20px;
+  letter-spacing: -0.32px;
+}
+
+.labelStandardSemibold {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  line-height: 18px;
+  letter-spacing: -0.28px;
+}
+
+.labelStandardMedium {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: 18px;
+  letter-spacing: -0.28px;
+}
+
+.labelStandardRegular {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  line-height: 18px;
+  letter-spacing: -0.28px;
+}
+
+.labelSmallSemibold {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  line-height: 16px;
+  letter-spacing: -0.12px;
+}
+
+.labelSmallMedium {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  line-height: 16px;
+  letter-spacing: -0.12px;
+}
+
+.labelSmallRegular {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-normal;
+  line-height: 16px;
+  letter-spacing: -0.12px;
+}
+
+// Основной текст
+.bodyXLargeSemibold {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  line-height: 28px;
+  letter-spacing: -0.36px;
+}
+
+.bodyXLargeMedium {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+  line-height: 28px;
+  letter-spacing: -0.36px;
+}
+
+.bodyXLargeRegular {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-normal;
+  line-height: 28px;
+  letter-spacing: -0.36px;
+}
+
+.bodyLargeSemibold {
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  line-height: 24px;
+  letter-spacing: -0.32px;
+}
+
+.bodyLargeMedium {
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  line-height: 24px;
+  letter-spacing: -0.32px;
+}
+
+.bodyLargeRegular {
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: 24px;
+  letter-spacing: -0.32px;
+}
+
+.bodyStandardSemibold {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  line-height: 20px;
+  letter-spacing: -0.28px;
+}
+
+.bodyStandardMedium {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: 20px;
+  letter-spacing: -0.28px;
+}
+
+.bodyStandardRegular {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  line-height: 20px;
+  letter-spacing: -0.28px;
 }
