@@ -31,33 +31,6 @@
     transform: translateY(1px);
   }
 
-  // Состояние загрузки
-  &.loading {
-    opacity: $opacity-loading;
-
-    pointer-events: none;
-
-    .title {
-      opacity: 0;
-    }
-
-    .spinner {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: $spacing-base;
-      height: $spacing-base;
-
-      border: $border-width-2 solid transparent;
-      border-top: $border-width-2 solid currentcolor;
-      border-radius: 50%;
-
-      animation: spin 1s linear infinite;
-
-      transform: translate(-50%, -50%);
-    }
-  }
-
   // Состояние неактивности
   &.disabled {
     opacity: $opacity-disabled;
@@ -66,10 +39,45 @@
     pointer-events: none;
   }
 
-  @supports (corner-shape: superellipse(2)) {
-    border-radius: calc($border-radius-xl * 2);
-    corner-shape: superellipse(2);
+  // Скругления суперэллипсом (только не для круглых кнопок)
+  &:not(.round) {
+    @supports (corner-shape: superellipse(1.5)) {
+      border-radius: calc($border-radius-md * 2);
+      corner-shape: superellipse(1.5);
+    }
   }
+}
+
+// Содержимое кнопки
+.title {
+  white-space: nowrap;
+  color: inherit;
+}
+
+// Иконка кнопки
+.icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+
+  color: inherit;
+
+  svg {
+    display: block;
+
+    path {
+      fill: currentcolor;
+    }
+  }
+}
+
+// Позиция иконки
+.iconLeft {
+  order: -1;
+}
+
+.iconRight {
+  order: 1;
 }
 
 // Варианты размеров
@@ -78,6 +86,10 @@
   padding: $spacing-xs $spacing-sm;
 
   font-size: $font-size-sm;
+
+  &.iconOnly {
+    width: 32px;
+  }
 }
 
 .medium {
@@ -85,39 +97,44 @@
   padding: $spacing-xs $spacing-base;
 
   font-size: $font-size-sm;
+
+  &.iconOnly {
+    width: 40px;
+  }
 }
 
 .large {
-  min-height: 48px;
+  min-height: 56px;
   padding: $spacing-sm $spacing-xl;
 
   font-size: $font-size-base;
+
+  &.iconOnly {
+    width: 56px;
+  }
 }
 
-.extra-large {
-  min-height: 56px;
-  padding: $spacing-base $spacing-3xl;
-
-  font-size: $font-size-lg;
+// Кнопка только с иконкой
+.iconOnly {
+  padding: 0;
 }
 
-// Варианты ширины
-.auto {
-  width: auto;
+// Круглая форма
+.round {
+  border-radius: 50%;
 }
 
-.full {
+// Растягивание на всю ширину
+.fluid {
   width: 100%;
 }
 
-// Варианты цветов
+// Варианты оформления
 .primary {
   background-color: $color-primary;
   border-color: $color-primary;
 
-  .title {
-    color: $color-white;
-  }
+  color: $color-white;
 
   &:hover:not(.disabled, .loading) {
     background-color: color-mix(in srgb, $color-primary 90%, white);
@@ -134,9 +151,7 @@
   background-color: $color-secondary;
   border-color: $color-secondary;
 
-  .title {
-    color: $color-white;
-  }
+  color: $color-white;
 
   &:hover:not(.disabled, .loading) {
     background-color: color-mix(in srgb, $color-secondary 90%, white);
@@ -153,26 +168,20 @@
   background-color: transparent;
   border-color: $color-gray-300;
 
-  .title {
-    color: $color-text-primary;
-  }
+  color: $color-text-primary;
 
   &:hover:not(.disabled, .loading) {
     background-color: $color-gray-50;
     border-color: $color-gray-400;
 
-    .title {
-      color: $color-secondary;
-    }
+    color: $color-secondary;
   }
 
   &:active:not(.disabled, .loading) {
     background-color: $color-gray-100;
     border-color: $color-secondary;
 
-    .title {
-      color: $color-secondary;
-    }
+    color: $color-secondary;
   }
 }
 
@@ -180,9 +189,7 @@
   background-color: $color-danger;
   border-color: $color-danger;
 
-  .title {
-    color: $color-white;
-  }
+  color: $color-white;
 
   &:hover:not(.disabled, .loading) {
     background-color: color-mix(in srgb, $color-danger 90%, white);
@@ -199,9 +206,7 @@
   background-color: $color-success;
   border-color: $color-success;
 
-  .title {
-    color: $color-white;
-  }
+  color: $color-white;
 
   &:hover:not(.disabled, .loading) {
     background-color: color-mix(in srgb, $color-success 90%, white);
@@ -229,33 +234,52 @@
   }
 }
 
-.link {
-  min-height: auto;
-  padding: 0;
+// Спиннер загрузки
+.spinner {
+  display: inline-block;
+  flex-shrink: 0;
+  width: $spacing-base;
+  height: $spacing-base;
 
-  background-color: transparent;
-  border-color: transparent;
-  border-radius: 0;
+  border: $border-width-2 solid transparent;
+  border-top: $border-width-2 solid currentcolor;
+  border-radius: 50%;
 
-  text-decoration: underline;
-  color: $color-primary;
+  color: inherit;
 
-  &:hover:not(.disabled, .loading) {
-    color: color-mix(in srgb, $color-primary 90%, white);
-  }
+  animation: spin 1s linear infinite;
 
-  &:active:not(.disabled, .loading) {
-    color: color-mix(in srgb, $color-primary 80%, white);
+  order: -2;
+}
+
+// Состояние загрузки
+.loading {
+  opacity: $opacity-loading;
+
+  pointer-events: none;
+
+  // Спиннер поверх содержимого
+  &.loadingDefault {
+    .title,
+    .icon {
+      opacity: 0;
+    }
+
+    .spinner {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+    }
   }
 }
 
 // Анимации
 @keyframes spin {
   0% {
-    transform: translate(-50%, -50%) rotate(0deg);
+    transform: rotate(0deg);
   }
 
   100% {
-    transform: translate(-50%, -50%) rotate(360deg);
+    transform: rotate(360deg);
   }
 }

@@ -15,25 +15,17 @@
 
   @include theme-transition(background-color);
 
-  a {
-    cursor: pointer;
+  .logo {
+    width: auto;
+    height: 25px;
 
-    .logo {
-      width: auto;
+    svg {
+      width: 256px;
       height: 25px;
-
-      svg {
-        width: 256px;
-        height: 25px;
-      }
     }
 
     &:active {
       transform: translateY(1px);
-    }
-
-    &:first-child {
-      height: 25px;
     }
   }
 

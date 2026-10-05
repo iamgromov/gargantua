@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 
 import { useDocumentTitle } from '@/hooks';
-import { Typography, TypographyVariant } from '@/shared/ui';
+import { HeadingLarge } from '@/shared/ui';
 
 import styles from './About.module.scss';
 
@@ -10,7 +10,7 @@ export const About: FC = () => {
 
   return (
     <div className={ styles.wrapper }>
-      <Typography variant={ TypographyVariant.H1 }>About</Typography>
+      <HeadingLarge>About</HeadingLarge>
     </div>
   );
 };

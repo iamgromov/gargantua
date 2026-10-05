@@ -12,8 +12,8 @@ export const NotFound: FC = () => {
   return (
     <EmptyState
       className={ styles.wrapper }
-      title='Такой страницы не существует'
-      subtitle='Вернитесь на главную'
+      title='Такой страницы не&nbsp;существует'
+      subtitle='Вернитесь на&nbsp;главную'
       buttons={ [
         { intent: Intent.Primary, key:'main', children: 'На главную', to: ROUTES.MAIN }
       ] }

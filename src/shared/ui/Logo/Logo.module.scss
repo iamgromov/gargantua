@@ -7,4 +7,6 @@
       fill: $color-text-primary;
     }
   }
+
+  @include flex-children;
 }

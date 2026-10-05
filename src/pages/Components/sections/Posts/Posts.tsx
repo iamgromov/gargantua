@@ -1,7 +1,7 @@
 import { useCallback, useMemo, type FC } from 'react';
 
 import { useGetPosts } from '@/api/queries/post';
-import { Spinner, SpinnerSize, Typography, TypographyVariant } from '@/shared/ui';
+import { HeadingStandard, Spinner, SpinnerSize } from '@/shared/ui';
 import { Accordion, AccordionSize, type AccordionItem } from '@/shared/ui/Accordion';
 import { Button, Intent, Size } from '@/shared/ui/Button';
 
@@ -28,7 +28,7 @@ export const Posts: FC = () => {
           header: 'Не удалось загрузить данные',
           content: (
             <div className={ styles.column }>
-              <Typography variant={ TypographyVariant.H4 }>Попробуйте повторить запрос</Typography>
+              <HeadingStandard>Попробуйте повторить запрос</HeadingStandard>
               <Button
                 intent={ Intent.Danger }
                 size={ Size.Medium }

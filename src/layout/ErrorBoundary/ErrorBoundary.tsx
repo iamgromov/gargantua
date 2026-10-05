@@ -50,8 +50,8 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
         title='Что-то пошло не так'
         subtitle={ error.message }
         buttons={ [
-          { intent: Intent.Primary, key: 'refresh', children: 'Обновить', onClick: () => location.reload() },
-          { intent: Intent.Secondary, key:'main', children: 'На главную', to: ROUTES.MAIN }
+          { intent: Intent.Secondary, key: 'refresh', children: 'Обновить', onClick: () => location.reload() },
+          { intent: Intent.Primary, key:'main', children: 'На главную', to: ROUTES.MAIN }
         ] }
       />
     );
