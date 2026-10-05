@@ -4,9 +4,16 @@
   text-decoration: none;
   color: $color-text-primary;
 
+  transition: color $transition-base;
+
   &:hover {
     text-decoration: underline;
+    color: $color-primary;
 
     text-decoration-color: $color-primary;
   }
+}
+
+.link.noUnderline:hover {
+  text-decoration: none;
 }

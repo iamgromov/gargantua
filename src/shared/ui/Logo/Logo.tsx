@@ -1,8 +1,9 @@
 import { memo, type FC } from 'react';
-import { Link } from 'react-router-dom';
 
 import { ROUTES } from '@/constants';
 import { scrollToTop } from '@/utils';
+
+import { Link } from '../Link';
 
 import { type LogoProps } from './types';
 
@@ -11,9 +12,13 @@ import styles from './Logo.module.scss';
 /** Логотип, ведущий на главную страницу */
 export const Logo: FC<LogoProps> = memo(({ ...props }) => {
   return (
-    <Link to={ ROUTES.MAIN } className={ styles.icon }>
+    <Link
+      to={ ROUTES.MAIN }
+      className={ styles.icon }
+      onClick={ scrollToTop }
+      underline={ false }
+    >
       <svg
-        onClick={ scrollToTop }
         viewBox='0 16 383.3999938964844 37.5'
         data-asc='1.07'
         width='383.3999938964844'

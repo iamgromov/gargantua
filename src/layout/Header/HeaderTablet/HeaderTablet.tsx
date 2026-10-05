@@ -1,9 +1,9 @@
 import { memo, useCallback, useState, type FC, type ReactElement } from 'react';
 
 import { Menu } from '@/assets/icons';
-import { ROUTES } from '@/constants';
-import { Drawer, IconButton, IconButtonVariant, Logo, ThemeSwitcher } from '@/shared/ui';
-import { Button, Intent, Size } from '@/shared/ui/Button';
+import { Drawer, HeadingSmall, IconButton, IconButtonVariant, Link, Logo, ThemeSwitcher } from '@/shared/ui';
+
+import { NAV_LINKS } from '../constants';
 
 import styles from './HeaderTablet.module.scss';
 
@@ -27,30 +27,11 @@ export const HeaderTablet: FC = memo((): ReactElement => {
       </div>
       <Drawer open={ isMenuOpen } onClose={ closeMenu }>
         <nav className={ styles.nav }>
-          <Button
-            to={ ROUTES.COMPONENTS }
-            intent={ Intent.Ghost }
-            size={ Size.Small }
-            onClick={ closeMenu }
-          >
-            Components
-          </Button>
-          <Button
-            to={ ROUTES.ABOUT }
-            intent={ Intent.Ghost }
-            size={ Size.Small }
-            onClick={ closeMenu }
-          >
-            About
-          </Button>
-          <Button
-            to={ ROUTES.CONTACTS }
-            intent={ Intent.Ghost }
-            size={ Size.Small }
-            onClick={ closeMenu }
-          >
-            Contacts
-          </Button>
+          { NAV_LINKS.map(({ to, title }) => (
+            <Link key={ to } to={ to } onClick={ closeMenu }>
+              <HeadingSmall>{ title }</HeadingSmall>
+            </Link>
+          )) }
         </nav>
       </Drawer>
     </div>

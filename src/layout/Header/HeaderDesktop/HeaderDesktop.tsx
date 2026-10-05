@@ -1,8 +1,8 @@
 import { memo, type FC, type ReactElement } from 'react';
 
-import { ROUTES } from '@/constants';
-import { Logo, ThemeSwitcher } from '@/shared/ui';
-import { Button, Intent, Size } from '@/shared/ui/Button';
+import { BodyLargeRegular, Link, Logo, ThemeSwitcher } from '@/shared/ui';
+
+import { NAV_LINKS } from '../constants';
 
 import styles from './HeaderDesktop.module.scss';
 
@@ -12,15 +12,11 @@ export const HeaderDesktop: FC = memo((): ReactElement => {
       <Logo className={ styles.logo } />
 
       <div className={ styles.controls }>
-        <Button to={ ROUTES.COMPONENTS } intent={ Intent.Ghost } size={ Size.Small }>
-          Components
-        </Button>
-        <Button to={ ROUTES.ABOUT } intent={ Intent.Ghost } size={ Size.Small }>
-          About
-        </Button>
-        <Button to={ ROUTES.CONTACTS } intent={ Intent.Ghost } size={ Size.Small }>
-          Contacts
-        </Button>
+        { NAV_LINKS.map(({ to, title }) => (
+          <Link key={ to } to={ to } underline={ false }>
+            <BodyLargeRegular>{ title }</BodyLargeRegular>
+          </Link>
+        )) }
         <ThemeSwitcher />
       </div>
     </div>

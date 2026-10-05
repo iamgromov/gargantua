@@ -8,6 +8,7 @@ import { AccordionDemo } from './sections/AccordionDemo/AccordionDemo';
 import { ButtonsDemo } from './sections/ButtonsDemo/ButtonsDemo';
 import { EmptyStateDemo } from './sections/EmptyStateDemo/EmptyStateDemo';
 import { IconButtonsDemo } from './sections/IconButtonsDemo/IconButtonsDemo';
+import { LinkDemo } from './sections/LinkDemo/LinkDemo';
 import { Posts } from './sections/Posts/Posts';
 import { Section } from './sections/Section/Section';
 import { SelectDemo } from './sections/SelectDemo/SelectDemo';
@@ -37,6 +38,7 @@ const SECTIONS: ComponentSection[] = [
   { id: 'headers', title: 'Headers', Component: TypographyDemo },
   { id: 'buttons', title: 'Buttons', Component: ButtonsDemo },
   { id: 'icon-buttons', title: 'IconButtons', Component: IconButtonsDemo },
+  { id: 'link', title: 'Link', Component: LinkDemo },
   { id: 'spinners', title: 'Spinners', Component: SpinnersDemo },
   { id: 'empty-state', title: 'EmptyState', Component: EmptyStateDemo }
 ];
