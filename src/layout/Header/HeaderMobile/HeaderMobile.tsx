@@ -1,7 +1,7 @@
 import { memo, useCallback, useState, type FC, type ReactElement } from 'react';
 
 import { Menu } from '@/assets/icons';
-import { BottomSheet, HeadingSmall, IconButton, IconButtonVariant, Link, Logo } from '@/shared/ui';
+import { BottomSheet, Button, HeadingSmall, Intent, Link, Logo, Size } from '@/shared/ui';
 
 import { NAV_LINKS } from '../constants';
 
@@ -16,10 +16,12 @@ export const HeaderMobile: FC = memo((): ReactElement => {
   return (
     <div className={ styles.header }>
       <Logo className={ styles.logo } />
-      <IconButton
-        variant={ IconButtonVariant.Ghost }
-        icon={ <Menu /> }
+      <Button
         className={ styles.menu }
+        intent={ Intent.Ghost }
+        size={ Size.Small }
+        icon={ <Menu /> }
+        round={ true }
         onClick={ openMenu }
       />
       <BottomSheet open={ isMenuOpen } onClose={ closeMenu }>

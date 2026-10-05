@@ -13,7 +13,7 @@ export const EmptyStateDemo: FC = () => (
       title='Здесь пока ничего нет'
       subtitle='Но совсем скоро появится — заглядывайте позже'
       buttons={ [
-        { intent: Intent.Outline, size: Size.Large, key:'extra', children: 'Дополнительная' },
+        { intent: Intent.Secondary, size: Size.Large, key:'extra', children: 'Дополнительная' },
         { intent: Intent.Primary, size: Size.Large, key:'main', children: 'Основная' }
       ] }
     />

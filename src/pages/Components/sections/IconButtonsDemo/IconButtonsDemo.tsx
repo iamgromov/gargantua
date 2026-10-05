@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 
 import { ArrowUp } from '@/assets/icons';
-import { IconButton } from '@/shared/ui';
+import { Button } from '@/shared/ui/Button';
 
 import styles from '../../Components.module.scss';
 import { ICON_BUTTON_SIZES, ICON_BUTTON_VARIANTS } from '../../constants';
@@ -11,11 +11,12 @@ export const IconButtonsDemo: FC = () => (
     { ICON_BUTTON_SIZES.map((size) => (
       <div key={ size.value } className={ styles.row }>
         { ICON_BUTTON_VARIANTS.map((variant) => (
-          <IconButton
+          <Button
             key={ `${size.value}-${variant.value}` }
             icon={ <ArrowUp /> }
-            variant={ variant.value }
+            intent={ variant.value }
             size={ size.value }
+            round={ true }
           />
         )) }
       </div>
