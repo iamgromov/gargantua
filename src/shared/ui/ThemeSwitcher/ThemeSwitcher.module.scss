@@ -6,7 +6,10 @@
   cursor: pointer;
 
   @include noselect;
-  @include flex-children;
+
+  @include tablet-and-less {
+    @include flex-children;
+  }
 
   .switcher {
     transform: scaleX(var(--rotation));
