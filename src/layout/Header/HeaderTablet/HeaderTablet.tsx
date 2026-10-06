@@ -29,7 +29,12 @@ export const HeaderTablet: FC = memo((): ReactElement => {
       <Drawer open={ isMenuOpen } onClose={ closeMenu }>
         <nav className={ styles.nav }>
           { NAV_LINKS.map(({ to, title }) => (
-            <Link key={ to } to={ to } onClick={ closeMenu }>
+            <Link
+              key={ to }
+              to={ to }
+              onClick={ closeMenu }
+              underline={ false }
+            >
               <HeadingSmall>{ title }</HeadingSmall>
             </Link>
           )) }
