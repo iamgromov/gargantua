@@ -1,27 +1,16 @@
-import { type FC, useCallback, useEffect, useId } from 'react';
+import { type FC, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import cn from 'classnames';
 
-import { ZIndex } from '@/utils/zIndex';
-
-import { Overlay } from '../primitives/Overlay';
-
+import { BottomSheetContent } from './BottomSheetContent/BottomSheetContent';
 import { type BottomSheetProps } from './types';
-
-import styles from './BottomSheet.module.scss';
 
 /** Выезжающая снизу шторка */
 export const BottomSheet: FC<BottomSheetProps> = ({
   open,
   onClose,
-  children,
-  closeOnBackdrop = true,
   closeOnEscape = true,
-  className,
-  style
+  ...contentProps
 }) => {
-  const titleId = useId();
-
   // Закрытие по Escape
   useEffect(() => {
     if (!open || !closeOnEscape) {
@@ -54,35 +43,12 @@ export const BottomSheet: FC<BottomSheetProps> = ({
     };
   }, [open]);
 
-  const handleBackdropClick = useCallback(() => {
-    if (closeOnBackdrop) {
-      onClose();
-    }
-  }, [closeOnBackdrop, onClose]);
-
   if (!open) {
     return null;
   }
 
   return createPortal(
-    <>
-      <Overlay
-        onClick={ handleBackdropClick }
-        style={ { zIndex: ZIndex.BottomSheet } }
-      />
-      <section
-        className={ cn(styles.sheet, className) }
-        style={ { ...style, zIndex: ZIndex.BottomSheet } }
-        role='dialog'
-        aria-modal='true'
-        aria-labelledby={ titleId }
-      >
-        <h2 className={ styles.visuallyHidden } id={ titleId }>
-          Bottom sheet
-        </h2>
-        { children }
-      </section>
-    </>,
+    <BottomSheetContent onClose={ onClose } { ...contentProps } />,
     document.body
   );
 };
