@@ -1,8 +1,8 @@
 import { useCallback, useState, type ChangeEvent, type ComponentType, type FC } from 'react';
 import cn from 'classnames';
 
-import { useBreakpoint, useDocumentTitle } from '@/hooks';
-import { Content, HeadingLarge, LayoutWithSidebar, Select, SelectWidth, Sidebar } from '@/shared/ui';
+import { useBreakpoint } from '@/hooks';
+import { Content, LayoutWithSidebar, PageTitle, Select, SelectWidth, Sidebar } from '@/shared/ui';
 
 import { AccordionDemo } from './sections/AccordionDemo/AccordionDemo';
 import { ButtonsDemo } from './sections/ButtonsDemo/ButtonsDemo';
@@ -47,8 +47,6 @@ const SECTIONS: ComponentSection[] = [
 const SECTION_OPTIONS = SECTIONS.map(({ id, title }) => ({ value: id, label: title }));
 
 export const Components: FC = () => {
-  useDocumentTitle('Components');
-
   const { isDesktop } = useBreakpoint();
   const [activeId, setActiveId] = useState(SECTIONS[0].id);
 
@@ -65,7 +63,7 @@ export const Components: FC = () => {
 
   return (
     <div className={ styles.wrapper }>
-      <HeadingLarge>Components</HeadingLarge>
+      <PageTitle title='Components' documentTitle='Components' />
       { !isDesktop && (
         <Select
           options={ SECTION_OPTIONS }

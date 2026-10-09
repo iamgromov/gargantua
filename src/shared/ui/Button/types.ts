@@ -6,7 +6,8 @@ export enum Intent {
   Outline = 'outline',
   Danger = 'danger',
   Success = 'success',
-  Ghost = 'ghost'
+  Ghost = 'ghost',
+  Transparent = 'transparent'
 }
 
 export enum Size {

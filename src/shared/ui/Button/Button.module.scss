@@ -234,6 +234,24 @@
   }
 }
 
+.transparent {
+  gap: 0;
+  padding: 0;
+
+  background-color: transparent;
+  border-color: transparent;
+
+  color: $color-text-primary;
+
+  &:hover:not(.disabled, .loading) {
+    color: $color-primary;
+  }
+
+  &:active:not(.disabled, .loading) {
+    color: $color-primary;
+  }
+}
+
 // Спиннер загрузки
 .spinner {
   display: inline-block;

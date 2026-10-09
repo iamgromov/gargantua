@@ -38,7 +38,8 @@ export const BUTTON_VARIANTS: Array<{ value: Intent; label: string }> = [
   { value: Intent.Outline, label: 'Outline' },
   { value: Intent.Danger, label: 'Danger' },
   { value: Intent.Success, label: 'Success' },
-  { value: Intent.Ghost, label: 'Ghost' }
+  { value: Intent.Ghost, label: 'Ghost' },
+  { value: Intent.Transparent, label: 'Transparent' }
 ];
 
 export const ICON_BUTTON_SIZES: Array<{ value: Size; label: string }> = [
@@ -53,7 +54,8 @@ export const ICON_BUTTON_VARIANTS: Array<{ value: Intent; label: string }> = [
   { value: Intent.Outline, label: 'Outline' },
   { value: Intent.Danger, label: 'Danger' },
   { value: Intent.Success, label: 'Success' },
-  { value: Intent.Ghost, label: 'Ghost' }
+  { value: Intent.Ghost, label: 'Ghost' },
+  { value: Intent.Transparent, label: 'Transparent' }
 ];
 
 export const SPINNERS_SIZES: Array<{ value: SpinnerSize; label: string }> = [
