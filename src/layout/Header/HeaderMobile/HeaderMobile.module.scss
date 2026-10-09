@@ -33,7 +33,7 @@
   }
 
   @supports (corner-shape: superellipse(1.5)) {
-    border-radius: calc($border-radius-sm * 5);
+    border-radius: calc($border-radius-xl);
     corner-shape: superellipse(1.5);
   }
 }

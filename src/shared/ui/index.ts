@@ -8,6 +8,7 @@ export * from './Link';
 export * from './Logo';
 export * from './Paper';
 export * from './PageTitle';
+export * from './ScrollContainer';
 export * from './ScrollToTop';
 export * from './Select';
 export * from './Spinner';
