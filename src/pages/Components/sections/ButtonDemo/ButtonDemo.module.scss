@@ -1,0 +1,15 @@
+@use '../../../../styles/variables' as *;
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-base;
+  width: 100%;
+}
+
+.preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 240px;
+}

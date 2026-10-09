@@ -32,5 +32,6 @@
 .singleColumn {
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   gap: $spacing-2xl;
 }

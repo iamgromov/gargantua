@@ -1,0 +1,50 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+// Контейнер с горизонтальной прокруткой на любых устройствах
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: $spacing-base;
+  width: 100%;
+  max-width: 100%;
+  margin: calc($spacing-xxs * -1) 0;
+  padding: $spacing-xxs 0;
+  overflow: auto hidden;
+
+  overscroll-behavior-x: contain;
+  touch-action: pan-x;
+  user-select: none;
+
+  // Элементы не сжимаются, чтобы контейнер переполнялся по ширине
+  & > * {
+    flex-shrink: 0;
+  }
+
+  // Курсор во время перетаскивания мышью
+  &.dragging {
+    cursor: grabbing;
+
+    & * {
+      cursor: grabbing;
+    }
+  }
+
+  @include hide-scrollbar;
+}
+
+.none {
+  gap: 0;
+}
+
+.small {
+  gap: $spacing-sm;
+}
+
+.base {
+  gap: $spacing-base;
+}
+
+.large {
+  gap: $spacing-2xl;
+}
