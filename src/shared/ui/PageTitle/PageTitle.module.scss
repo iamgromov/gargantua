@@ -1,0 +1,14 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+// Заголовок страницы с кнопкой возврата
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.title {
+  text-align: left;
+}

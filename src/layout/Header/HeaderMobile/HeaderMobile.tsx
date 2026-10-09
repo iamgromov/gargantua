@@ -1,7 +1,7 @@
 import { memo, useCallback, useState, type FC, type ReactElement } from 'react';
 
 import { Menu } from '@/assets/icons';
-import { BottomSheet, Button, HeadingStandard, Intent, Link, Logo, Size } from '@/shared/ui';
+import { BottomSheet, Button, HeadingSmall, Intent, Link, Logo, Size } from '@/shared/ui';
 
 import { NAV_LINKS } from '../constants';
 
@@ -24,7 +24,11 @@ export const HeaderMobile: FC = memo((): ReactElement => {
         round={ true }
         onClick={ openMenu }
       />
-      <BottomSheet open={ isMenuOpen } onClose={ closeMenu }>
+      <BottomSheet
+        title='Pages'
+        open={ isMenuOpen }
+        onClose={ closeMenu }
+      >
         <nav className={ styles.nav }>
           { NAV_LINKS.map(({ to, title }) => (
             <Link
@@ -33,7 +37,7 @@ export const HeaderMobile: FC = memo((): ReactElement => {
               onClick={ closeMenu }
               underline={ false }
             >
-              <HeadingStandard>{ title }</HeadingStandard>
+              <HeadingSmall>{ title }</HeadingSmall>
             </Link>
           )) }
         </nav>

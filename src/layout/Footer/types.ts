@@ -1,19 +1,21 @@
 import type { FC, SVGProps } from 'react';
 
-export enum LINKS {
+import { REPO_URL } from '@/constants';
+
+export const LINKS = {
   // PROFILE
-  REPO = 'https://github.com/iamgromov/gargantua',
-  TELEGRAM = 'https://t.me/iamgromov',
+  REPO: REPO_URL,
+  TELEGRAM: 'https://t.me/iamgromov',
 
   // STUB
-  STUB = 'https://www.youtube.com/watch?v=K5zP7eQltDE',
+  STUB: 'https://www.youtube.com/watch?v=K5zP7eQltDE',
 
   // DOCS
-  REACT = 'https://react.dev/',
-  TANSTACK = 'https://tanstack.com/query/latest',
-  REDUX = 'https://redux.js.org/toolkit/',
-  JS = 'https://developer.mozilla.org/ru/docs/Web/JavaScript'
-};
+  REACT: 'https://react.dev/',
+  TANSTACK: 'https://tanstack.com/query/latest',
+  REDUX: 'https://redux.js.org/toolkit/',
+  JS: 'https://developer.mozilla.org/ru/docs/Web/JavaScript'
+} as const;
 
 export interface FooterLogo {
   id: 'react' | 'tanstack' | 'redux' | 'js';

@@ -1,17 +1,25 @@
 import { type FC, type ReactNode } from 'react';
 
-import { HeadingStandard } from '@/shared/ui';
+import { BodyXLargeMedium, HeadingStandard, Link } from '@/shared/ui';
 
 import styles from './Section.module.scss';
 
-interface SectionProps {
+interface Props {
   title: string;
+  description: string;
+  link: string;
   children: ReactNode;
 }
 
-export const Section: FC<SectionProps> = ({ title, children }) => (
+export const Section: FC<Props> = ({ title, description, link, children }) => (
   <section className={ styles.section }>
-    <HeadingStandard>{ title }</HeadingStandard>
+    <header className={ styles.header }>
+      <div className={ styles.info }>
+        <HeadingStandard>{ title }</HeadingStandard>
+        <BodyXLargeMedium className={ styles.description }>{ description }</BodyXLargeMedium>
+      </div>
+      <Link href={ link }>@/shared/ui/{ title }</Link>
+    </header>
     { children }
   </section>
 );

@@ -1,21 +1,71 @@
 @use '../../../styles/variables' as *;
 
-// Прямоугольная боковая панель без скруглений углов
+// Прямоугольная боковая панель без скруглений углов: собственных отступов нет — их задают шапка и контент
 .drawer {
   position: fixed;
   top: 0;
   bottom: 0;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
   width: min(85vw, 360px);
   height: 100%;
-  padding: $spacing-xl;
-  overflow-y: auto;
+  overflow: hidden;
 
   background-color: $color-background;
   box-shadow: $shadow-2xl;
 
   color: $color-text-primary;
+}
+
+// Шапка панели с заголовком
+.header {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
+  padding: $spacing-base $spacing-xl;
+}
+
+// Прокручиваемая область контента
+.content {
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: 0 $spacing-xl $spacing-xl;
+  overflow-y: auto;
+
+  overscroll-behavior: contain;
+}
+
+.content.contentNoHeader {
+  padding-top: $spacing-xl;
+}
+
+.header .title {
+  flex: 1;
+  padding-right: $spacing-4xl;
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.header .title.titleLeft {
+  text-align: left;
+}
+
+.header .title.titleCenter {
+  padding-left: $spacing-4xl;
+
+  text-align: center;
+}
+
+.drawer .close {
+  position: absolute;
+  top: $spacing-base;
+  right: $spacing-base;
 }
 
 // Выезд справа

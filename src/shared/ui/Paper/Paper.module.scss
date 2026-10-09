@@ -1,0 +1,32 @@
+@use '../../../styles/mixins' as *;
+@use '../../../styles/variables' as *;
+
+.paper {
+  padding: $spacing-base;
+
+  border-radius: $border-radius-xl;
+
+  @include theme-transition(background-color);
+
+  @include tablet-and-more {
+    padding: $spacing-xl;
+  }
+}
+
+.noPadding {
+  padding: 0;
+}
+
+.primary {
+  background-color: $color-surface;
+}
+
+.blur {
+  background-color: color-mix(in srgb, $color-surface 60%, transparent);
+
+  backdrop-filter: blur(16px);
+}
+
+.transparent {
+  background-color: transparent;
+}
