@@ -1,6 +1,45 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
 
+// Обёртка для привязки теней к видимой области прокрутки
+.viewport {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+}
+
+// Затемнение у края, подсказывающее, что контент можно прокрутить
+.shadow {
+  position: absolute;
+  top: calc($spacing-xxs * -1);
+  bottom: calc($spacing-xxs * -1);
+  z-index: 1;
+  width: 40px;
+
+  background-repeat: no-repeat;
+  opacity: 0;
+
+  transition: opacity var(--transition-duration) var(--transition-timing);
+  pointer-events: none;
+}
+
+.shadowLeft {
+  left: 0;
+
+  background-image: linear-gradient(to right, $color-surface, transparent);
+}
+
+.shadowRight {
+  right: 0;
+
+  background-image: linear-gradient(to left, $color-surface, transparent);
+}
+
+.shadowVisible {
+  opacity: 1;
+}
+
 // Контейнер с горизонтальной прокруткой на любых устройствах
 .container {
   display: flex;

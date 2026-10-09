@@ -44,6 +44,7 @@ export const ScrollContainer = forwardRef<HTMLDivElement, ScrollContainerProps>(
     const dragRef = useRef<DragState>(INITIAL_DRAG_STATE);
     const suppressClickRef = useRef(false);
     const [dragging, setDragging] = useState(false);
+    const [shadows, setShadows] = useState({ start: false, end: false });
 
     // Сохраняет узел одновременно во внутреннем и внешнем ref
     const setElementRef = useCallback(
@@ -89,6 +90,41 @@ export const ScrollContainer = forwardRef<HTMLDivElement, ScrollContainerProps>(
 
       return () => element.removeEventListener('wheel', handleWheel);
     }, []);
+
+    // Обновляет видимость теней по текущей позиции прокрутки
+    const updateShadows = useCallback(() => {
+      const element = elementRef.current;
+
+      if (!element) {
+        return;
+      }
+
+      const { scrollLeft, scrollWidth, clientWidth } = element;
+      const start = scrollLeft > 1;
+      const end = scrollLeft + clientWidth < scrollWidth - 1;
+
+      setShadows((prev) => (prev.start === start && prev.end === end ? prev : { start, end }));
+    }, []);
+
+    // Следит за прокруткой и размерами, чтобы вовремя обновлять тени
+    useEffect(() => {
+      const element = elementRef.current;
+
+      if (!element) {
+        return undefined;
+      }
+
+      updateShadows();
+      element.addEventListener('scroll', updateShadows, { passive: true });
+
+      const observer = new ResizeObserver(updateShadows);
+      observer.observe(element);
+
+      return () => {
+        element.removeEventListener('scroll', updateShadows);
+        observer.disconnect();
+      };
+    }, [updateShadows]);
 
     // Начало перетаскивания мышью
     const handlePointerDown = (event: PointerEvent<HTMLDivElement>) => {
@@ -166,17 +202,27 @@ export const ScrollContainer = forwardRef<HTMLDivElement, ScrollContainerProps>(
     };
 
     return (
-      <div
-        { ...rest }
-        ref={ setElementRef }
-        className={ cn(styles.container, styles[gap], { [styles.dragging]: dragging }, className) }
-        onClickCapture={ handleClickCapture }
-        onPointerDown={ handlePointerDown }
-        onPointerMove={ handlePointerMove }
-        onPointerUp={ handlePointerEnd }
-        onPointerCancel={ handlePointerEnd }
-      >
-        { children }
+      <div className={ styles.viewport }>
+        <div
+          { ...rest }
+          ref={ setElementRef }
+          className={ cn(styles.container, styles[gap], { [styles.dragging]: dragging }, className) }
+          onClickCapture={ handleClickCapture }
+          onPointerDown={ handlePointerDown }
+          onPointerMove={ handlePointerMove }
+          onPointerUp={ handlePointerEnd }
+          onPointerCancel={ handlePointerEnd }
+        >
+          { children }
+        </div>
+        <span
+          className={ cn(styles.shadow, styles.shadowLeft, { [styles.shadowVisible]: shadows.start }) }
+          aria-hidden
+        />
+        <span
+          className={ cn(styles.shadow, styles.shadowRight, { [styles.shadowVisible]: shadows.end }) }
+          aria-hidden
+        />
       </div>
     );
   }

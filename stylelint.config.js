@@ -21,6 +21,12 @@ export default {
       }
     ],
     'no-descending-specificity': null,
+    'no-invalid-position-declaration': [
+      true,
+      {
+        ignoreAtRules: ['mixin']
+      }
+    ],
     'property-no-unknown': [
       true,
       {

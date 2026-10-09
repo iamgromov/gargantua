@@ -18,10 +18,8 @@
     box-shadow: $shadow-sm;
   }
 
-  // Size variants
+  // Size variants (эти же классы задают вариант скругления из пропа borderRadius)
   &.small {
-    border-radius: $border-radius-sm;
-
     .button {
       min-height: 36px;
       padding: $spacing-sm;
@@ -32,11 +30,17 @@
     .contentInner {
       padding: $spacing-sm;
     }
+
+    @include superellipse(
+      $border-radius-sm,
+      $border-radius-sm,
+      $border-radius-sm,
+      $border-radius-sm,
+      0
+    );
   }
 
   &.medium {
-    border-radius: $border-radius-md;
-
     .button {
       min-height: 44px;
       padding: $spacing-base;
@@ -47,11 +51,16 @@
     .contentInner {
       padding: $spacing-base;
     }
+
+    @include superellipse(
+      $border-radius-md,
+      $border-radius-md,
+      $border-radius-md,
+      $border-radius-md
+    );
   }
 
   &.large {
-    border-radius: $border-radius-lg;
-
     .button {
       min-height: 52px;
       padding: $spacing-lg;
@@ -62,6 +71,13 @@
     .contentInner {
       padding: $spacing-lg;
     }
+
+    @include superellipse(
+      $border-radius-lg,
+      $border-radius-lg,
+      $border-radius-lg,
+      $border-radius-lg
+    );
   }
 
   // Border radius variants
@@ -71,6 +87,7 @@
 
   &.full {
     border-radius: $border-radius-full;
+    corner-shape: round;
   }
 }
 

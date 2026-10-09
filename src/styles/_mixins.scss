@@ -100,3 +100,28 @@
     }
   }
 }
+
+// Радиус одного угла под corner-shape: нулевой угол остаётся нулевым,
+// а вычитание компенсации не уводит радиус в минус.
+@function superellipse-corner($radius, $shrink) {
+  $corner: $radius + $shrink;
+
+  @if $radius == 0 {
+    @return 0;
+  }
+
+  @return $corner;
+}
+
+// Скругления суперэллипсом там, где поддерживается corner-shape.
+// $tl/$tr/$br/$bl — радиусы углов от левого верхнего по часовой стрелке,
+// $shrink — компенсация «визуально более скруглённого» суперэллипса.
+@mixin superellipse($tl, $tr: $tl, $br: $tl, $bl: $tl, $shrink: $border-radius-sm) {
+  border-radius: $tl $tr $br $bl;
+
+  @supports (corner-shape: superellipse(1.5)) {
+    border-radius: superellipse-corner($tl, $shrink) superellipse-corner($tr, $shrink)
+      superellipse-corner($br, $shrink) superellipse-corner($bl, $shrink);
+    corner-shape: superellipse(1.5);
+  }
+}
