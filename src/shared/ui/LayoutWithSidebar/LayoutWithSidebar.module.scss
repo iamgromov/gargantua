@@ -6,7 +6,7 @@
 
   display: grid;
   align-items: start;
-  gap: $spacing-4xl;
+  gap: $spacing-sm;
   grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
 }
 

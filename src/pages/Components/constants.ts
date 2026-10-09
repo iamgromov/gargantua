@@ -22,6 +22,7 @@ import {
   LabelStandardMedium,
   LabelStandardRegular,
   LabelStandardSemibold,
+  PaperIntent,
   SpinnerSize,
   type TypographyProps
 } from '@/shared/ui';
@@ -56,6 +57,12 @@ export const ICON_BUTTON_VARIANTS: Array<{ value: Intent; label: string }> = [
   { value: Intent.Success, label: 'Success' },
   { value: Intent.Ghost, label: 'Ghost' },
   { value: Intent.Transparent, label: 'Transparent' }
+];
+
+export const PAPER_INTENTS: Array<{ value: PaperIntent; label: string }> = [
+  { value: PaperIntent.Primary, label: 'Primary' },
+  { value: PaperIntent.Blur, label: 'Blur' },
+  { value: PaperIntent.Transparent, label: 'Transparent' }
 ];
 
 export const SPINNERS_SIZES: Array<{ value: SpinnerSize; label: string }> = [

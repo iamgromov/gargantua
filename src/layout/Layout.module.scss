@@ -19,5 +19,9 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding: $spacing-xl;
+  padding: $spacing-base;
+
+  @include tablet-and-more {
+    padding: $spacing-xl;
+  }
 }

@@ -2,13 +2,14 @@ import { useCallback, useState, type ChangeEvent, type ComponentType, type FC } 
 import cn from 'classnames';
 
 import { useBreakpoint } from '@/hooks';
-import { Content, LayoutWithSidebar, PageTitle, Select, SelectWidth, Sidebar } from '@/shared/ui';
+import { Content, LayoutWithSidebar, PageTitle, Paper, Select, SelectWidth, Sidebar } from '@/shared/ui';
 
 import { AccordionDemo } from './sections/AccordionDemo/AccordionDemo';
 import { ButtonsDemo } from './sections/ButtonsDemo/ButtonsDemo';
 import { EmptyStateDemo } from './sections/EmptyStateDemo/EmptyStateDemo';
 import { IconButtonsDemo } from './sections/IconButtonsDemo/IconButtonsDemo';
 import { LinkDemo } from './sections/LinkDemo/LinkDemo';
+import { PaperDemo } from './sections/PaperDemo/PaperDemo';
 import { Posts } from './sections/Posts/Posts';
 import { Section } from './sections/Section/Section';
 import { SelectDemo } from './sections/SelectDemo/SelectDemo';
@@ -40,7 +41,8 @@ const SECTIONS: ComponentSection[] = [
   { id: 'icon-buttons', title: 'IconButtons', Component: IconButtonsDemo },
   { id: 'link', title: 'Link', Component: LinkDemo },
   { id: 'spinners', title: 'Spinners', Component: SpinnersDemo },
-  { id: 'empty-state', title: 'EmptyState', Component: EmptyStateDemo }
+  { id: 'empty-state', title: 'EmptyState', Component: EmptyStateDemo },
+  { id: 'paper', title: 'Paper', Component: PaperDemo }
 ];
 
 /** Опции выпадающего списка для навигации по компонентам на узких экранах */
@@ -89,10 +91,11 @@ export const Components: FC = () => {
         </Sidebar>
 
         <Content className={ styles.content }>
-
-          <Section title={ activeSection.title }>
-            <ActiveComponent />
-          </Section>
+          <Paper>
+            <Section title={ activeSection.title }>
+              <ActiveComponent />
+            </Section>
+          </Paper>
         </Content>
       </LayoutWithSidebar>
     </div>

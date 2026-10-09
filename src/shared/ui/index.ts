@@ -6,6 +6,7 @@ export * from './EmptyState';
 export * from './LayoutWithSidebar';
 export * from './Link';
 export * from './Logo';
+export * from './Paper';
 export * from './PageTitle';
 export * from './ScrollToTop';
 export * from './Select';
