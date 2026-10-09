@@ -2,11 +2,14 @@ import { type FC, useCallback, useEffect, useId } from 'react';
 import { createPortal } from 'react-dom';
 import cn from 'classnames';
 
+import { Close } from '@/assets/icons';
 import { ZIndex } from '@/utils/zIndex';
 
+import { Button, Intent, Size } from '../Button';
 import { Overlay } from '../primitives/Overlay';
+import { HeadingStandard } from '../Typography';
 
-import { DrawerSide, type DrawerProps } from './types';
+import { DrawerSide, DrawerTitleAlign, type DrawerProps } from './types';
 
 import styles from './Drawer.module.scss';
 
@@ -14,6 +17,9 @@ import styles from './Drawer.module.scss';
 export const Drawer: FC<DrawerProps> = ({
   open,
   onClose,
+  title,
+  titleAlign = DrawerTitleAlign.Left,
+  showClose = true,
   children,
   side = DrawerSide.Right,
   closeOnBackdrop = true,
@@ -65,6 +71,9 @@ export const Drawer: FC<DrawerProps> = ({
     return null;
   }
 
+  const hasTitle = Boolean(title);
+  const hasContent = Boolean(children);
+
   return createPortal(
     <>
       <Overlay
@@ -78,10 +87,41 @@ export const Drawer: FC<DrawerProps> = ({
         aria-modal='true'
         aria-labelledby={ titleId }
       >
-        <h2 className={ styles.visuallyHidden } id={ titleId }>
-          Drawer
-        </h2>
-        { children }
+        { hasTitle && (
+          <div className={ styles.header }>
+            <HeadingStandard
+              className={ cn(
+                styles.title,
+                titleAlign === DrawerTitleAlign.Center ? styles.titleCenter : styles.titleLeft
+              ) }
+              tag='h2'
+              id={ titleId }
+            >
+              { title }
+            </HeadingStandard>
+          </div>
+        ) }
+        { showClose && (
+          <Button
+            className={ styles.close }
+            icon={ <Close /> }
+            intent={ Intent.Outline }
+            size={ Size.Small }
+            round
+            aria-label='Закрыть'
+            onClick={ onClose }
+          />
+        ) }
+        { !hasTitle && (
+          <h2 className={ styles.visuallyHidden } id={ titleId }>
+            Drawer
+          </h2>
+        ) }
+        { hasContent && (
+          <div className={ cn(styles.content, { [styles.contentNoHeader]: !hasTitle }) }>
+            { children }
+          </div>
+        ) }
       </aside>
     </>,
     document.body
