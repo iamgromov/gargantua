@@ -13,7 +13,6 @@
 
   background-color: $color-background;
   border: $border-width-1 solid $color-border;
-  border-radius: $border-radius-lg;
 
   @include theme-transition(background-color);
 
@@ -32,10 +31,7 @@
     right: $spacing-base;
   }
 
-  @supports (corner-shape: superellipse(1.5)) {
-    border-radius: calc($border-radius-xl);
-    corner-shape: superellipse(1.5);
-  }
+  @include superellipse($border-radius-lg, $border-radius-lg, $border-radius-lg, $border-radius-lg);
 }
 
 .nav {

@@ -1,4 +1,5 @@
 @use '../../../../styles/variables' as *;
+@use '../../../../styles/mixins' as *;
 
 // Съезжающая снизу панель: собственных отступов нет — их задают шапка и контент
 .sheet {
@@ -16,7 +17,6 @@
 
   background-color: $color-background;
   border: $border-width-1 solid $color-border;
-  border-radius: $border-radius-xl $border-radius-xl 0 0;
   box-shadow: $shadow-2xl;
 
   color: $color-text-primary;
@@ -27,10 +27,13 @@
     border-radius $transition-base;
   animation: slide-up $transition-fast;
 
-  @supports (corner-shape: superellipse(1.5)) {
-    border-radius: calc($border-radius-md * 5) calc($border-radius-md * 5) 0 0;
-    corner-shape: superellipse(1.5);
-  }
+  @include superellipse(
+    calc($border-radius-sm * 5),
+    calc($border-radius-sm * 5),
+    0,
+    0,
+    $border-radius-xl
+  );
 }
 
 .expanded {

@@ -178,11 +178,13 @@ export * from './types';
 5. Каждую смысловую группу предваряет короткий комментарий на русском (`// Закрытие по Escape`, `// Варианты размеров`, `// Анимации`).
 6. Порядок свойств внутри блока — по правилу `order/properties-order` из `stylelint.config.js`: Layout → Visual → Typography → Misc, затем прочие свойства по алфавиту. Значения берутся из токенов (`$color-*`, `$spacing-*`, `$border-*`, `$transition-*`), а не «магическими» числами.
 7. Анимации объявляются `@keyframes` в конце файла.
+8. Скругления задаются миксином `superellipse($tl, $tr, $br, $bl, $shrink)` из `styles/mixins`: `border-radius` остаётся fallback‑ом, а `corner-shape: superellipse(1.5)` включается в `@supports`. Радиусы берутся из токенов `$border-radius-*`, нулевые углы передаются как `0` без единиц, а `$shrink` (по умолчанию `$border-radius-sm`) компенсирует визуально более скруглённый суперэллипс. Для круглых элементов (`border-radius: 50%`, `$border-radius-full`) миксин не применяется, вместо него остаётся обычный радиус.
 
 Пример:
 
 ```scss
 @use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
 
 // Съезжающая снизу панель
 .sheet {
@@ -199,12 +201,13 @@ export * from './types';
 
   background-color: $color-background;
   border: $border-width-1 solid $color-border;
-  border-radius: $border-radius-xl $border-radius-xl 0 0;
   box-shadow: $shadow-2xl;
 
   color: $color-text-primary;
 
   animation: slide-up $transition-fast;
+
+  @include superellipse($border-radius-xl, $border-radius-xl, 0, 0);
 }
 
 // Появление шторки снизу
