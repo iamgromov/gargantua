@@ -16,3 +16,6 @@ export enum ROUTES {
   CONTACTS = '/contacts',
   NOT_FOUND = '*'
 }
+
+/** Ссылка на репозиторий проекта */
+export const REPO_URL = 'https://github.com/iamgromov/gargantua';
