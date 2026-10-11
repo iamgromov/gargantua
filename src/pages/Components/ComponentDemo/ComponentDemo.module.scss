@@ -1,7 +1,7 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
 
-.section {
+.wrapper {
   display: flex;
   flex-direction: column;
   gap: $spacing-lg;

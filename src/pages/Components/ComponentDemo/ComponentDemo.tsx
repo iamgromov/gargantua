@@ -1,6 +1,6 @@
 import { type FC, type ReactNode } from 'react';
 
-import { BodyXLargeMedium, HeadingStandard, Link } from '@/shared/ui';
+import { BodyXLargeMedium, HeadingStandard, Link, Paper } from '@/shared/ui';
 
 import { getSourceLabel } from './constants';
 
@@ -14,7 +14,7 @@ interface Props {
 }
 
 export const ComponentDemo: FC<Props> = ({ title, description, link, children }) => (
-  <section className={ styles.section }>
+  <Paper className={ styles.wrapper }>
     <header className={ styles.header }>
       <div className={ styles.info }>
         <HeadingStandard>{ title }</HeadingStandard>
@@ -23,5 +23,5 @@ export const ComponentDemo: FC<Props> = ({ title, description, link, children })
       <Link href={ link }>{ getSourceLabel(link) }</Link>
     </header>
     { children }
-  </section>
+  </Paper>
 );

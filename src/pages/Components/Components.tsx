@@ -1,8 +1,8 @@
-import { useCallback, useState, type ChangeEvent, type FC } from 'react';
+import { Suspense, useCallback, useState, type ChangeEvent, type FC } from 'react';
 import cn from 'classnames';
 
 import { useBreakpoint } from '@/hooks';
-import { Content, LayoutWithSidebar, PageTitle, Paper, PaperIntent, Select, SelectWidth, Sidebar } from '@/shared/ui';
+import { Content, LayoutWithSidebar, PageTitle, Paper, PaperIntent, Select, SelectWidth, Sidebar, Spinner, SpinnerSize } from '@/shared/ui';
 
 import { ComponentDemo } from './ComponentDemo/ComponentDemo';
 import { COMPONENTS_MAP, COMPONENTS_OPTIONS } from './constants';
@@ -51,15 +51,15 @@ export const Components: FC = () => {
           </Paper>
         </Sidebar>
         <Content className={ styles.content }>
-          <Paper>
-            <ComponentDemo
-              title={ activeComponent.title }
-              description={ activeComponent.description }
-              link={ activeComponent.link }
-            >
+          <ComponentDemo
+            title={ activeComponent.title }
+            description={ activeComponent.description }
+            link={ activeComponent.link }
+          >
+            <Suspense fallback={ <Spinner size={ SpinnerSize.Large } fullHeight={ true } /> }>
               <ComponentPreview />
-            </ComponentDemo>
-          </Paper>
+            </Suspense>
+          </ComponentDemo>
         </Content>
       </LayoutWithSidebar>
     </div>
