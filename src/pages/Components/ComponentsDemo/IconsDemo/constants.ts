@@ -10,7 +10,7 @@ export type IconComponent = FC<SVGProps<SVGSVGElement>>;
 export type IconCategory = keyof typeof ICON_CATEGORIES;
 
 /** Категория, открытая по умолчанию */
-export const DEFAULT_CATEGORY: IconCategory = 'arrows';
+export const DEFAULT_CATEGORY: IconCategory = 'essetional';
 
 /** Цвет иконки — токены в стиле вариантов кнопки */
 export enum IconColor {

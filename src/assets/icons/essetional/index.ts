@@ -24,6 +24,7 @@ export { default as Chart } from './chart.svg?react';
 export { default as Chrome } from './chrome.svg?react';
 export { default as CloseCircle } from './close-circle.svg?react';
 export { default as CloseSquare } from './close-square.svg?react';
+export { default as Close } from './close.svg?react';
 export { default as Coffee } from './coffee.svg?react';
 export { default as Computing } from './computing.svg?react';
 export { default as Crown2 } from './crown-2.svg?react';
