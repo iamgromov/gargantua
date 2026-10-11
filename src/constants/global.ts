@@ -21,4 +21,4 @@ export enum ROUTES {
 export const REPO_URL = 'https://github.com/iamgromov/gargantua';
 
 /** Ссылка на дерево файлов репозитория */
-export const REPO_TREE_URL = `${REPO_URL}/tree/main`;
+export const REPO_TREE_URL = `${REPO_URL}/tree/main/src`;

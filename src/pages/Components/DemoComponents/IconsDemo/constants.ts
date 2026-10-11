@@ -10,7 +10,7 @@ export type IconComponent = FC<SVGProps<SVGSVGElement>>;
 export type IconCategory = keyof typeof ICON_CATEGORIES;
 
 /** Категория, открытая по умолчанию */
-export const DEFAULT_CATEGORY: IconCategory = 'arrows';
+export const DEFAULT_CATEGORY: IconCategory = 'essetional';
 
 /** Цвет иконки — токены в стиле вариантов кнопки */
 export enum IconColor {
@@ -33,14 +33,6 @@ export const COLOR_OPTIONS: SelectOption[] = [
   { value: IconColor.Success, label: 'Success' },
   { value: IconColor.Danger, label: 'Danger' }
 ];
-
-/** Соответствие выбранного цвета и CSS-токена */
-export const COLOR_TOKENS: Record<IconColor, string> = {
-  [IconColor.Primary]: 'var(--color-primary)',
-  [IconColor.Secondary]: 'var(--color-secondary)',
-  [IconColor.Success]: 'var(--color-success)',
-  [IconColor.Danger]: 'var(--color-danger)'
-};
 
 /** Иконки категории в виде пар «имя — компонент» */
 export const getCategoryIcons = (category: IconCategory): [string, IconComponent][] =>

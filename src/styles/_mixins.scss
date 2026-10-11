@@ -90,17 +90,6 @@
   transition: $properties var(--transition-theme) var(--transition-timing);
 }
 
-@mixin svg-fill() {
-  svg {
-    display: block;
-    margin: 0 auto;
-
-    path {
-      fill: $color-text-primary;
-    }
-  }
-}
-
 // Радиус одного угла под corner-shape: нулевой угол остаётся нулевым,
 // а вычитание компенсации не уводит радиус в минус.
 @function superellipse-corner($radius, $shrink) {

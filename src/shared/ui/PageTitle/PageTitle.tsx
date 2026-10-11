@@ -2,7 +2,7 @@ import { type FC, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import cn from 'classnames';
 
-import { ArrowSquareLeft } from '@/assets/icons/arrows';
+import { ArrowLeft2 } from '@/assets/icons/arrows';
 import { useCanGoBack, useDocumentTitle } from '@/hooks';
 
 import { Button, Intent, Size } from '../Button';
@@ -30,8 +30,7 @@ export const PageTitle: FC<PageTitleProps> = ({ title, documentTitle, className,
         <Button
           intent={ Intent.Transparent }
           size={ Size.Small }
-          icon={ <ArrowSquareLeft height={ 16 } /> }
-
+          icon={ <ArrowLeft2 height={ 16 } /> }
           aria-label={ 'Вернуться назад' }
           onClick={ handleBackClick }
         >

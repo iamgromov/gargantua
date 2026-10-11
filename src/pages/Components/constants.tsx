@@ -1,16 +1,12 @@
-import { type ComponentType } from 'react';
+import { lazy, type ComponentType } from 'react';
 
 import { REPO_TREE_URL } from '@/constants';
 
-import { AccordionSection } from './ComponentsDemo/AccordionSection/AccordionSection';
-import { ButtonDemo } from './ComponentsDemo/ButtonDemo/ButtonDemo';
-import { EmptyStateDemo } from './ComponentsDemo/EmptyStateDemo/EmptyStateDemo';
-import { IconsDemo } from './ComponentsDemo/IconsDemo/IconsDemo';
-import { LinkDemo } from './ComponentsDemo/LinkDemo/LinkDemo';
-import { PaperDemo } from './ComponentsDemo/PaperDemo/PaperDemo';
-import { SelectDemo } from './ComponentsDemo/SelectDemo/SelectDemo';
-import { SpinnerDemo } from './ComponentsDemo/SpinnerDemo/SpinnerDemo';
-import { TypographyDemo } from './ComponentsDemo/TypographyDemo/TypographyDemo';
+/** Ленивая загрузка компонента из именованного экспорта модуля демо */
+const lazyComponent = <TModule extends Record<string, ComponentType>>(
+  factory: () => Promise<TModule>,
+  name: keyof TModule
+) => lazy(() => factory().then((module) => ({ default: module[name] })));
 
 interface ComponentDemo {
   id: string;
@@ -20,73 +16,70 @@ interface ComponentDemo {
   Component: ComponentType;
 }
 
-/** Базовый адрес исходников в репозитории */
-const CODE_BASE_URL = `${REPO_TREE_URL}/src`;
-
 /** Компоненты, отображаемые на странице */
 export const COMPONENTS_MAP: ComponentDemo[] = [
   {
     id: 'accordion',
     title: 'Accordion',
     description: 'Сворачиваемые панели для компактного отображения контента.',
-    link: `${CODE_BASE_URL}/shared/ui/Accordion`,
-    Component: AccordionSection
+    link: `${REPO_TREE_URL}/shared/ui/Accordion`,
+    Component: lazyComponent(() => import('./DemoComponents/AccordionSection/AccordionSection'), 'AccordionSection')
   },
   {
     id: 'button',
     title: 'Button',
     description: 'Кнопка с настраиваемым размером и вариантом оформления.',
-    link: `${CODE_BASE_URL}/shared/ui/Button`,
-    Component: ButtonDemo
+    link: `${REPO_TREE_URL}/shared/ui/Button`,
+    Component: lazyComponent(() => import('./DemoComponents/ButtonDemo/ButtonDemo'), 'ButtonDemo')
   },
   {
     id: 'empty-state',
     title: 'EmptyState',
     description: 'Заглушка для пустых состояний с заголовком, описанием и действием.',
-    link: `${CODE_BASE_URL}/shared/ui/EmptyState`,
-    Component: EmptyStateDemo
+    link: `${REPO_TREE_URL}/shared/ui/EmptyState`,
+    Component: lazyComponent(() => import('./DemoComponents/EmptyStateDemo/EmptyStateDemo'), 'EmptyStateDemo')
   },
   {
     id: 'typography',
     title: 'Typography',
     description: 'Стили заголовков для визуального выделения и структурирования контента.',
-    link: `${CODE_BASE_URL}/shared/ui/Typography`,
-    Component: TypographyDemo
+    link: `${REPO_TREE_URL}/shared/ui/Typography`,
+    Component: lazyComponent(() => import('./DemoComponents/TypographyDemo/TypographyDemo'), 'TypographyDemo')
   },
   {
     id: 'icons',
     title: 'Icons',
     description: 'Библиотека иконок, сгруппированных по категориям.',
-    link: `${CODE_BASE_URL}/assets/icons`,
-    Component: IconsDemo
+    link: `${REPO_TREE_URL}/assets/icons`,
+    Component: lazyComponent(() => import('./DemoComponents/IconsDemo/IconsDemo'), 'IconsDemo')
   },
   {
     id: 'link',
     title: 'Link',
     description: 'Ссылка для внутренней навигации и перехода по внешним URL.',
-    link: `${CODE_BASE_URL}/shared/ui/Link`,
-    Component: LinkDemo
+    link: `${REPO_TREE_URL}/shared/ui/Link`,
+    Component: lazyComponent(() => import('./DemoComponents/LinkDemo/LinkDemo'), 'LinkDemo')
   },
   {
     id: 'paper',
     title: 'Paper',
     description: 'Контейнер с фоном, границей и скруглением для группировки контента.',
-    link: `${CODE_BASE_URL}/shared/ui/Paper`,
-    Component: PaperDemo
+    link: `${REPO_TREE_URL}/shared/ui/Paper`,
+    Component: lazyComponent(() => import('./DemoComponents/PaperDemo/PaperDemo'), 'PaperDemo')
   },
   {
     id: 'select',
     title: 'Select',
     description: 'Выпадающий список для выбора одного значения из набора опций.',
-    link: `${CODE_BASE_URL}/shared/ui/Select`,
-    Component: SelectDemo
+    link: `${REPO_TREE_URL}/shared/ui/Select`,
+    Component: lazyComponent(() => import('./DemoComponents/SelectDemo/SelectDemo'), 'SelectDemo')
   },
   {
     id: 'spinner',
     title: 'Spinner',
     description: 'Индикатор загрузки для отображения процесса ожидания.',
-    link: `${CODE_BASE_URL}/shared/ui/Spinner`,
-    Component: SpinnerDemo
+    link: `${REPO_TREE_URL}/shared/ui/Spinner`,
+    Component: lazyComponent(() => import('./DemoComponents/SpinnerDemo/SpinnerDemo'), 'SpinnerDemo')
   }
 ];
 
