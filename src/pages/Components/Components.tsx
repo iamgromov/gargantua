@@ -1,10 +1,10 @@
 import { Suspense, useCallback, useState, type ChangeEvent, type FC } from 'react';
-import cn from 'classnames';
 
 import { useBreakpoint } from '@/hooks';
-import { Content, LayoutWithSidebar, PageTitle, Paper, PaperIntent, Select, SelectWidth, Sidebar, Spinner, SpinnerSize } from '@/shared/ui';
+import { Content, LayoutWithSidebar, PageTitle, Select, SelectWidth, Sidebar, Spinner, SpinnerSize } from '@/shared/ui';
 
-import { ComponentDemo } from './ComponentDemo/ComponentDemo';
+import { ComponentPreview } from './ComponentPreview/ComponentPreview';
+import { ComponentTabs } from './ComponentTabs/ComponentTabs';
 import { COMPONENTS_MAP, COMPONENTS_OPTIONS } from './constants';
 
 import styles from './Components.module.scss';
@@ -22,7 +22,7 @@ export const Components: FC = () => {
   }, []);
 
   const activeComponent = COMPONENTS_MAP.find((component) => component.id === activeId) ?? COMPONENTS_MAP[0];
-  const ComponentPreview = activeComponent.Component;
+  const ActiveComponentPreview = activeComponent.Component;
 
   return (
     <div className={ styles.wrapper }>
@@ -37,29 +37,18 @@ export const Components: FC = () => {
       ) }
       <LayoutWithSidebar>
         <Sidebar>
-          <Paper className={ styles.nav } intent={ PaperIntent.Primary }>
-            { COMPONENTS_MAP.map(({ id, title }) => (
-              <button
-                key={ id }
-                type='button'
-                className={ cn(styles.navItem, { [styles.active]: id === activeId }) }
-                onClick={ () => handleSelect(id) }
-              >
-                { title }
-              </button>
-            )) }
-          </Paper>
+          <ComponentTabs activeId={ activeId } onSelect={ handleSelect } />
         </Sidebar>
         <Content className={ styles.content }>
-          <ComponentDemo
+          <ComponentPreview
             title={ activeComponent.title }
             description={ activeComponent.description }
             link={ activeComponent.link }
           >
             <Suspense fallback={ <Spinner size={ SpinnerSize.Large } fullHeight={ true } /> }>
-              <ComponentPreview />
+              <ActiveComponentPreview />
             </Suspense>
-          </ComponentDemo>
+          </ComponentPreview>
         </Content>
       </LayoutWithSidebar>
     </div>

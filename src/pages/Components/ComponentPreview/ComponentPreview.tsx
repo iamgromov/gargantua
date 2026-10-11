@@ -4,7 +4,7 @@ import { BodyXLargeMedium, HeadingStandard, Link, Paper } from '@/shared/ui';
 
 import { getSourceLabel } from './constants';
 
-import styles from './ComponentDemo.module.scss';
+import styles from './ComponentPreview.module.scss';
 
 interface Props {
   title: string;
@@ -13,7 +13,7 @@ interface Props {
   children: ReactNode;
 }
 
-export const ComponentDemo: FC<Props> = ({ title, description, link, children }) => (
+export const ComponentPreview: FC<Props> = ({ title, description, link, children }) => (
   <Paper className={ styles.wrapper }>
     <header className={ styles.header }>
       <div className={ styles.info }>
