@@ -17,9 +17,7 @@ export enum IconColor {
   Primary = 'primary',
   Secondary = 'secondary',
   Success = 'success',
-  Danger = 'danger',
-  TextPrimary = 'text-primary',
-  TextSecondary = 'text-secondary'
+  Danger = 'danger'
 }
 
 /** Опции выбора категории иконок */
@@ -33,9 +31,7 @@ export const COLOR_OPTIONS: SelectOption[] = [
   { value: IconColor.Primary, label: 'Primary' },
   { value: IconColor.Secondary, label: 'Secondary' },
   { value: IconColor.Success, label: 'Success' },
-  { value: IconColor.Danger, label: 'Danger' },
-  { value: IconColor.TextPrimary, label: 'Text primary' },
-  { value: IconColor.TextSecondary, label: 'Text secondary' }
+  { value: IconColor.Danger, label: 'Danger' }
 ];
 
 /** Соответствие выбранного цвета и CSS-токена */
@@ -43,9 +39,7 @@ export const COLOR_TOKENS: Record<IconColor, string> = {
   [IconColor.Primary]: 'var(--color-primary)',
   [IconColor.Secondary]: 'var(--color-secondary)',
   [IconColor.Success]: 'var(--color-success)',
-  [IconColor.Danger]: 'var(--color-danger)',
-  [IconColor.TextPrimary]: 'var(--color-text-primary)',
-  [IconColor.TextSecondary]: 'var(--color-text-secondary)'
+  [IconColor.Danger]: 'var(--color-danger)'
 };
 
 /** Иконки категории в виде пар «имя — компонент» */

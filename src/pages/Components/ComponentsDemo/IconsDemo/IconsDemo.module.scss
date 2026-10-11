@@ -41,6 +41,10 @@
   justify-content: center;
   align-items: center;
 
+  // Перекрывает глобальный reset для `span` (color: --color-text-primary),
+  // чтобы иконка наследовала цвет от <ul> и currentcolor следовало за токеном.
+  color: inherit;
+
   svg {
     display: block;
     width: 24px;
