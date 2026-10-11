@@ -4,7 +4,7 @@ import cn from 'classnames';
 import { useBreakpoint } from '@/hooks';
 import { Content, LayoutWithSidebar, PageTitle, Paper, PaperIntent, Select, SelectWidth, Sidebar } from '@/shared/ui';
 
-import { Section } from './ComponentsDemo/ComponentDemo/ComponentDemo';
+import { ComponentDemo } from './ComponentDemo/ComponentDemo';
 import { COMPONENTS_MAP, COMPONENTS_OPTIONS } from './constants';
 
 import styles from './Components.module.scss';
@@ -52,13 +52,13 @@ export const Components: FC = () => {
         </Sidebar>
         <Content className={ styles.content }>
           <Paper>
-            <Section
+            <ComponentDemo
               title={ activeComponent.title }
               description={ activeComponent.description }
               link={ activeComponent.link }
             >
               <ComponentPreview />
-            </Section>
+            </ComponentDemo>
           </Paper>
         </Content>
       </LayoutWithSidebar>

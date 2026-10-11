@@ -47,9 +47,6 @@ export const IconsDemo: FC = () => {
         />
       </ScrollContainer>
       <Paper intent={ PaperIntent.Transparent } className={ styles.preview }>
-        <LabelSmallRegular className={ styles.counter }>
-          Иконок в категории: { icons.length }
-        </LabelSmallRegular>
         <ul className={ styles.grid } style={ { color: COLOR_TOKENS[color] } }>
           { icons.map(([name, Icon]) => (
             <li key={ name } className={ styles.item }>

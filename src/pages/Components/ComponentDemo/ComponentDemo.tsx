@@ -13,7 +13,7 @@ interface Props {
   children: ReactNode;
 }
 
-export const Section: FC<Props> = ({ title, description, link, children }) => (
+export const ComponentDemo: FC<Props> = ({ title, description, link, children }) => (
   <section className={ styles.section }>
     <header className={ styles.header }>
       <div className={ styles.info }>
