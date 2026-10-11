@@ -34,29 +34,22 @@
   border-radius: $border-radius-md;
 }
 
-// Иконки монохромные: цвет заливки и обводки берётся из текущего цвета текста,
-// поэтому переключение палитры не требует правок самих svg.
+// Иконки монохромные: в самих svg заданы fill/stroke="currentColor",
+// поэтому цвет берётся из текущего цвета текста и переключение палитры
+// не требует правок ни самих svg, ни этих стилей.
 .icon {
   display: flex;
   justify-content: center;
   align-items: center;
 
   // Перекрывает глобальный reset для `span` (color: --color-text-primary),
-  // чтобы иконка наследовала цвет от <ul> и currentcolor следовало за токеном.
+  // чтобы иконка наследовала цвет от <ul>.
   color: inherit;
 
   svg {
     display: block;
     width: 24px;
     height: 24px;
-
-    path[fill]:not([fill='none']) {
-      fill: currentcolor;
-    }
-
-    [stroke] {
-      stroke: currentcolor;
-    }
   }
 }
 
