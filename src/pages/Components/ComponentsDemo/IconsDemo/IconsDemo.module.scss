@@ -1,0 +1,68 @@
+@use '../../../../styles/variables' as *;
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-base;
+  width: 100%;
+}
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-base;
+}
+
+.counter {
+  color: $color-text-secondary;
+}
+
+.grid {
+  display: grid;
+  gap: $spacing-xs;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-xxs;
+  padding: $spacing-xs;
+
+  background-color: $color-gray-50;
+  border-radius: $border-radius-md;
+}
+
+// Иконки монохромные: цвет заливки и обводки берётся из текущего цвета текста,
+// поэтому переключение палитры не требует правок самих svg.
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    path[fill]:not([fill='none']) {
+      fill: currentcolor;
+    }
+
+    [stroke] {
+      stroke: currentcolor;
+    }
+  }
+}
+
+.name {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: $color-text-secondary;
+}

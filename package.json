@@ -13,6 +13,7 @@
     "stylelint:fix": "stylelint \"**/*.scss\" --fix",
     "typecheck": "tsc -b",
     "bump": "node scripts/bump.mjs",
+    "icons": "node scripts/icons.mjs",
     "preview": "vite preview --config vite/vite.prod.ts",
     "prepare": "husky"
   },

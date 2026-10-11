@@ -1,0 +1,50 @@
+/**
+ * Иконки категории «grid».
+ * Сгенерировано автоматически: scripts/icons.mjs — не редактировать вручную.
+ */
+
+export { default as Icon3square } from './3square.svg?react';
+export { default as AlignBottom } from './align-bottom.svg?react';
+export { default as AlignHorizontally } from './align-horizontally.svg?react';
+export { default as AlignLeft } from './align-left.svg?react';
+export { default as AlignRight } from './align-right.svg?react';
+export { default as AlignTop } from './align-top.svg?react';
+export { default as AlignVertically } from './align-vertically.svg?react';
+export { default as Convertshape2 } from './convertshape-2.svg?react';
+export { default as Convertshape } from './convertshape.svg?react';
+export { default as Crop } from './crop.svg?react';
+export { default as Element1 } from './element-1.svg?react';
+export { default as Element2 } from './element-2.svg?react';
+export { default as Element3 } from './element-3.svg?react';
+export { default as Element4 } from './element-4.svg?react';
+export { default as ElementEqual } from './element-equal.svg?react';
+export { default as ElementPlus } from './element-plus.svg?react';
+export { default as Fatrows } from './fatrows.svg?react';
+export { default as FormatCircle } from './format-circle.svg?react';
+export { default as FormatSquare } from './format-square.svg?react';
+export { default as Grid1 } from './grid-1.svg?react';
+export { default as Grid2 } from './grid-2.svg?react';
+export { default as Grid3 } from './grid-3.svg?react';
+export { default as Grid4 } from './grid-4.svg?react';
+export { default as Grid5 } from './grid-5.svg?react';
+export { default as Grid6 } from './grid-6.svg?react';
+export { default as Grid7 } from './grid-7.svg?react';
+export { default as Grid8 } from './grid-8.svg?react';
+export { default as Grid9 } from './grid-9.svg?react';
+export { default as GridEdit } from './grid-edit.svg?react';
+export { default as GridEraser } from './grid-eraser.svg?react';
+export { default as GridLock } from './grid-lock.svg?react';
+export { default as Kanban } from './kanban.svg?react';
+export { default as Maximize1 } from './maximize-1.svg?react';
+export { default as Maximize2 } from './maximize-2.svg?react';
+export { default as Maximize3 } from './maximize-3.svg?react';
+export { default as Maximize4 } from './maximize-4.svg?react';
+export { default as Maximize } from './maximize.svg?react';
+export { default as RotateLeft } from './rotate-left.svg?react';
+export { default as RotateRight } from './rotate-right.svg?react';
+export { default as RowHorizontal } from './row-horizontal.svg?react';
+export { default as RowVertical } from './row-vertical.svg?react';
+export { default as SliderHorizontal1 } from './slider-horizontal-1.svg?react';
+export { default as SliderHorizontal } from './slider-horizontal.svg?react';
+export { default as SliderVertical1 } from './slider-vertical-1.svg?react';
+export { default as SliderVertical } from './slider-vertical.svg?react';

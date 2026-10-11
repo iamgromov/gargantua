@@ -1,6 +1,6 @@
 import { type ReactNode } from 'react';
 
-import { Menu } from '@/assets/icons';
+import { Menu } from '@/assets/icons/essetional';
 import { type SelectOption } from '@/shared/ui';
 import { IconPosition, Intent, LoadingType, Size } from '@/shared/ui/Button';
 

@@ -1,7 +1,7 @@
 import { useEffect, useState, type FC } from 'react';
 import cn from 'classnames';
 
-import { ArrowUp } from '@/assets/icons';
+import { ArrowUp3 } from '@/assets/icons/arrows';
 import { Button, Intent, Size } from '@/shared/ui/Button';
 import { scrollToTop } from '@/utils';
 
@@ -39,7 +39,7 @@ export const ScrollToTop: FC<ScrollToTopProps> = ({ className }) => {
         className={ styles.button }
         intent={ Intent.Ghost }
         size={ Size.Large }
-        icon={ <ArrowUp /> }
+        icon={ <ArrowUp3 /> }
         round={ true }
         onClick={ scrollToTop }
       />

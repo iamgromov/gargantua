@@ -2,7 +2,9 @@ import { type FC, type ReactNode } from 'react';
 
 import { BodyXLargeMedium, HeadingStandard, Link } from '@/shared/ui';
 
-import styles from './Section.module.scss';
+import { getSourceLabel } from './constants';
+
+import styles from './ComponentDemo.module.scss';
 
 interface Props {
   title: string;
@@ -18,7 +20,7 @@ export const Section: FC<Props> = ({ title, description, link, children }) => (
         <HeadingStandard>{ title }</HeadingStandard>
         <BodyXLargeMedium className={ styles.description }>{ description }</BodyXLargeMedium>
       </div>
-      <Link href={ link }>@/shared/ui/{ title }</Link>
+      <Link href={ link }>{ getSourceLabel(link) }</Link>
     </header>
     { children }
   </section>
