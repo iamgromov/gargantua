@@ -34,14 +34,6 @@ export const COLOR_OPTIONS: SelectOption[] = [
   { value: IconColor.Danger, label: 'Danger' }
 ];
 
-/** Соответствие выбранного цвета и CSS-токена */
-export const COLOR_TOKENS: Record<IconColor, string> = {
-  [IconColor.Primary]: 'var(--color-primary)',
-  [IconColor.Secondary]: 'var(--color-secondary)',
-  [IconColor.Success]: 'var(--color-success)',
-  [IconColor.Danger]: 'var(--color-danger)'
-};
-
 /** Иконки категории в виде пар «имя — компонент» */
 export const getCategoryIcons = (category: IconCategory): [string, IconComponent][] =>
   Object.entries(ICON_CATEGORIES[category] as Record<string, IconComponent>);

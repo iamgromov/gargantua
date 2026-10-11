@@ -1,11 +1,12 @@
 import { useState, type ChangeEvent, type FC } from 'react';
+import cn from 'classnames';
 
+import { Copy } from '@/assets/icons/tools';
 import { LabelSmallRegular, Paper, PaperIntent, ScrollContainer, Select } from '@/shared/ui';
 
 import {
   CATEGORY_OPTIONS,
   COLOR_OPTIONS,
-  COLOR_TOKENS,
   DEFAULT_CATEGORY,
   getCategoryIcons,
   IconColor,
@@ -30,6 +31,11 @@ export const IconsDemo: FC = () => {
     setColor(event.target.value as IconColor);
   };
 
+  /** Копирует имя иконки в буфер обмена */
+  const handleCopy = (name: string) => {
+    void navigator.clipboard.writeText(name);
+  };
+
   return (
     <div className={ styles.column }>
       <ScrollContainer>
@@ -47,13 +53,23 @@ export const IconsDemo: FC = () => {
         />
       </ScrollContainer>
       <Paper intent={ PaperIntent.Transparent } className={ styles.preview }>
-        <ul className={ styles.grid } style={ { color: COLOR_TOKENS[color] } }>
+        <ul className={ cn(styles.grid, styles[color]) }>
           { icons.map(([name, Icon]) => (
-            <li key={ name } className={ styles.item }>
-              <span className={ styles.icon }>
+            <li key={ name }>
+              <Paper intent={ PaperIntent.Transparent } className={ styles.item }>
                 <Icon />
-              </span>
-              <LabelSmallRegular tag='span' className={ styles.name }>{ name }</LabelSmallRegular>
+                <button
+                  type='button'
+                  className={ styles.nameRow }
+                  title='Скопировать имя'
+                  onClick={ () => handleCopy(name) }
+                >
+                  <span className={ styles.nameWrap }>
+                    <LabelSmallRegular tag='span' className={ styles.name }>{ name }</LabelSmallRegular>
+                    <Copy className={ styles.copy } width={ 12 } height={ 12 } />
+                  </span>
+                </button>
+              </Paper>
             </li>
           )) }
         </ul>
