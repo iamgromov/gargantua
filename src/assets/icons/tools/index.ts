@@ -1,0 +1,55 @@
+/**
+ * Иконки категории «tools».
+ * Сгенерировано автоматически: scripts/icons.mjs — не редактировать вручную.
+ */
+
+export { default as Additem } from './additem.svg?react';
+export { default as BackwardItem } from './backward-item.svg?react';
+export { default as Bezier } from './bezier.svg?react';
+export { default as Blend2 } from './blend-2.svg?react';
+export { default as Blend } from './blend.svg?react';
+export { default as Blur } from './blur.svg?react';
+export { default as Brush1 } from './brush-1.svg?react';
+export { default as Brush2 } from './brush-2.svg?react';
+export { default as Brush4 } from './brush-4.svg?react';
+export { default as BrushSquare } from './brush-square.svg?react';
+export { default as Brush } from './brush.svg?react';
+export { default as BucketCircle } from './bucket-circle.svg?react';
+export { default as BucketSquare } from './bucket-square.svg?react';
+export { default as Bucket } from './bucket.svg?react';
+export { default as ColorSwatch } from './color-swatch.svg?react';
+export { default as Colorfilter } from './colorfilter.svg?react';
+export { default as ColorsSquare } from './colors-square.svg?react';
+export { default as Component } from './component.svg?react';
+export { default as CopySuccess } from './copy-success.svg?react';
+export { default as Copy } from './copy.svg?react';
+export { default as Designtools } from './designtools.svg?react';
+export { default as Eraser } from './eraser.svg?react';
+export { default as FlashCircle } from './flash-circle.svg?react';
+export { default as ForwardItem } from './forward-item.svg?react';
+export { default as Glass } from './glass.svg?react';
+export { default as Layer } from './layer.svg?react';
+export { default as Lifebuoy } from './lifebuoy.svg?react';
+export { default as Magicpen } from './magicpen.svg?react';
+export { default as MainComponent } from './main-component.svg?react';
+export { default as Mask1 } from './mask-1.svg?react';
+export { default as Mask2 } from './mask-2.svg?react';
+export { default as Mask } from './mask.svg?react';
+export { default as OmegaCircle } from './omega-circle.svg?react';
+export { default as OmegaSquare } from './omega-square.svg?react';
+export { default as Paintbucket } from './paintbucket.svg?react';
+export { default as Path2 } from './path-2.svg?react';
+export { default as PathSquare } from './path-square.svg?react';
+export { default as Path } from './path.svg?react';
+export { default as PenAdd } from './pen-add.svg?react';
+export { default as PenClose } from './pen-close.svg?react';
+export { default as PenRemove } from './pen-remove.svg?react';
+export { default as PenTool2 } from './pen-tool-2.svg?react';
+export { default as PenTool } from './pen-tool.svg?react';
+export { default as RecoveryConvert } from './recovery-convert.svg?react';
+export { default as RulerPen } from './ruler&pen.svg?react';
+export { default as Ruler } from './ruler.svg?react';
+export { default as Scissor } from './scissor.svg?react';
+export { default as Shapes1 } from './shapes-1.svg?react';
+export { default as Shapes } from './shapes.svg?react';
+export { default as Size } from './size.svg?react';

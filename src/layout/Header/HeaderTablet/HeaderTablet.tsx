@@ -1,6 +1,6 @@
 import { memo, useCallback, useState, type FC, type ReactElement } from 'react';
 
-import { Menu } from '@/assets/icons';
+import { Menu } from '@/assets/icons/essetional';
 import { Button, Drawer, HeadingSmall, Intent, Link, Logo, Size, ThemeSwitcher } from '@/shared/ui';
 
 import { NAV_LINKS } from '../constants';

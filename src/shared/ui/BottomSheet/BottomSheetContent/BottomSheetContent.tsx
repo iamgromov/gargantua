@@ -1,7 +1,7 @@
 import { type FC, type PointerEvent, useCallback, useId, useRef, useState } from 'react';
 import cn from 'classnames';
 
-import { Close } from '@/assets/icons';
+import { CloseCircle } from '@/assets/icons/essetional';
 import { ZIndex } from '@/utils/zIndex';
 
 import { Button, Intent, Size } from '../../Button';
@@ -140,7 +140,7 @@ export const BottomSheetContent: FC<BottomSheetContentProps> = ({
         { showClose && (
           <Button
             className={ styles.close }
-            icon={ <Close /> }
+            icon={ <CloseCircle /> }
             intent={ Intent.Outline }
             size={ Size.Small }
             round

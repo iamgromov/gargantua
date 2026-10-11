@@ -2,7 +2,7 @@ import { type FC, useCallback, useEffect, useId } from 'react';
 import { createPortal } from 'react-dom';
 import cn from 'classnames';
 
-import { Close } from '@/assets/icons';
+import { CloseCircle } from '@/assets/icons/essetional';
 import { ZIndex } from '@/utils/zIndex';
 
 import { Button, Intent, Size } from '../Button';
@@ -104,7 +104,7 @@ export const Drawer: FC<DrawerProps> = ({
         { showClose && (
           <Button
             className={ styles.close }
-            icon={ <Close /> }
+            icon={ <CloseCircle /> }
             intent={ Intent.Outline }
             size={ Size.Small }
             round

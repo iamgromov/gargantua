@@ -1,7 +1,7 @@
 import { type FC, useCallback } from 'react';
 import cn from 'classnames';
 
-import ChevronDown from '@/assets/icons/chevron-down.svg?react';
+import { ArrowDown1 } from '@/assets/icons/arrows';
 
 import { AccordionBorderRadius, AccordionSize, type AccordionItemProps } from '../types';
 
@@ -9,7 +9,7 @@ import styles from './AccordionItem.module.scss';
 
 /** Шеврон, поворачивающийся при раскрытии пункта */
 const ChevronIcon: FC<{ isExpanded: boolean }> = ({ isExpanded }) => (
-  <ChevronDown className={ cn(styles.chevron, { [styles.chevronExpanded]: isExpanded }) } />
+  <ArrowDown1 className={ cn(styles.chevron, { [styles.chevronExpanded]: isExpanded }) } />
 );
 
 /** Пункт аккордеона */

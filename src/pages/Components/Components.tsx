@@ -2,16 +2,16 @@ import { useCallback, useState, type ChangeEvent, type FC } from 'react';
 import cn from 'classnames';
 
 import { useBreakpoint } from '@/hooks';
-import { Content, LayoutWithSidebar, PageTitle, Paper, Select, SelectWidth, Sidebar } from '@/shared/ui';
+import { Content, LayoutWithSidebar, PageTitle, Paper, PaperIntent, Select, SelectWidth, Sidebar } from '@/shared/ui';
 
-import { SECTION_OPTIONS, SECTIONS } from './constants';
-import { Section } from './sections/Section/Section';
+import { ComponentDemo } from './ComponentDemo/ComponentDemo';
+import { COMPONENTS_MAP, COMPONENTS_OPTIONS } from './constants';
 
 import styles from './Components.module.scss';
 
 export const Components: FC = () => {
   const { isDesktop } = useBreakpoint();
-  const [activeId, setActiveId] = useState(SECTIONS[0].id);
+  const [activeId, setActiveId] = useState(COMPONENTS_MAP[0].id);
 
   const handleSelect = useCallback((id: string) => {
     setActiveId(id);
@@ -21,15 +21,15 @@ export const Components: FC = () => {
     setActiveId(event.target.value);
   }, []);
 
-  const activeSection = SECTIONS.find((section) => section.id === activeId) ?? SECTIONS[0];
-  const ActiveComponent = activeSection.Component;
+  const activeComponent = COMPONENTS_MAP.find((component) => component.id === activeId) ?? COMPONENTS_MAP[0];
+  const ComponentPreview = activeComponent.Component;
 
   return (
     <div className={ styles.wrapper }>
       <PageTitle title='Components' documentTitle='Components' />
       { !isDesktop && (
         <Select
-          options={ SECTION_OPTIONS }
+          options={ COMPONENTS_OPTIONS }
           value={ activeId }
           width={ SelectWidth.Full }
           onChange={ handleChange }
@@ -37,8 +37,8 @@ export const Components: FC = () => {
       ) }
       <LayoutWithSidebar>
         <Sidebar>
-          <nav className={ styles.nav }>
-            { SECTIONS.map(({ id, title }) => (
+          <Paper className={ styles.nav } intent={ PaperIntent.Primary }>
+            { COMPONENTS_MAP.map(({ id, title }) => (
               <button
                 key={ id }
                 type='button'
@@ -48,17 +48,17 @@ export const Components: FC = () => {
                 { title }
               </button>
             )) }
-          </nav>
+          </Paper>
         </Sidebar>
         <Content className={ styles.content }>
           <Paper>
-            <Section
-              title={ activeSection.title }
-              description={ activeSection.description }
-              link={ activeSection.link }
+            <ComponentDemo
+              title={ activeComponent.title }
+              description={ activeComponent.description }
+              link={ activeComponent.link }
             >
-              <ActiveComponent />
-            </Section>
+              <ComponentPreview />
+            </ComponentDemo>
           </Paper>
         </Content>
       </LayoutWithSidebar>

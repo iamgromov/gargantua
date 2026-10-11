@@ -1,0 +1,53 @@
+/**
+ * Иконки категории «devices».
+ * Сгенерировано автоматически: scripts/icons.mjs — не редактировать вручную.
+ */
+
+export { default as Airdrop } from './airdrop.svg?react';
+export { default as Airpod } from './airpod.svg?react';
+export { default as Airpods } from './airpods.svg?react';
+export { default as Bluetooth2 } from './bluetooth-2.svg?react';
+export { default as BluetoothCircle } from './bluetooth-circle.svg?react';
+export { default as BluetoothRectangle } from './bluetooth-rectangle.svg?react';
+export { default as Bluetooth } from './bluetooth.svg?react';
+export { default as Clock } from './clock.svg?react';
+export { default as CloudAdd } from './cloud-add.svg?react';
+export { default as CloudChange } from './cloud-change.svg?react';
+export { default as CloudConnection } from './cloud-connection.svg?react';
+export { default as CloudRemove } from './cloud-remove.svg?react';
+export { default as CpuCharge } from './cpu-charge.svg?react';
+export { default as CpuSetting } from './cpu-setting.svg?react';
+export { default as Cpu } from './cpu.svg?react';
+export { default as Devices } from './devices.svg?react';
+export { default as Driver1 } from './driver-1.svg?react';
+export { default as DriverRefresh } from './driver-refresh.svg?react';
+export { default as Driver } from './driver.svg?react';
+export { default as Electricity } from './electricity.svg?react';
+export { default as ExternalDrive } from './external-drive.svg?react';
+export { default as FolderConnection } from './folder-connection.svg?react';
+export { default as Game } from './game.svg?react';
+export { default as Gameboy } from './gameboy.svg?react';
+export { default as Headphone } from './headphone.svg?react';
+export { default as Headphones } from './headphones.svg?react';
+export { default as KeyboardOpen } from './keyboard-open.svg?react';
+export { default as Keyboard } from './keyboard.svg?react';
+export { default as Lamp } from './lamp.svg?react';
+export { default as Microscope } from './microscope.svg?react';
+export { default as MirroringScreen } from './mirroring-screen.svg?react';
+export { default as Mobile } from './mobile.svg?react';
+export { default as MonitorMobbile } from './monitor-mobbile.svg?react';
+export { default as MonitorRecorder } from './monitor-recorder.svg?react';
+export { default as Monitor } from './monitor.svg?react';
+export { default as Mouse } from './mouse.svg?react';
+export { default as MusicPlay } from './music-play.svg?react';
+export { default as PrinterSlash } from './printer-slash.svg?react';
+export { default as Printer } from './printer.svg?react';
+export { default as Ram2 } from './ram-2.svg?react';
+export { default as Ram } from './ram.svg?react';
+export { default as Simcard1 } from './simcard-1.svg?react';
+export { default as Simcard2 } from './simcard-2.svg?react';
+export { default as Simcard } from './simcard.svg?react';
+export { default as Speaker } from './speaker.svg?react';
+export { default as WatchStatus } from './watch-status.svg?react';
+export { default as Watch } from './watch.svg?react';
+export { default as Weight } from './weight.svg?react';
