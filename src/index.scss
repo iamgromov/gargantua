@@ -10,3 +10,9 @@ body {
 
   @include theme-transition(background-color);
 }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}

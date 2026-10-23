@@ -29,6 +29,15 @@
   --color-border-hover: #adb5bd;
   --color-error: #d32f2f;
 
+  // Декоративный фон страниц
+  // Значения — подложка и палитра частиц: правятся здесь.
+  --color-background-stardust: #fcfcff;
+  --color-background-stardust-halo: rgb(99 102 241 / 8%);
+  --color-background-dust-1: rgb(30 58 138 / 42%);
+  --color-background-dust-2: rgb(79 70 229 / 40%);
+  --color-background-dust-3: rgb(124 58 237 / 36%);
+  --color-background-dust-4: rgb(13 148 136 / 38%);
+
   // Формы
   // Значения — ссылки на палитру: правятся в одном месте.
   --color-input-filled-background: var(--color-gray-50);
@@ -66,6 +75,14 @@
   --color-border: #3d3d45;
   --color-border-hover: #5d5d65;
   --color-error: #ef4444;
+
+  // Декоративный фон страниц
+  --color-background-stardust: #0a0a10;
+  --color-background-stardust-halo: rgb(129 140 248 / 10%);
+  --color-background-dust-1: rgb(255 255 255 / 92%);
+  --color-background-dust-2: rgb(147 197 253 / 85%);
+  --color-background-dust-3: rgb(196 181 253 / 85%);
+  --color-background-dust-4: rgb(94 234 212 / 82%);
 
   // Формы
   --color-input-filled-background: var(--color-gray-800);
