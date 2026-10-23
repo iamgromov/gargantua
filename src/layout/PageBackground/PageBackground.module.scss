@@ -1,0 +1,30 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+@use './styles/stardust';
+
+// Декоративный шум поверх фоновых слоёв
+$noise-size: 120px;
+$noise-opacity: 0.05;
+
+// Декоративный слой под контентом страницы
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+// Общая для вариантов зернистость: тайл шума поверх фоновых слоёв
+.background::after {
+  position: absolute;
+  inset: 0;
+
+  background-image: url('../../assets/backgrounds/noise.svg');
+  background-size: $noise-size $noise-size;
+  background-repeat: repeat;
+  opacity: $noise-opacity;
+
+  content: '';
+}

@@ -8,10 +8,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: $spacing-xl;
+  padding: $spacing-xl $spacing-4xl;
 
-  background-color: $color-background;
-  border-bottom: $border-width-1 solid $color-border;
+  background-color: color-mix(in srgb, $color-surface 60%, transparent);
+
+  backdrop-filter: blur(16px);
 
   @include theme-transition(background-color);
 

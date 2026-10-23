@@ -8,8 +8,6 @@
   margin: 0 $spacing-sm;
   padding: $spacing-base $spacing-sm $spacing-5xl $spacing-sm;
 
-  border-top: $border-width-1 solid $color-border;
-
   @include tablet-and-more {
     flex-direction: row;
     justify-content: space-between;

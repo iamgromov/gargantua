@@ -11,10 +11,10 @@
   margin: $spacing-sm;
   padding: $spacing-base;
 
-  background-color: $color-background;
+  background-color: color-mix(in srgb, $color-surface 60%, transparent);
   border: $border-width-1 solid $color-border;
 
-  @include theme-transition(background-color);
+  backdrop-filter: blur(16px);
 
   .logo {
     width: auto;

@@ -1,0 +1,95 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+// Палитра и подложка задаются токенами темы в styles/global/_tokens.scss
+// Медленный дрейф, мерцание и перелив цвета — по одной анимации на свойство
+
+.stardust {
+  background-color: $color-background-stardust;
+
+  @include theme-transition(background-color);
+}
+
+// Слой, внутри которого живут частицы
+.stardustField {
+  position: absolute;
+  inset: 0;
+}
+
+// Отдельная частица: позиция, размер и тайминги приходят из инлайн-стилей
+.stardustDot {
+  position: absolute;
+  top: var(--dot-y);
+  left: var(--dot-x);
+  width: var(--dot-size);
+  height: var(--dot-size);
+
+  background-color: currentcolor;
+  border-radius: 50%;
+  box-shadow: 0 0 var(--dot-glow) currentcolor;
+  opacity: var(--dot-opacity-max);
+
+  animation:
+    stardust-drift var(--dot-drift-duration) ease-in-out var(--dot-drift-delay) infinite alternate,
+    stardust-twinkle var(--dot-twinkle-duration) ease-in-out var(--dot-twinkle-delay) infinite
+      alternate,
+    stardust-color var(--dot-color-duration) linear var(--dot-color-delay) infinite;
+  will-change: transform, opacity;
+
+  // На телефонах оставляем половину точек — меньше нагрузки на отрисовку
+  @include mobile {
+    &:nth-child(2n) {
+      display: none;
+    }
+  }
+
+  // Пользователям с reduced motion достаточно статичного поля
+  @media (prefers-reduced-motion: reduce) {
+    color: $color-background-dust-1;
+
+    animation: none;
+  }
+}
+
+// Медленный дрейф в случайную сторону: траектории не повторяются
+@keyframes stardust-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(var(--dot-drift-x), var(--dot-drift-y), 0);
+  }
+}
+
+// Мерцание: одни точки почти гаснут, другие мягко разгораются
+@keyframes stardust-twinkle {
+  0%,
+  100% {
+    opacity: var(--dot-opacity-min);
+  }
+
+  50% {
+    opacity: var(--dot-opacity-max);
+  }
+}
+
+// Перелив цвета по палитре темы: белый → голубой → фиолетовый → бирюзовый
+@keyframes stardust-color {
+  0%,
+  100% {
+    color: $color-background-dust-1;
+  }
+
+  25% {
+    color: $color-background-dust-2;
+  }
+
+  50% {
+    color: $color-background-dust-3;
+  }
+
+  75% {
+    color: $color-background-dust-4;
+  }
+}
