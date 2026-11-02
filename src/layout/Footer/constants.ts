@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 
-import { ReactLogo, ReduxLogo, JSLogo, TanstackLogo } from '@/assets/logos';
+import { ReactLogo, ReduxLogo, TanstackLogo, TypescriptLogo, ViteLogo } from '@/assets/logos';
 
 import { LINKS, type FooterLink, type FooterLogo } from './types';
 
@@ -25,8 +25,9 @@ export const STUB_LINKS: FooterLink[] = [
 ];
 
 export const DOCS_LINKS: FooterLogo[] = [
+  { id: 'vite', Component: ViteLogo, href: LINKS.VITE },
   { id: 'react', Component: ReactLogo, href: LINKS.REACT },
-  { id: 'tanstack', Component: TanstackLogo, href: LINKS.TANSTACK },
   { id: 'redux', Component: ReduxLogo, href: LINKS.REDUX },
-  { id: 'js', Component: JSLogo, href: LINKS.JS }
+  { id: 'tanstack', Component: TanstackLogo, href: LINKS.TANSTACK },
+  { id: 'ts', Component: TypescriptLogo, href: LINKS.TYPESCRIPT }
 ];

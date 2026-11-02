@@ -1,14 +1,71 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
 
+// Ширина icon-only кнопки Size.Small (24px) — на неё заголовок сдвигается вправо
+$back-button-shift: $spacing-xl;
+
 // Заголовок страницы с кнопкой возврата
 .root {
   display: flex;
+  width: 100%;
+}
+
+// Кнопка возврата над заголовком
+.top {
   flex-direction: column;
   align-items: flex-start;
-  width: 100%;
+}
+
+// Кнопка возврата слева от заголовка
+.left {
+  align-items: center;
+}
+
+// Первое появление кнопки возврата: иконка проявляется, заголовок отъезжает вправо
+.appear {
+  .backButton {
+    animation: back-button-appear $transition-slow;
+  }
+
+  .title {
+    animation: title-shift $transition-slow;
+  }
 }
 
 .title {
   text-align: left;
+}
+
+// Пользователям с reduced motion анимация не нужна
+@media (prefers-reduced-motion: reduce) {
+  .appear .backButton,
+  .appear .title {
+    animation: none;
+  }
+}
+
+// Проявление иконки возврата
+@keyframes back-button-appear {
+  from {
+    opacity: 0;
+
+    transform: translateX(-$spacing-sm);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+}
+
+// Сдвиг заголовка вправо на освобождаемое иконкой место
+@keyframes title-shift {
+  from {
+    transform: translateX(-$back-button-shift);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }

@@ -12,13 +12,14 @@ export const LINKS = {
 
   // DOCS
   REACT: 'https://react.dev/',
-  TANSTACK: 'https://tanstack.com/query/latest',
   REDUX: 'https://redux.js.org/toolkit/',
-  JS: 'https://developer.mozilla.org/ru/docs/Web/JavaScript'
+  TANSTACK: 'https://tanstack.com/query/latest',
+  TYPESCRIPT: 'https://www.typescriptlang.org/docs/',
+  VITE: 'https://vite.dev/'
 } as const;
 
 export interface FooterLogo {
-  id: 'react' | 'tanstack' | 'redux' | 'js';
+  id: 'vite' | 'react' | 'ts' | 'tanstack' | 'redux' ;
   href: string;
   Component: FC<SVGProps<SVGSVGElement>>;
 }
