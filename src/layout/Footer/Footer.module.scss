@@ -48,6 +48,7 @@
   @include flex-children(row, start, center);
 
   .dependency_logo {
+    width: $spacing-2xl;
     height: $spacing-2xl;
 
     &:hover {
